@@ -1,0 +1,41 @@
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 10vh;
+  width: 100vw;
+  align-items: center;
+}
+
+.logo-name {
+  font-family: "Ephesis", cursive;
+  font-weight: 100;
+  font-size: 40px;
+  transition: 90ms;
+}
+
+.logo-name:hover {
+  scale: calc(1.1);
+  text-shadow: 0 0 5px #00000032;
+  cursor: pointer;
+}
+
+.nav-content {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-item {
+  text-decoration: none;
+  user-select: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 3px;
+  color: #000;
+  transition: 90ms;
+}
+
+.nav-item:hover {
+  color: #9e045e;
+  font-size: 21px;
+}
