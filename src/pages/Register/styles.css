@@ -5,9 +5,38 @@
   align-items: center;
 }
 
+.form-logo-name {
+  font-size: 25px;
+  margin-bottom: 35px;
+  font-family: "Ephesis", cursive;
+  font-weight: 100;
+}
+
+.form-title {
+  margin-bottom: 35px;
+  color: #414141;
+}
+
 .form-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.form-btn {
+  border: none;
+  height: 55px;
+  width: 95px;
+  background: #d10583;
+  color: #e2dfdf;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 35px;
+  transition: 65ms;
+}
+
+.form-btn:hover {
+  background: #ee1e9e;
+  cursor: pointer;
 }

@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-section {
-  height: 90vh;
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -26,12 +22,6 @@ form {
   margin: 0 auto; 
 }
 
-label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1px solid #AAA;
-}
-
 label span {
   margin-bottom: .3em;
   font-weight: bold;
@@ -45,6 +35,7 @@ textarea {
   border-bottom: 1px solid #ccc;
   padding: .8em 0;
   background-color: transparent;
+  width: 350px;
 }
 
 .btn {

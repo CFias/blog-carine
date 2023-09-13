@@ -17,11 +17,18 @@
   background: #0807077a;
   z-index: 1000;
   transition: 65ms;
+  cursor: pointer;
 }
 
 .modal-content {
-  background: #fff;
+  background: #ebe8e8;
   position: relative;
   z-index: 1001;
   padding: 10px;
+  height: 600px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
 }

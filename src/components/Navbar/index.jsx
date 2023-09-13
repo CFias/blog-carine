@@ -3,8 +3,18 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../contexts/AppContext";
 
-export default function Navbar({ children }) {
-  const { showModal, setShowModal } = useContext(AppContext);
+export default function Navbar() {
+  const { setIsLogin, setShowModal } = useContext(AppContext);
+
+  const handleClick = (e) => {
+    setShowModal(true);
+
+    if (e == "login") {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  };
 
   return (
     <>
@@ -18,19 +28,18 @@ export default function Navbar({ children }) {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className="nav-item">
-                História
-              </NavLink>
-            </li>
-            <li>
               <NavLink to="/contact" className="nav-item">
                 Contato
               </NavLink>
             </li>
             <li>
+              <NavLink to="/about" className="nav-item">
+                Sobre
+              </NavLink>
+            </li>
+            <li>
               <NavLink
-                onClick={() => setShowModal(true)}
-                to="/login"
+                onClick={(e) => handleClick("login")}
                 className="nav-item btn-auth-login"
               >
                 Login
@@ -38,8 +47,7 @@ export default function Navbar({ children }) {
             </li>
             <li>
               <NavLink
-                onClick={() => setShowModal(true)}
-                to="/register"
+                onClick={(e) => handleClick("register")}
                 className="nav-item btn-auth-register"
               >
                 Registrar
@@ -47,7 +55,6 @@ export default function Navbar({ children }) {
             </li>
           </ul>
         </nav>
-        {children}
       </header>
     </>
   );
