@@ -8,7 +8,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubimit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     setError("");
@@ -29,8 +29,9 @@ export default function Register() {
 
   return (
     <section className="form-container">
-      <h1 className="form-title">Cadastre-se</h1>
-      <form onSubmit={handleSubimit} className="form-content">
+      <h1 className="form-logo-name">Carine Lima</h1>
+      <h2 className="form-title">Cadastre-se</h2>
+      <form onSubmit={handleSubmit} className="form-content">
         <label>
           <span>Nome</span>
           <input
@@ -65,7 +66,7 @@ export default function Register() {
           />
         </label>
         <label>
-          <span>Senha</span>
+          <span>Cornfirmar senha</span>
           <input
             type="password"
             name="confirmPassword"
@@ -75,7 +76,7 @@ export default function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
-        <button className="btn">Cadastrar</button>
+        <button className="form-btn">Cadastrar</button>
       </form>
     </section>
   );
