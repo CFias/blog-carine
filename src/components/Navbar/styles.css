@@ -4,6 +4,7 @@
   height: 10vh;
   width: 100vw;
   align-items: center;
+  border-bottom: 1px solid #c9c8c8;
 }
 
 .logo-name {
@@ -14,8 +15,7 @@
 }
 
 .logo-name:hover {
-  scale: calc(1.1);
-  text-shadow: 0 0 5px #00000032;
+  text-shadow: 0 0 8px #00000032;
   cursor: pointer;
 }
 
@@ -36,6 +36,10 @@
 }
 
 .nav-item:hover {
-  color: #9e045e;
-  font-size: 21px;
+  color: #b73380;
+}
+
+.btn-auth-login {
+  list-style: none;
+  text-decoration: none;
 }

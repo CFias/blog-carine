@@ -1,0 +1,12 @@
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+}
+
+.banner {
+  font-size: 65px;
+  color: #bb098b;
+}
+
