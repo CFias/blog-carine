@@ -23,3 +23,9 @@
 .cat-item:hover {
   color: #ca0b81;
 }
+
+@media screen and (max-width: 768px) {
+  .cat-content {
+    display: none;
+  }
+}

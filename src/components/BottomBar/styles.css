@@ -1,0 +1,39 @@
+.nav-bottom-container {
+  width: 100vw;
+  height: 65px;
+  border-top: 1px solid #bebdbd;
+  background: #ececec;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 90%;
+}
+
+.nav-item {
+  color: #383636;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-name {
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .nav-bottom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

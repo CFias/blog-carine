@@ -12,6 +12,8 @@
   font-weight: 100;
   font-size: 40px;
   transition: 90ms;
+  text-decoration: none;
+  color: #000;
 }
 
 .logo-name:hover {
@@ -21,6 +23,7 @@
 
 .nav-content {
   display: flex;
+
   list-style: none;
   gap: 20px;
 }
@@ -39,7 +42,48 @@
   color: #b73380;
 }
 
+.nav-btn {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
 .btn-auth-login {
   list-style: none;
   text-decoration: none;
+  color: #f50909;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-auth-register {
+  list-style: none;
+  text-decoration: none;
+  color: #f50909;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px){
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+  }
+
+  .nav-content,
+  .btn-auth-login,
+  .btn-auth-register {
+    display: none;
+  }
+
+  .nav-item {
+
+  }
+
+  .logo-name {
+    font-size: 35px;
+  }
 }

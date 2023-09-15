@@ -19,7 +19,9 @@ export default function Navbar() {
   return (
     <>
       <header className="header-container">
-        <h1 className="logo-name">Carine Lima</h1>
+        <NavLink to="/" className="logo-name">
+          Carine Lima
+        </NavLink>
         <nav className="nav-container">
           <ul className="nav-content">
             <li>
@@ -37,25 +39,27 @@ export default function Navbar() {
                 Sobre
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                onClick={(e) => handleClick("login")}
-                className="nav-item btn-auth-login"
-              >
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                onClick={(e) => handleClick("register")}
-                className="nav-item btn-auth-register"
-              >
-                Registrar
-              </NavLink>
-            </li>
           </ul>
         </nav>
+        <div className="nav-btn">
+          <li>
+            <NavLink
+              onClick={(e) => handleClick("login")}
+              className="btn-auth-login"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={(e) => handleClick("register")}
+              className="btn-auth-register"
+            >
+              Registrar
+            </NavLink>
+          </li>
+        </div>
       </header>
     </>
   );
-}
+};

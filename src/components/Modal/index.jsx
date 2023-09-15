@@ -5,7 +5,7 @@ import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 
 export default function Modal() {
-  const { isLogin, setIsLogin, showModal, setShowModal } =
+  const { isLogin, showModal, setShowModal } =
     useContext(AppContext);
 
   return (
@@ -23,4 +23,4 @@ export default function Modal() {
       )}
     </>
   );
-}
+};
