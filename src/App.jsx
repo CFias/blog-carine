@@ -14,6 +14,8 @@ import Register from "./pages/Register";
 import Modal from "./components/Modal";
 import { AppProvider } from "./contexts/AppContext";
 import Categories from "./components/Categories";
+import BottomBar from "./components/BottomBar";
+import Feed from "./pages/Feed";
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
       <BrowserRouter>
         <AppProvider>
           <Navbar />
+          <BottomBar />
           <Banner />
+          <Feed />
           <Categories />
           <Modal />
           <Routes>

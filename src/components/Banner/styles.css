@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12vh;
+  height: 18vh;
 }
 
 .banner {
@@ -10,3 +10,22 @@
   color: #bb098b;
 }
 
+@media (min-width: 320px) and (max-width: 460px) {
+  .banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+  }
+
+  .banner {
+    font-size: 18px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .banner-container {
+    display: none;
+  }
+}

@@ -1,3 +1,14 @@
 .about-container {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #010101f7;
+  color: aliceblue;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .about-container {
+    
+  }
 }
