@@ -10,7 +10,6 @@ import Banner from "./components/Banner";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Register from "./pages/Register";
 import Modal from "./components/Modal";
 import { AppProvider } from "./contexts/AppContext";
 import Categories from "./components/Categories";
