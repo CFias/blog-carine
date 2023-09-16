@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -5,5 +6,11 @@
   --main-color: #B31E55;
   --bg-color: ;
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+>>>>>>> d3b88bb52ed574ed48a9c2f4071fe5f918e8aeaa
 }
 
