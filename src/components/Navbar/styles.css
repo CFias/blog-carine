@@ -51,6 +51,7 @@
   height: 10vh;
   width: 100vw;
   align-items: center;
+  border-bottom: 1px solid #c9c8c8;
 }
 
 .logo-name {
@@ -58,16 +59,18 @@
   font-weight: 100;
   font-size: 40px;
   transition: 90ms;
+  text-decoration: none;
+  color: #000;
 }
 
 .logo-name:hover {
-  scale: calc(1.1);
-  text-shadow: 0 0 5px #00000032;
+  text-shadow: 0 0 8px #00000032;
   cursor: pointer;
 }
 
 .nav-content {
   display: flex;
+
   list-style: none;
   gap: 20px;
 }
@@ -83,7 +86,54 @@
 }
 
 .nav-item:hover {
-  color: #9e045e;
-  font-size: 21px;
+  color: #b73380;
+}
+
+.nav-btn {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.btn-auth-login {
+  list-style: none;
+  text-decoration: none;
+  color: #f50909;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-auth-register {
+  list-style: none;
+  text-decoration: none;
+  color: #f50909;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px){
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background: #55093c;
+  }
+
+  .nav-content,
+  .btn-auth-login,
+  .btn-auth-register {
+    display: none;
+  }
+
+  .nav-item {
+
+  }
+
+  .logo-name {
+    font-size: 35px;
+    color: #f18ec5;
+  }
 }
 >>>>>>> d3b88bb52ed574ed48a9c2f4071fe5f918e8aeaa

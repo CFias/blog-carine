@@ -1,0 +1,31 @@
+.cat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-content {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  user-select: none;
+}
+
+.cat-item {
+  color: #131212;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 65ms;
+}
+
+.cat-item:hover {
+  color: #ca0b81;
+}
+
+@media screen and (max-width: 768px) {
+  .cat-content {
+    display: none;
+  }
+}

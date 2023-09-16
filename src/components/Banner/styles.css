@@ -1,5 +1,6 @@
 .banner-container {
   display: flex;
+<<<<<<< HEAD
   align-items: center;
   height: 13rem;
   width: 66rem;
@@ -14,3 +15,34 @@
   font-weight: 700;
   margin-left: 45px;
 }
+=======
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
+}
+
+.banner {
+  font-size: 65px;
+  color: #bb098b;
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+  .banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+  }
+
+  .banner {
+    font-size: 18px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .banner-container {
+    display: none;
+  }
+}
+>>>>>>> 40f1210296fd5f39fff3b7d0b25a4435c641cab0

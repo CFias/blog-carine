@@ -1,0 +1,17 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-logo-name {
+  background: #000;
+}
+
+.login-form {
+  background: #f10909;
+}
+
+.login-content {
+  background: #dd2121;
+}
