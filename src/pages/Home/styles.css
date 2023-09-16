@@ -1,0 +1,48 @@
+.main-container {
+  display: flex;
+  width: 100vw;
+  background: #272424;
+  height: 100vh;
+}
+
+.main-content {
+  background: #363636;
+  height: 60vh;
+  width: 100vw;
+  border-bottom: 2px solid #ff00b31a;
+  color: aliceblue;
+}
+
+.main-profile {
+  background: #363636;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #00000038;
+}
+
+.main-img-profile {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.main-name-profile {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-posts-title {
+  font-size: 18px;
+}
+
+.main-posts-img {
+  width: 100vw;
+}

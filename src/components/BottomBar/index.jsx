@@ -8,19 +8,19 @@ export default function BottomBar() {
     <nav className="nav-bottom-container">
       <ul className="nav-item-content">
         <li>
-          <NavLink className="nav-item">
+          <NavLink to="/" className="nav-item">
             <Home />
             <p className="nav-name">home</p>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" className="nav-item">
+          <NavLink to="" className="nav-item">
             <AddBox />
             <p className="nav-name">Adicionar</p>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" className="nav-item">
+          <NavLink to="/about" className="nav-item">
             <Info />
             <p className="nav-name">Sobre</p>
           </NavLink>
