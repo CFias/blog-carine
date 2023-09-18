@@ -34,7 +34,7 @@
   font-size: 20px;
   font-weight: 600;
   padding: 3px;
-  color: #000;
+  color: #252323;
   transition: 90ms;
 }
 
@@ -51,7 +51,7 @@
 .btn-auth-login {
   list-style: none;
   text-decoration: none;
-  color: #f50909;
+  color: #0f0e0e;
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
@@ -78,10 +78,6 @@
   .btn-auth-login,
   .btn-auth-register {
     display: none;
-  }
-
-  .nav-item {
-
   }
 
   .logo-name {
