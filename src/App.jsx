@@ -14,7 +14,7 @@ import { AppProvider } from "./contexts/AppContext";
 import Categories from "./components/Categories";
 import BottomBar from "./components/BottomBar";
 import ToAdd from "./pages/ToAdd";
-import Profile from './pages/Profile/index';
+import Profile from './pages/Profile';
 
 function App() {
   return (
