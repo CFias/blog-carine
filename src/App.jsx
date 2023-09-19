@@ -13,7 +13,6 @@ import Modal from "./components/Modal";
 import { AppProvider } from "./contexts/AppContext";
 import Categories from "./components/Categories";
 import BottomBar from "./components/BottomBar";
-import ToAdd from "./pages/ToAdd";
 import Profile from './pages/Profile';
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
           <Modal />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/add" element={<ToAdd />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
