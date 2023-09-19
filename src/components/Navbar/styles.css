@@ -71,7 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;    
-    background: var(--dark-bg-color);
+    background: var(--dark-cards-color);
     border-bottom: 1px solid #6e717346;
   }
 

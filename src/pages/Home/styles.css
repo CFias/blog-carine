@@ -53,7 +53,7 @@
     border: 1px solid #6E7173;
     border-radius: 15px;
     color: rgb(204, 204, 204);
-    box-shadow: 0 0 8px 8px #00000046;
+    box-shadow: 0 0 8px 8px #00000040;
   }
   
   .main-profile {
@@ -101,7 +101,7 @@
     border: 1px solid #6E7173;
     font-size: 12px;
     font-weight: 400;
-    padding: 2px;
+    padding: 3px;
   }
 
   .main-posts-description {

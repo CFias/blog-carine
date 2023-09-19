@@ -21,7 +21,9 @@ export default function Home() {
               <Edit className="main-edit" />
             </div>
           </div>
-          <h1 className="main-posts-title">Primeiro Post <span className="main-span" >podcast</span></h1>
+          <h1 className="main-posts-title">
+            Primeiro Post <span className="main-span">podcast</span>
+          </h1>
           <p className="main-posts-description">
             Vem aí mais um evento voltado para o meio ambiente, governação e
           </p>
