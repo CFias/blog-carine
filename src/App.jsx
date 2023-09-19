@@ -9,12 +9,11 @@ import Banner from "./components/Banner";
 // Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Modal from "./components/Modal";
 import { AppProvider } from "./contexts/AppContext";
 import Categories from "./components/Categories";
 import BottomBar from "./components/BottomBar";
-import Feed from "./pages/Feed";
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -24,13 +23,12 @@ function App() {
           <Navbar />
           <BottomBar />
           <Banner />
-          <Feed />
           <Categories />
           <Modal />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           <Footer />
         </AppProvider>
