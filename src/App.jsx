@@ -28,7 +28,7 @@ function App() {
           <Modal />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/toadd" element={<ToAdd />} />
+            <Route path="/add" element={<ToAdd />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
