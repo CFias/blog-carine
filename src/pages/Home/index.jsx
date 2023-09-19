@@ -25,7 +25,7 @@ export default function Home() {
             Primeiro Post <span className="main-span">podcast</span>
           </h1>
           <p className="main-posts-description">
-            Vem aí mais um evento voltado para o meio ambiente, governação e
+            Vem aí mais um evento voltado para o meio ambiente, governação e...
           </p>
           <div className="main-posts-highlight">
             <img
