@@ -6,13 +6,13 @@
   .nav-bottom-container {
     width: 100vw;
     height: 65px;
-    border-top: 1px solid #bebdbd;
-    background: #1b1919;
+    border-top: 1px solid #6e717346;
+    background: var(--dark-bg-color);
     position: fixed;
     z-index: 1000;
     bottom: 0;
     left: 0;
-    display: none;
+    box-shadow: 15px 0 8px #00000045;    
   }
 
   .nav-item-content {

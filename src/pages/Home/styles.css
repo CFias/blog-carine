@@ -1,5 +1,5 @@
 .main-container {
-  width: 100vw;
+  width: 90vw;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -11,15 +11,15 @@
   justify-content: center;
   flex-direction: column;
   color: #d3d0d0;
-  background-color: rgb(43, 42, 42);
+  background-color:  var(--dark-bg-color);
   width: 80vw;
-  height: 60vh;
+  height: 0vh;
   border-radius: 15px;
-  box-shadow: 0 0 10px 5px #0000003b;
+  box-shadow: 0 0 8px 5px #00000023;
 }
 
 .main-profile {
-  background-color: rgb(41, 43, 41);
+  background-color: red;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -36,58 +36,82 @@
 }
 
 .main-posts-img {
-  width: 350px;
+  width: 30px;
 }
 
 @media screen and (max-width: 768px) {
   .main-container {
-    display: flex;
     width: 100vw;
-    background: #272424;
-    height: 100vh;
+    background: var(--dark-bg-color);
+    height: 85vh;
   }
   
   .main-content {
-    background: #363636;
-    height: 60vh;
-    width: 100vw;
-    border-bottom: 2px solid #ff00b31a;
-    color: aliceblue;
+    background: var(--dark-cards-color);
+    height: 65vh;
+    width: 90vw;
+    border: 1px solid #6E7173;
+    border-radius: 15px;
+    color: rgb(204, 204, 204);
+    box-shadow: 0 0 8px 8px #00000046;
   }
   
   .main-profile {
-    background: #363636;
-    width: 100vw;
-    height: 8vh;
+    background: var(--dark-cards-color);
+    width: 80vw;
+    height: 6vh;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    border-bottom: 1px solid #00000038;
+    gap: 15px;
+    border-bottom: 1px solid #6e717325;
+    margin-top: 6px;
   }
   
   .main-img-profile {
     width: 40px;
     border-radius: 50%;
+    margin-left: 10px;
   }
   
   .main-name-profile {
     text-decoration: none;
     color: #fff;
   }
-  
+   
+  .main-edit-icon {
+    text-align: end;
+    margin-left: 95px;
+  }
+
   .main-posts-container {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 15px;
   }
   
   .main-posts-title {
     font-size: 18px;
+    width: 80vw;
+  }
+
+  .main-span {
+    background: var(--dark-bg-color);
+    margin-left: 90px;
+    border-radius: 10px;
+    border: 1px solid #6E7173;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 2px;
+  }
+
+  .main-posts-description {
+    width: 80vw;
+    border-bottom: 1px solid #6e717336;
   }
   
   .main-posts-img {
-    width: 100vw;
+    width: 70vw;
+    height: 35vh;
   }
-  
 }
 
