@@ -8,6 +8,12 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --main-color: ;
+  --bg-color: ;
+  --dark-bg-color: #212625 ;
+  --cards-color: ;
+  --dark-cards-color: #2E3331;
 }
 
 input::placeholder,
