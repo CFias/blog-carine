@@ -21,7 +21,7 @@
 }
 
 .modal-content {
-  background: #ebe8e8;
+  background: var(--dark-cards-color);
   position: relative;
   z-index: 1001;
   padding: 10px;
@@ -30,5 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 35px;
+  border-radius: 15px;
+  border: 1px solid var(--dark-border-color);
 }

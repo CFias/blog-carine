@@ -1,20 +1,26 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  height: 55vh;
 }
 
 .form-logo-name {
-  font-size: 25px;
+  font-size: 45px;
   margin-bottom: 35px;
   font-family: "Ephesis", cursive;
   font-weight: 100;
+  color: var(--logo-color);
+  text-align: center;
+  width: 15vw;
+  border-bottom: 1px solid var(--dark-border-color);
 }
 
 .form-title {
   margin-bottom: 35px;
-  color: #414141;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .form-content {
@@ -22,21 +28,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 40vh;
+  width: 20vw;
+  color: #e2dfdf;
+  gap: 16px;
+  border-radius: 15px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-in {
+  background: var(--dark-bg-color);
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  width: 17vw;
+  height: 3.5vh;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--dark-border-color);
 }
 
 .form-btn {
-  border: none;
   height: 55px;
-  width: 95px;
-  background: #d10583;
-  color: #e2dfdf;
-  font-size: 18px;
+  width: 17vw;
+  background: var(--dark-border-color);
+  border: 1px solid var(--dark-border-color);
+  color: #fff;
+  font-size: 16px;
+  padding: 4px;
   border-radius: 10px;
-  margin-top: 35px;
+  margin-top: 15px;
   transition: 65ms;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .form-btn:hover {
-  background: #ee1e9e;
+  background: var(--dark-bg-color);
   cursor: pointer;
 }

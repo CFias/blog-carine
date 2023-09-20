@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -7,57 +8,18 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-logo: font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-all: font-family: 'Montserrat', sans-serif;
 
   --main-color: ;
+  --logo-color: #F26B9C;
   --bg-color: ;
-  --dark-bg-color: #212625 ;
+  --dark-bg-color: #212625;
+  --dark-border-color: #6E7173;
   --cards-color: ;
   --dark-cards-color: #2E3331;
 }
 
-input::placeholder,
-textarea::placeholder {
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px;
-  color: #AAA;
-}
-
-form {
-  max-width: 40%;
-  margin: 0 auto; 
-}
-
-label span {
-  margin-bottom: .3em;
-  font-weight: bold;
-  text-align: left;
-}
-
-input,
-textarea {
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: .8em 0;
-  background-color: transparent;
-  width: 350px;
-}
-
-.btn {
-  background-color: #9e0c72;
-  color: #FFF;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 12px;
-  font-weight: bold;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1em;
-  transition: 66ms;
-}
-
-.btn:hover {
-  background-color: #96096c;
-  color: #FFF;
+.container {
+  background: var(--dark-bg-color);
 }

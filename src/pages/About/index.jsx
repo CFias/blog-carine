@@ -4,7 +4,7 @@ import { Edit } from "@mui/icons-material";
 
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="about-container container">
       <div className="about-content">
         <div className="about-name-img">
           <img
