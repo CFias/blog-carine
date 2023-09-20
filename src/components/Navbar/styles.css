@@ -4,7 +4,8 @@
   height: 10vh;
   width: 100vw;
   align-items: center;
-  border-bottom: 1px solid #c9c8c8;
+  border-bottom: 1px solid var(--dark-border-color);
+  background: var(--dark-cards-color);
 }
 
 .logo-name {
@@ -13,7 +14,7 @@
   font-size: 40px;
   transition: 90ms;
   text-decoration: none;
-  color: #000;
+  color: var(--logo-color);
 }
 
 .logo-name:hover {
@@ -23,7 +24,6 @@
 
 .nav-content {
   display: flex;
-
   list-style: none;
   gap: 20px;
 }
@@ -32,26 +32,27 @@
   text-decoration: none;
   user-select: none;
   font-size: 20px;
-  font-weight: 600;
   padding: 3px;
-  color: #252323;
+  color: #fff;
   transition: 90ms;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-item:hover {
-  color: #b73380;
+  color: var(--logo-color);
 }
 
 .nav-btn {
   display: flex;
   list-style: none;
   gap: 15px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-auth-login {
   list-style: none;
   text-decoration: none;
-  color: #0f0e0e;
+  color: #fff;
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
@@ -60,7 +61,7 @@
 .btn-auth-register {
   list-style: none;
   text-decoration: none;
-  color: #f50909;
+  color: #fff;
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
@@ -83,6 +84,6 @@
 
   .logo-name {
     font-size: 35px;
-    color: #F26B9C;
+    color: var(--logo-color);
   }
 }

@@ -1,31 +1,107 @@
-.cat-container {
+.add-posts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.add-posts-content {
+  background: var(--dark-cards-color);
+  width: 40vw;
+  height: 13vh;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  border-radius: 15px;
+  padding: 8px;
+  border: 1px solid var(--dark-border-color);
+  box-shadow: 0 0 10px 8px #00000048;
+}
+
+.add-img-profile {
+  width: 3rem;
+  margin: 9px;
+}
+
+.add-text {
+  background: var(--dark-bg-color);
+  color: #fff;
+  border: 1px solid var(--dark-border-color);
+  width: 34.7vw;
+  height: 5vh;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.add-posts-icons {
+  display: flex;
+  gap: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.add-icon-midia,
+.add-icon-article {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  gap: 5px;
+  transition: 20ms;
+  border-radius: 10px;
+  width: 8vw;
+  height: 4vh;
+  margin-left: 9px;
 }
 
-.cat-content {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  user-select: none;
+.add-img {
+  color: rgb(134, 134, 238);
 }
 
-.cat-item {
-  color: #131212;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  transition: 65ms;
+.add-article {
+  color: var(--logo-color);
 }
 
-.cat-item:hover {
-  color: #ca0b81;
+@media screen and (min-width: 768px) {
+  .add-icon-midia:hover,
+  .add-icon-article:hover {
+    background: var(--dark-bg-color);
+    border-radius: 10px;
+    border: 1px solid var(--dark-border-color);
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .cat-content {
-    display: none;
+  .add-posts-container {
+    padding: 15px;
+  }
+
+  .add-posts-content {
+    width: 90vw;
+    height: 18vh;
+  }
+
+  .add-img-profile {
+    border-radius: 50%;
+  }
+
+  .add-text {
+    width: 60vw;
+  }
+
+  .add-posts-icons {
+    gap: 1px;
+    margin-top: 8px;
+  }
+
+  .add-icon-midia {
+    font-size: 14px;
+  }
+
+  .add-icon-article {
+    font-size: 14px;
+    width: 200px;
   }
 }

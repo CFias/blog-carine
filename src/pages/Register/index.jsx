@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function Register() {
@@ -8,7 +8,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setError("");
@@ -16,15 +16,14 @@ export default function Register() {
     const user = {
       displayName,
       email,
-      password
+      password,
     };
 
-    if(password !== confirmPassword) {
+    if (password !== confirmPassword) {
       setError("As senhas precisam ser iguais!");
       return;
-    };
-
-    console.log(user)
+    }
+    console.log(user);
   };
 
   return (
@@ -32,9 +31,10 @@ export default function Register() {
       <h1 className="form-logo-name">Carine Lima</h1>
       <h2 className="form-title">Cadastre-se</h2>
       <form onSubmit={handleSubmit} className="form-content">
-        <label>
-          <span>Nome</span>
+        <label className="form-item">
+          Nome
           <input
+            className="form-in"
             type="text"
             name="displayName"
             required
@@ -43,9 +43,10 @@ export default function Register() {
             onChange={(e) => setDisplayName(e.target.value)}
           />
         </label>
-        <label>
-          <span>E-mail</span>
+        <label className="form-item" >
+          E-mail
           <input
+            className="form-in"
             type="email"
             name="email"
             required
@@ -54,9 +55,10 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label>
+        <label className="form-item" >
           <span>Senha</span>
           <input
+            className="form-in"
             type="password"
             name="password"
             required
@@ -65,9 +67,10 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <label>
+        <label className="form-item">
           <span>Cornfirmar senha</span>
           <input
+            className="form-in"
             type="password"
             name="confirmPassword"
             required
@@ -76,8 +79,10 @@ export default function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
-        <button className="form-btn">Cadastrar</button>
+        {!loading && <button className="form-btn">Cadastrar</button>}
+        {loading && <button className="form-btn" disabled >Aguarde</button>}
+        {error && <p className="error" >{error}</p>}
       </form>
     </section>
   );
-};
+}

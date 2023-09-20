@@ -7,7 +7,8 @@
 
 .banner {
   font-size: 65px;
-  color: #bb098b;
+  color: var(--logo-color);
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (min-width: 320px) and (max-width: 460px) {
