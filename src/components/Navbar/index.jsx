@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../contexts/AppContext";
+import DarkMode from "../DarkMode";
 
 export default function Navbar() {
   const { setIsLogin, setShowModal } = useContext(AppContext);
@@ -42,6 +43,7 @@ export default function Navbar() {
           </ul>
         </nav>
         <div className="nav-btn">
+          <ul className="nav-content">
           <li>
             <NavLink
               onClick={(e) => handleClick("login")}
@@ -58,6 +60,10 @@ export default function Navbar() {
               Registrar
             </NavLink>
           </li>
+          <li>
+            <DarkMode />
+          </li>
+          </ul>
         </div>
       </header>
     </>

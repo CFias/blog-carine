@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dark-bg-color);
+  background: var(--bg-color);
   padding: 3rem 0;
 }
 .main-posts-container {
@@ -12,14 +12,14 @@
 }
 
 .main-posts-content {
-  background: var(--dark-cards-color);
+  background: var(--cards-color);
   justify-content: center;
   width: 760px;
   color: #fff;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--dark-border-color);
+  border: 1px solid var(--border-color);
   box-shadow: 0 0 10px 8px #00000028;
 }
 
@@ -30,7 +30,7 @@
   gap: 20px;
   padding: 20px;
   height: 80px;
-  border-bottom: 1px solid var(--dark-border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 .main-profile-content {
   display: flex;
