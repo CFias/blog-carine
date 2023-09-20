@@ -1,14 +1,20 @@
 .main-container {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--dark-bg-color);
+  padding: 3rem 0;
+}
+.main-posts-container {
+  display: flex; 
+  flex-direction: column;
+  gap: 50px;
 }
 
 .main-posts-content {
   background: var(--dark-cards-color);
   justify-content: center;
+  width: 760px;
   color: #fff;
   border-radius: 15px;
   display: flex;
@@ -18,13 +24,18 @@
 }
 
 .main-profile {
-  background-color: var(--dark-cards-color);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
-  margin: 15px;
+  padding: 20px;
   height: 80px;
   border-bottom: 1px solid var(--dark-border-color);
+}
+.main-profile-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .main-img-profile {
@@ -45,19 +56,13 @@
   cursor: pointer;
 }
 
-.main-edit-icon {
-  margin-left: 70%;
-}
-
 .main-posts-highlight {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .main-posts-description {
-  width: 35vw;
-  margin: 15px;
+  padding: 1.5rem;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -67,8 +72,10 @@
 }
 
 .main-posts-img {
-  width: 760px;
-  background: #000;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  align-self: center;
 }
 
 .main-share-icon {
@@ -85,7 +92,7 @@
   .main-container {
     display: flex;
     align-items: start;
-    padding: 10px;
+    padding-top: 15px;
   }
   
   .main-posts-content {
@@ -105,12 +112,6 @@
   }
 
   .main-posts-description {
-    width: 80vw;
     font-size: 14px;
-  }
-
-  .main-posts-img {
-    width: 85vw;
-    height: 35vh;
   }
 }
