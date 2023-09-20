@@ -14,12 +14,21 @@
   --main-color: ;
   --logo-color: #F26B9C;
   --bg-color: ;
-  --dark-bg-color: #212625;
-  --dark-border-color: #6E7173;
-  --cards-color: ;
-  --dark-cards-color: #2E3331;
+  --bg-color: #ffffff;
+  --border-color: #afafaf;
+  --cards-color: #c5c5c5;
+}
+
+[data-theme="dark"] {
+  --main-color: ;
+  --logo-color: #F26B9C;
+  --bg-color: ;
+  --bg-color: #212625;
+  --border-color: #6E7173;
+  --cards-color: #2E3331;
 }
 
 .container {
-  background: var(--dark-bg-color);
+  background: var(--bg-color);
+  transition: transform 0.45s ease, background 0.45s ease;
 }
