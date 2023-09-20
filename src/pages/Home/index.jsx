@@ -9,7 +9,7 @@ export default function Home() {
     <section className="main-container container">
       <div className="main-posts-container">
       {posts.map((post) => (
-      <div className="main-posts-content">
+      <div key={post.id} className="main-posts-content">
         <div className="main-profile">
         <div className="main-profile-content">
         <img
