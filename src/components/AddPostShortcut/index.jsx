@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./styles.css";
 import { AddPhotoAlternateRounded, Article } from "@mui/icons-material";
 
-export default function Categories() {
+export default function AddPostShortcut() {
   return (
     <article className="add-posts-container container">
       <div className="add-posts-content">

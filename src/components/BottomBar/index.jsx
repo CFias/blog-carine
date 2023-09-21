@@ -14,7 +14,7 @@ export default function BottomBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/add" className="nav-item">
+          <NavLink to="/addpost" className="nav-item">
             <AddBox />
             <p className="nav-name">Adicionar</p>
           </NavLink>

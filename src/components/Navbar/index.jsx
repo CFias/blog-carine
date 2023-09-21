@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { useAuthentication } from "../../hooks/useAuthentication";
+import { useAuthValue } from "../../contexts/AppContext";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../contexts/AppContext";
@@ -6,6 +8,7 @@ import DarkMode from "../DarkMode";
 
 export default function Navbar() {
   const { setIsLogin, setShowModal } = useContext(AppContext);
+  const { user } = useAuthValue();
 
   const handleClick = (e) => {
     setShowModal(true);
@@ -68,4 +71,4 @@ export default function Navbar() {
       </header>
     </>
   );
-};
+}

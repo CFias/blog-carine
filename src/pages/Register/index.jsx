@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 export default function Register() {
   const [displayName, setDisplayName] = useState("");
@@ -7,6 +8,8 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  const { createUser, error: authError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,8 +26,15 @@ export default function Register() {
       setError("As senhas precisam ser iguais!");
       return;
     }
-    console.log(user);
+
+    const res = await createUser(user);
+
+    // console.log(res);
   };
+
+  useEffect(() => {
+    setError(authError);
+  }, [setError]);
 
   return (
     <section className="form-container">
@@ -43,7 +53,7 @@ export default function Register() {
             onChange={(e) => setDisplayName(e.target.value)}
           />
         </label>
-        <label className="form-item" >
+        <label className="form-item">
           E-mail
           <input
             className="form-in"
@@ -55,7 +65,7 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label className="form-item" >
+        <label className="form-item">
           <span>Senha</span>
           <input
             className="form-in"
@@ -80,8 +90,12 @@ export default function Register() {
           />
         </label>
         {!loading && <button className="form-btn">Cadastrar</button>}
-        {loading && <button className="form-btn" disabled >Aguarde</button>}
-        {error && <p className="error" >{error}</p>}
+        {loading && (
+          <button className="form-btn" disabled>
+            Aguarde...
+          </button>
+        )}
+        {error && <p className="error">{error}</p>}
       </form>
     </section>
   );
