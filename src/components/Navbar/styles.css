@@ -49,22 +49,42 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.nav-profile {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.nav-btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logout {
+  text-decoration: none;
+  color: #fff;
+  font-family: var(--main-font);
+}
+
+.nav-logout-icon {
+  cursor: pointer;
+  color: #fff;
+}
+
 .btn-auth-login {
-  list-style: none;
   text-decoration: none;
   color: #fff;
   text-decoration: none;
   font-size: 20px;
-  font-weight: 600;
+  font-family: var(--main-font);
 }
 
 .btn-auth-register {
-  list-style: none;
   text-decoration: none;
   color: #fff;
   text-decoration: none;
   font-size: 20px;
-  font-weight: 600;
+  font-family: var(--main-font);
 }
 
 @media screen and (max-width: 768px){

@@ -13,7 +13,7 @@
   border-radius: 15px;
   padding: 8px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 0 10px 8px #00000048;
+  box-shadow: var(--box-shadow-cards);
 }
 
 .add-post-input {
@@ -51,14 +51,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: black; */
   color: #fff;
   gap: 5px;
   transition: 20ms;
   border-radius: 10px;
   padding: .5em .5em;
-  /* width: 8vw;
-  height: 4vh; */
   margin-left: 9px;
   text-decoration: none;
 }
@@ -94,12 +91,6 @@
   .add-img-profile {
     border-radius: 50%;
   }
-
-  /* .add-posts-text {
-    margin-left: 0;
-    display: flex;
-    align-items: center;
-  } */
 
   .add-posts-icons {
     gap: 1px;
