@@ -23,10 +23,10 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 function App() {
-  const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
+  const [user, setUser] = useState();
 
-  const loadingUser = user === undefined;
+  const loadingUser = user === false;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

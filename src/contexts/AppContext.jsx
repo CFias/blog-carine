@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
 
+
   return (
     <AppContext.Provider
       value={{
@@ -18,8 +19,4 @@ export const AppProvider = ({ children }) => {
       {children}
     </AppContext.Provider>
   );
-};
-
-export function useAuthValue() {
-  return useContext(AppContext);
 };
