@@ -45,45 +45,6 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-<<<<<<< HEAD
-        {user ? (
-          <>
-            <div className="nav-btn">
-              <li>
-                <NavLink to="/posts/addpost" className="btn-auth-login">
-                  Publicar
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/" className="btn-auth-register">
-                  Feed
-                </NavLink>
-              </li>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="nav-btn">
-              <li>
-                <NavLink
-                  onClick={(e) => handleClick("login")}
-                  className="btn-auth-login"
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  onClick={(e) => handleClick("register")}
-                  className="btn-auth-register"
-                >
-                  Registrar
-                </NavLink>
-              </li>
-            </div>
-          </>
-        )}
-=======
         <div className="nav-btn">
           <ul className="nav-content">
           <li>
@@ -107,7 +68,6 @@ export default function Navbar() {
           </li>
           </ul>
         </div>
->>>>>>> 6a3c1f9f35bbf9b147c51bdef2561aabfd91e9b6
       </header>
     </>
   );
