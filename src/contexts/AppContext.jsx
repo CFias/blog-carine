@@ -1,10 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const AppContext = createContext({});
 
 export const AppProvider = ({ children }) => {
-  const [ showModal, setShowModal ] = useState(false);
-  const [ isLogin, setIsLogin ] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <AppContext.Provider
@@ -18,4 +18,8 @@ export const AppProvider = ({ children }) => {
       {children}
     </AppContext.Provider>
   );
+};
+
+export function useAuthValue() {
+  return useContext(AppContext);
 };
