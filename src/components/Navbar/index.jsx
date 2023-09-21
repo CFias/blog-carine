@@ -4,6 +4,7 @@ import { useAuthValue } from "../../contexts/AppContext";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../contexts/AppContext";
+import DarkMode from "../DarkMode";
 
 export default function Navbar() {
   const { setIsLogin, setShowModal } = useContext(AppContext);
@@ -44,6 +45,7 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
+<<<<<<< HEAD
         {user ? (
           <>
             <div className="nav-btn">
@@ -81,6 +83,31 @@ export default function Navbar() {
             </div>
           </>
         )}
+=======
+        <div className="nav-btn">
+          <ul className="nav-content">
+          <li>
+            <NavLink
+              onClick={(e) => handleClick("login")}
+              className="btn-auth-login"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={(e) => handleClick("register")}
+              className="btn-auth-register"
+            >
+              Registrar
+            </NavLink>
+          </li>
+          <li>
+            <DarkMode />
+          </li>
+          </ul>
+        </div>
+>>>>>>> 6a3c1f9f35bbf9b147c51bdef2561aabfd91e9b6
       </header>
     </>
   );

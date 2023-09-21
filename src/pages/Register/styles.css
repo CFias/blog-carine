@@ -12,7 +12,12 @@
   font-weight: 100;
   color: var(--logo-color);
   text-align: center;
+<<<<<<< HEAD
   border-bottom: 1px solid var(--dark-border-color);
+=======
+  width: 15vw;
+  border-bottom: 1px solid var(--border-color);
+>>>>>>> 6a3c1f9f35bbf9b147c51bdef2561aabfd91e9b6
 }
 
 .form-title {
@@ -40,19 +45,26 @@
 }
 
 .form-in {
-  background: var(--dark-bg-color);
+  background: var(--bg-color);
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   height: 3.5vh;
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid var(--dark-border-color);
+  border: 1px solid var(--border-color);
 }
 
 .form-btn {
+<<<<<<< HEAD
   padding: 15px;
   background: var(--dark-border-color);
   border: 1px solid var(--dark-border-color);
+=======
+  height: 55px;
+  width: 17vw;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+>>>>>>> 6a3c1f9f35bbf9b147c51bdef2561aabfd91e9b6
   color: #fff;
   font-size: 16px;
   border-radius: 10px;
@@ -62,7 +74,7 @@
 }
 
 .form-btn:hover {
-  background: var(--dark-bg-color);
+  background: var(--bg-color);
   cursor: pointer;
 }
 

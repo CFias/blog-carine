@@ -7,14 +7,14 @@
   .about-container {
     height: 85vh;
     width: 100vw;
-    background: var(--dark-bg-color);
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .about-content {
-    background: var(--dark-cards-color);
+    background: var(--cards-color);
     width: 90vw;
     height: 70vh;
     display: flex;
