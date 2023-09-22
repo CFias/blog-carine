@@ -20,7 +20,7 @@ export default function Navbar() {
     }
   };
 
-  console.log(user);
+  console.log(typeof user);
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-        {!user ? (
+        {user ? (
           <>
             <div className="nav-btn">
               <ul className="nav-content">

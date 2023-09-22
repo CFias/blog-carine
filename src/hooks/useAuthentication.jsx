@@ -11,7 +11,7 @@ import {
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [user, setUser] = useState([{name: "Fias", lastName: "Ramos", age: 25}])
+  const [user, setUser] = useState(true);
 
   // Cleanup
   const [cancelled, setCancelld] = useState(false);
@@ -63,12 +63,12 @@ export const useAuthentication = () => {
     return () => setCancelld(true);
   }, []);
 
-
   return {
     auth,
     createUser,
     error,
     loading,
-    user
+    user,
+    setUser,
   };
 };

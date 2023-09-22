@@ -6,9 +6,11 @@ import { useAuthentication } from "./../../hooks/useAuthentication";
 export default function AddPostShortcut() {
   const { user } = useAuthentication();
 
+  console.log(typeof user);
+
   return (
     <article className="add-posts-container container">
-      {!user && (
+      {user ? (
         <div className="add-posts-content">
           <div className="add-post-input">
             <img
@@ -35,7 +37,7 @@ export default function AddPostShortcut() {
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </article>
   );
 }

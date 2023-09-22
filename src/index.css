@@ -16,13 +16,13 @@
   --border-color: #afafaf;
   --cards-color: #c5c5c5;
 
-  --box-shadow-cards: 0 0 15px 8px #0000002a; 
+  --box-shadow-cards: 0 0 20px 6px #0000002a; 
 }
 
 [data-theme="dark"] {
   --logo-color: #f26b9c;
   --bg-color: #212625;
-  --border-color: #6e7173;
+  --border-color: #6e71732c;
   --cards-color: #2e3331;
 }
 

@@ -23,14 +23,13 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 function App() {
-  const { auth } = useAuthentication();
-  const [user, setUser] = useState();
+  const { auth, user, setUser } = useAuthentication();
 
   const loadingUser = user === false;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setUser(user);
+      setUser(() => setUser(user));
     });
   }, [auth]);
 
@@ -45,19 +44,16 @@ function App() {
           <Navbar />
           <BottomBar />
           <Banner />
-          {user ? <AddPostShortcut /> : <Navigate to="/" />}
+          <AddPostShortcut />
           <Modal />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route
               path="/login"
-              element={!user ? <Login /> : <Navigate to="/" />}
+              element={!user ? <Login /> : <Navigate to="/login" />}
             />
-            <Route
-              path="/register"
-              element={!user ? <Register /> : <Navigate to="/" />}
-            />
+            <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route
               path="/addpost"
