@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
 import "./styles.css";
 import Sun from "@mui/icons-material/LightMode";
 import Moon from "@mui/icons-material/Brightness3";
+import { useEffect, useState } from "react";
+
 export default function DarkMode() {
   const [isActive, setIsActive] = useState(false);
   const selectedTheme = localStorage.getItem("selectedTheme");
@@ -18,16 +19,18 @@ export default function DarkMode() {
 
   const toggleTheme = () => {
     if (isActive) {
-      setDarkMode();
-    } else {
       setLightMode();
+    } else {
+      setDarkMode();
     }
     setIsActive(!isActive);
   };
 
+
   useEffect(() => {
     if (selectedTheme === "dark") {
       setIsActive(false);
+      setDarkMode()
     } else {
       setIsActive(true);
     }
@@ -42,11 +45,7 @@ export default function DarkMode() {
         onChange={toggleTheme}
         checked={!isActive}
       />
-      <label
-        className="dark_mode_label"
-        htmlFor="darkmode-toggle"
-        onClick={toggleTheme}
-      >
+      <label className="dark_mode_label" htmlFor="darkmode-toggle" onClick={toggleTheme}>
         {isActive ? (
           <Sun sx={{ color: "#ffffff" }} className="icon" />
         ) : (
