@@ -18,7 +18,7 @@
 }
 
 .logo-name:hover {
-  text-shadow: 0 0 8px #00000032;
+  text-shadow: var(--box-shadow-cards);
   cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
   user-select: none;
   font-size: 20px;
   padding: 3px;
-  color: #fff;
+  color: var(--text-color);
   transition: 90ms;
   font-family: 'Montserrat', sans-serif;
 }
@@ -62,18 +62,18 @@
 
 .nav-logout {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-family: var(--main-font);
 }
 
 .nav-logout-icon {
   cursor: pointer;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .btn-auth-login {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 20px;
   font-family: var(--main-font);
@@ -81,7 +81,7 @@
 
 .btn-auth-register {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 20px;
   font-family: var(--main-font);

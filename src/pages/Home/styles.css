@@ -15,12 +15,12 @@
   background: var(--cards-color);
   justify-content: center;
   width: 760px;
-  color: #fff;
+  color: var(--text-color);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border-color);
-  box-shadow: 0 0 10px 8px #00000028;
+  box-shadow: var(--box-shadow-cards);
 }
 
 .main-profile {
@@ -44,7 +44,7 @@
 }
 
 .main-name-profile {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
@@ -52,7 +52,6 @@
 
 .main-name-profile:hover,
 .main-edit-icon:hover {
-  color: #a1a3a4;
   cursor: pointer;
 }
 
@@ -104,7 +103,7 @@
   }
 
   .main-name-profile {
-    color: #fff;
+    color: var(--text-color);
   }
 
   .main-edit-icon {

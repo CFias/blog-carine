@@ -9,7 +9,7 @@
   display: grid;
   place-items: center;
   background: transparent;
-  box-shadow: 0 0 1px 2px var(--fonte-branca);
+  box-shadow: 0 0 1px 2px var(--text-color);
   cursor: pointer;
   transition: 0.3s;
 }

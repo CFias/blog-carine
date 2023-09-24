@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../reducer/userReducer";
+import "../../index.css";
 
 export default function Login() {
   const dispatch = useDispatch();
   const user = { name: "Fias", age: 25 };
 
-  const usuario = useSelector((state) => state.user)
+  const usuario = useSelector((state) => state.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,27 +14,31 @@ export default function Login() {
   };
 
   return (
-    <div className="login-container">
+    <div className="form-container">
       <h1 className="form-logo-name">Carine Lima</h1>
       <h2 className="form-title">Fazer Login</h2>
-      <form onSubmit={handleSubmit} className="login-content">
-        <label>
-          <span>E-mail</span>
+      <form onSubmit={handleSubmit} className="form-content">
+        <label className="form-item">
+          E-mail
           <input
+            className="form-in"
             type="text"
             name="email"
             required
             placeholder="E-mail de acesso"
           />
-          <span>Senha</span>
+        </label>
+        <label className="form-item">
+          Senha
           <input
+            className="form-in"
             type="password"
             name="password"
             required
             placeholder="Digite a sua senha"
           />
         </label>
-        <button type="submit">Login</button>
+        <button className="form-btn" type="submit">Login</button>
       </form>
     </div>
   );
