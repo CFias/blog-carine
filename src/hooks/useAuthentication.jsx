@@ -11,10 +11,10 @@ import {
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(undefined);
 
   // Cleanup
-  const [cancelled, setCancelld] = useState(false);
+  const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
 
@@ -60,7 +60,7 @@ export const useAuthentication = () => {
   };
 
   useEffect(() => {
-    return () => setCancelld(true);
+    return () => setCancelled(true);
   }, []);
 
   return {
