@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
+import "../../index.css";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 export default function Register() {

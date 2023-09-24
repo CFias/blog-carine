@@ -12,21 +12,107 @@
   --main-font: "Montserrat", sans-serif;
 
   --logo-color: #f26b9c;
-  --bg-color: #ffffff;
-  --border-color: #afafaf;
-  --cards-color: #c5c5c5;
+  --text-color: #404040;
+  --bg-color: #D9D9D9;
+  --border-color: 1px solid #afafaf;
+  --cards-color: #F2F2F2;
 
-  --box-shadow-cards: 0 0 20px 6px #0000002a; 
+  --box-shadow-cards: 0 0 20px 6px #00000013; 
 }
 
 [data-theme="dark"] {
   --logo-color: #f26b9c;
-  --bg-color: #212625;
-  --border-color: #6e71732c;
-  --cards-color: #2e3331;
+  --text-color: #F2F2F2;
+  --bg-color: #262626;
+  --border-color: 1px solid #73737321;
+  --cards-color: #404040;
 }
 
 .container {
   background: var(--bg-color);
   transition: transform 0.45s ease, background 0.45s ease;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.form-logo-name {
+  font-size: 45px;
+  margin-bottom: 35px;
+  font-family: "Ephesis", cursive;
+  font-weight: 100;
+  color: var(--logo-color);
+  text-align: center;
+  width: 15vw;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-title {
+  margin-bottom: 35px;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  gap: 16px;
+  border-radius: 15px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-in {
+  background: var(--bg-color);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  height: 3.5vh;
+  padding: 5px;
+  border-radius: 10px;
+  border: var(--border-color);
+}
+
+.form-btn {
+  height: 55px;
+  width: 12vw;
+  background: var(--bg-color);
+  border: var(--border-color);
+  color: var(--text-color);
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: 650ms;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-btn:hover {
+  box-shadow: var(--box-shadow-cards);
+  cursor: pointer;
+  color: var(--logo-color);
+}
+
+.error {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background: #ca72727e;
+  color: var(--text-color);
+  border-radius: 10px;
+  border: var(--border-color);
+  box-shadow: var(--box-shadow-cards);
+  padding: 8px;
 }

@@ -18,22 +18,26 @@
 
 .add-post-input {
   display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-img-profile {
   width: 3rem;
   margin: 9px;
+  border-radius: 50%;
 }
 .add-posts-text {
   margin-left: 70px;
-  }
+}
 
 .add-text {
   background: var(--bg-color);
   display: flex;
-  color: #fff;
-  border: 1px solid var(--border-color);
-  width: 100%;
+  color: var(--text-color);
+  border: var(--border-color);
+  width: 85%;
   height: 5vh;
   padding: 10px;
   margin: 10px;
@@ -51,12 +55,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-color);
   gap: 5px;
-  transition: 20ms;
+  transition: 100ms;
   border-radius: 10px;
-  padding: .5em .5em;
-  margin-left: 9px;
+  padding: 0.5em 0.5em;
+  margin-left: 24px;
   text-decoration: none;
 }
 
@@ -80,7 +84,7 @@
 
 @media screen and (max-width: 768px) {
   .add-posts-container {
-    padding: 15px 0 ;
+    padding: 15px 0;
   }
 
   .add-posts-content {

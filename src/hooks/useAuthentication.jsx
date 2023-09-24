@@ -11,7 +11,7 @@ import {
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [user, setUser] = useState(undefined);
+  const [user, setUser] = useState(true);
 
   // Cleanup
   const [cancelled, setCancelled] = useState(false);

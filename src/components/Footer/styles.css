@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: end;
   height: 10vw;
-  background: var(--bg-color);
-  border-top: 1px solid var(--border-color);
-  box-shadow: 10px 0 15px #00000069;
+  background: var(--cards-color);
+  border-top: var(--border-color);
+  box-shadow: var(--box-shadow-cards);
 }
 
 .footer-nav {
@@ -26,24 +26,24 @@
 
 .footer-item {
   text-decoration: none;
-  color: #aaa;
+  color: var(--text-color);
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .footer-item:hover {
-  color: #e9e9e9;
+  color: var(--logo-color);
 }
 
 .footer-logo-name {
-  color: #fff;
+  color: var(--logo-color);
   font-family: "Ephesis", cursive;
   font-weight: 100;
   font-size: 35px;
 }
 
 .footer-copy {
-  color: #909090;
+  color: var(--text-color);
   background: var(--bg-color);
   width: 100%;
   height: 2vw;
