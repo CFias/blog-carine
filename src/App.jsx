@@ -1,35 +1,39 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 
 // Components
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer/index";
+import BottomBar from "./components/BottomBar";
+import AddPostShortcut from "./components/AddPostShortcut";
+
+// hooks
+import { useEffect, useState } from "react";
+import { useAuthentication } from "./hooks/useAuthentication";
+
+// context
+import { AuthProvider } from "./contexts/AuthContext";
 
 // Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Modal from "./components/Modal";
-import { AppProvider } from "./contexts/AppContext";
-import BottomBar from "./components/BottomBar";
 import Profile from "./pages/Profile";
-import { useAuthentication } from "./hooks/useAuthentication";
-import { onAuthStateChanged } from "firebase/auth";
-import AddPost from "./pages/AddPost";
-import AddPostShortcut from "./components/AddPostShortcut";
-import Feed from "./pages/Feed";
-import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Login from "./pages/Login/index";
+import Dashboard from "./pages/Dashboard";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
-  const { auth, user, setUser } = useAuthentication();
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
 
-  const loadingUser = user === false;
+  const loadingUser = user === undefined;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setUser(() => setUser(user));
+      setUser(user);
     });
   }, [auth]);
 
@@ -39,31 +43,36 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <AppProvider value={{ user }}>
+      <AuthProvider value={{ user }}>
+        <BrowserRouter>
           <Navbar />
           <BottomBar />
           <Banner />
-          <AddPostShortcut />
-          <Modal />
+          {user ? <AddPostShortcut /> : ""}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route
               path="/login"
-              element={!user ? <Login /> : <Navigate to="/login" />}
+              element={!user ? <Login /> : <Navigate to="/" />}
             />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
             <Route
-              path="/addpost"
-              element={user ? <AddPost /> : <Navigate to="/" />}
+              path="/register"
+              element={!user ? <Register /> : <Navigate to="/" />}
             />
-            <Route path="/feed" element={<Feed />} />
+            <Route
+              path="/createpost"
+              element={user ? <CreatePost /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/posts/"
+              element={user ? <Dashboard /> : <Navigate to="/login" />}
+            />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           <Footer />
-        </AppProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Feed() {
+export default function Dashboard() {
   return (
     <div>Feed</div>
   )

@@ -1,26 +1,14 @@
-import React, { useContext } from "react";
-import { useAuthentication } from "../../hooks/useAuthentication";
+import React from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import { AppContext } from "../../contexts/AppContext";
 import DarkMode from "../DarkMode";
 import { Logout } from "@mui/icons-material";
+import { useAuthentication } from "./../../hooks/useAuthentication";
+import { useAuthValue } from "./../../contexts/AuthContext";
 
 export default function Navbar() {
-  const { setIsLogin, setShowModal } = useContext(AppContext);
-  const { user } = useAuthentication();
-
-  const handleClick = (e) => {
-    setShowModal(true);
-
-    if (e == "login") {
-      setIsLogin(true);
-    } else {
-      setIsLogin(false);
-    }
-  };
-
-  console.log(typeof user);
+  const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
   return (
     <>
@@ -48,48 +36,45 @@ export default function Navbar() {
           </ul>
         </nav>
         {user ? (
-          <>
-            <div className="nav-btn">
-              <ul className="nav-content">
-                <li>
-                  <NavLink className="nav-profile-img">
-                    <img
-                      className="nav-profile"
-                      src="https://media.licdn.com/dms/image/D4D03AQFwzJ4ebw2CyA/profile-displayphoto-shrink_100_100/0/1689000908080?e=1700092800&v=beta&t=mfrLGrLmHr0hWVcXxHk1XRwt0SJBgPleHN42FFv0GC8"
-                      alt=""
-                    />
-                  </NavLink>
-                </li>
-                <li className="nav-btn-logout">
-                  <NavLink className="nav-logout">Sair</NavLink>
-                  <Logout className="nav-logout-icon" />
-                </li>
-              </ul>
-            </div>
-          </>
+          <div className="nav-btn">
+            <ul className="nav-content">
+              <li>
+                <NavLink to="/createpost" className="nav-item">
+                  Novo Post
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="nav-profile-img">
+                  <img
+                    className="nav-profile"
+                    src="https://media.licdn.com/dms/image/D4D03AQF9HZmFqoBrZg/profile-displayphoto-shrink_100_100/0/1695645600115?e=1701302400&v=beta&t=H6sc1ovst8Cw4si4r5ZkTFvyakg8HfdxNAuxzZ0_u9A"
+                    alt=""
+                  />
+                </NavLink>
+              </li>
+              <li className="nav-btn-logout">
+                <NavLink onClick={logout} className="nav-logout">
+                  Sair
+                </NavLink>
+                <Logout className="nav-logout-icon" />
+              </li>
+            </ul>
+          </div>
         ) : (
-          <>
-            <div className="nav-btn">
-              <ul className="nav-content">
-                <li>
-                  <NavLink
-                    onClick={(e) => handleClick("login")}
-                    className="btn-auth-login"
-                  >
-                    Login
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    onClick={(e) => handleClick("register")}
-                    className="btn-auth-register"
-                  >
-                    Registrar
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </>
+          <div className="nav-btn">
+            <ul className="nav-content">
+              <li>
+                <NavLink to="/login" className="btn-auth-login">
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/register" className="btn-auth-register">
+                  Registrar
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         )}
         <DarkMode />
       </header>

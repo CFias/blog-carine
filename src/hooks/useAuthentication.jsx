@@ -11,9 +11,9 @@ import {
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [user, setUser] = useState(true);
 
   // Cleanup
+  // Deal with memory leak
   const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
@@ -24,6 +24,7 @@ export const useAuthentication = () => {
     }
   }
 
+  // register
   const createUser = async (data) => {
     checkIfsCancelled();
 
@@ -37,13 +38,13 @@ export const useAuthentication = () => {
         data.password
       );
 
-      setLoading(false);
-
       await updateProfile(user, {
         displayName: data.displayName,
       });
+
+      setLoading(false);
+      return user;
     } catch (error) {
-      console.log(error.message);
       let systemErrorMessage;
 
       if (error.message.includes("Password")) {
@@ -59,6 +60,39 @@ export const useAuthentication = () => {
     }
   };
 
+  // login - sign in
+  const login = async (data) => {
+    checkIfsCancelled();
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch (error) {
+      let systemErrorMessage;
+
+      if (error.message.includes("user-not-found")) {
+        systemErrorMessage = "Usuário não existe.";
+      } else if (error.message.includes("wrong-password")) {
+        systemErrorMessage = "A senha está incorreta";
+      } else {
+        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde.";
+      }
+
+      setError(systemErrorMessage);
+      setLoading(false);
+    }
+  };
+
+  // logout - sign out
+  const logout = () => {
+    checkIfsCancelled();
+
+    signOut(auth);
+  };
+
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
@@ -68,7 +102,7 @@ export const useAuthentication = () => {
     createUser,
     error,
     loading,
-    user,
-    setUser,
+    logout,
+    login
   };
 };

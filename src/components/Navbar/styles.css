@@ -6,6 +6,7 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   background: var(--cards-color);
+  overflow: hidden;
 }
 
 .logo-name {
