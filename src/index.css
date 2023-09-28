@@ -8,12 +8,14 @@
 }
 
 :root {
-  --logo-font: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --logo-font: "Ephesis", cursive;
   --main-font: "Montserrat", sans-serif;
 
   --logo-color: #f26b9c;
   --text-color: #404040;
   --bg-color: #D9D9D9;
+  --bg-form: #d4d4d4;
+  --bg-error: #bb4949;
   --border-color: 1px solid #afafaf;
   --cards-color: #F2F2F2;
 
@@ -24,6 +26,9 @@
   --logo-color: #f26b9c;
   --text-color: #F2F2F2;
   --bg-color: #262626;
+  --bg-form: #1a1717;
+  --bg-error: #bb4949;
+  --form-color: #A6A6A6;
   --border-color: 1px solid #73737321;
   --cards-color: #404040;
 }
@@ -33,86 +38,126 @@
   transition: transform 0.45s ease, background 0.45s ease;
 }
 
+/* Form Global */
+
 .form-container {
+  height: 100vh;
+  background: var(--bg-color);
   display: flex;
-  flex-direction: column;
-  justify-content: start;
   align-items: center;
+  justify-content: center;
+}
+
+.form-card-container {
+  display: flex;
+  border-radius: 25px;
+  background: var(--cards-color);
+  box-shadow: var(--box-shadow-cards);
+}
+
+.form-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--bg-form);
+  padding: 10rem;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow-cards);
+  gap: 30px;
 }
 
 .form-logo-name {
-  font-size: 45px;
-  margin-bottom: 35px;
-  font-family: "Ephesis", cursive;
+  font-family: var(--logo-font);
   font-weight: 100;
+  font-size: 35px;
   color: var(--logo-color);
-  text-align: center;
-  width: 15vw;
-  border-bottom: 1px solid var(--border-color);
 }
 
-.form-title {
-  margin-bottom: 35px;
+.form-text {
+  width: 15vw;
+  font-family: var(--main-font);
+  font-weight: 400;
   color: var(--text-color);
-  font-family: 'Montserrat', sans-serif;
+  padding: 25px;
+}
 
+.form-span {
+  color: var(--logo-color);
+  font-weight: 500;
+}
+
+.form-icons {
+  border-bottom: var(--border-color);
+  width: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons {
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .form-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 200px;
+  width: 30vw;
+  gap: 30px;
+}
+
+.form-title {
+  font-family: var(--main-font);
   color: var(--text-color);
-  gap: 16px;
-  border-radius: 15px;
+  font-weight: 400;
 }
 
 .form-item {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--text-color);
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  align-items: center;
+  gap: 10px;
 }
 
 .form-in {
-  background: var(--bg-color);
-  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
   color: var(--text-color);
-  height: 3.5vh;
-  padding: 5px;
-  border-radius: 10px;
-  border: var(--border-color);
+  background: var(--bg-color);
+  font-family: var(--main-font);
+  border: none;
+  border-radius: 15px;
 }
 
 .form-btn {
-  height: 55px;
-  width: 12vw;
-  background: var(--bg-color);
-  border: var(--border-color);
-  color: var(--text-color);
-  font-size: 16px;
-  border-radius: 10px;
-  margin-top: 15px;
-  transition: 650ms;
-  font-family: 'Montserrat', sans-serif;
+  border: none;
+  padding: 15px;
+  width: 11vw;
+  border-radius: 15px;
+  font-family: var(--main-font);
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.form-btn:hover {
-  box-shadow: var(--box-shadow-cards);
-  cursor: pointer;
+.form-route {
+  font-family: var(--main-font);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.form-nav {
+  text-decoration: none;
   color: var(--logo-color);
 }
 
-.error {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  background: #ca72727e;
+.form-error {
   color: var(--text-color);
-  border-radius: 10px;
+  background: var(--bg-error);
+  font-family: var(--main-font);
+  text-align: center;
   border: var(--border-color);
-  box-shadow: var(--box-shadow-cards);
-  padding: 8px;
+  padding: 5px;
+  border-radius: 5px;
 }

@@ -1,0 +1,34 @@
+.create-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cards-color);
+  gap: 20px;
+  padding: 80px;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-cards);
+}
+
+.create-title {
+  font-family: var(--main-font);
+  color: var(--text-color);
+}
+
+.form-input {
+  background: var(--bg-color);
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

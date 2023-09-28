@@ -43,6 +43,7 @@
   margin: 10px;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
+  outline: none;
 }
 
 .add-posts-icons {

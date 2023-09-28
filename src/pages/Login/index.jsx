@@ -1,45 +1,86 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../reducer/userReducer";
+import { Instagram, LinkedIn, YouTube } from "@mui/icons-material";
 import "../../index.css";
+import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuthentication } from "./../../hooks/useAuthentication";
 
 export default function Login() {
-  const dispatch = useDispatch();
-  const user = { name: "Fias", age: 25 };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const usuario = useSelector((state) => state.user);
+  const { login, error: authError, loading } = useAuthentication();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(setUser(user));
+
+    setError("");
+
+    const user = {
+      email,
+      password,
+    };
+
+    const res = await login(user);
+
+    console.log(res);
   };
 
+  useEffect(() => {
+    setError(authError);
+  }, [authError]);
+
   return (
-    <div className="form-container">
-      <h1 className="form-logo-name">Carine Lima</h1>
-      <h2 className="form-title">Fazer Login</h2>
-      <form onSubmit={handleSubmit} className="form-content">
-        <label className="form-item">
-          E-mail
-          <input
-            className="form-in"
-            type="text"
-            name="email"
-            required
-            placeholder="E-mail de acesso"
-          />
-        </label>
-        <label className="form-item">
-          Senha
-          <input
-            className="form-in"
-            type="password"
-            name="password"
-            required
-            placeholder="Digite a sua senha"
-          />
-        </label>
-        <button className="form-btn" type="submit">Login</button>
-      </form>
-    </div>
+    <section className="form-container container">
+      <div className="form-card-container">
+        <div className="form-card">
+          <h1 className="form-logo-name">Carine Lima</h1>
+          <h2 className="form-text">
+            <span className="form-span">Mulheres em movimento</span> estão
+            transformando o mundo com força e determinação.
+          </h2>
+          <div className="form-icons">
+            <LinkedIn className="icons" />
+            <Instagram path="" className="icons" />
+            <YouTube path="" className="icons" />
+          </div>
+        </div>
+        <form onSubmit={handleSubmit} className="form-content">
+          <h2 className="form-title">Fazer Login</h2>
+          <label className="form-item">
+            <input
+              className="form-in"
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="E-mail do usuário"
+            />
+          </label>
+          <label className="form-item">
+            <input
+              className="form-in"
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Digite a sua senha"
+            />
+          </label>
+          {!loading && <button className="form-btn">Login</button>}
+          {loading && <button className="form-btn">Aguarde</button>}
+          <p className="form-route">
+            Não possui cadastro ?
+            <NavLink className="form-nav" to="/login">
+              {" "}
+              Cadastre-se
+            </NavLink>
+          </p>
+          {error && <p className="form-error">{error}</p>}
+        </form>
+      </div>
+    </section>
   );
 }
