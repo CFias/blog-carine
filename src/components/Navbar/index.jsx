@@ -76,7 +76,6 @@ export default function Navbar() {
             </ul>
           </div>
         )}
-        <DarkMode />
       </header>
     </>
   );

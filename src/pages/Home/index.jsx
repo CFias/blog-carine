@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Edit, Share } from "@mui/icons-material";
 import { posts } from "../../data.json";
 
@@ -13,9 +13,9 @@ export default function Home() {
             <div className="main-profile">
               <div className="main-profile-content">
                 <img className="main-img-profile" src={post.profile} alt="" />
-                <NavLink to="/" className="main-name-profile">
+                <Link to="/" className="main-name-profile">
                   Carine Lima
-                </NavLink>
+                </Link>
               </div>
               <div className="main-edit-icon">
                 <Edit className="main-edit" />

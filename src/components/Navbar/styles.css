@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   background: var(--cards-color);
@@ -10,6 +10,10 @@
 }
 
 .logo-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
   font-family: "Ephesis", cursive;
   font-weight: 100;
   font-size: 40px;
@@ -24,9 +28,10 @@
 }
 
 .nav-content {
+  width: 200px;
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 14px;
 }
 
 .nav-item {

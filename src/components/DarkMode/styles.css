@@ -1,5 +1,8 @@
 .dark_mode {
-    margin: 0 -10px 0 10px;
+  display: flex;
+  position: fixed;
+  right: 40px;
+  bottom: 30px;
 }
 
 .dark_mode_label {
@@ -9,28 +12,18 @@
   display: grid;
   place-items: center;
   background: transparent;
-  box-shadow: 0 0 1px 2px var(--text-color);
+  box-shadow: 0 0 1px 2px #3b3b3b;
   cursor: pointer;
   transition: 0.3s;
 }
-.dark_mode_label:after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: 3px;
-  left: 3px;
 
-  border-radius: 180px;
-  transition: 0.3s;
-}
 .dark_mode_input {
   width: 0;
   height: 0;
   visibility: hidden;
 }
 .dark_mode_input:checked + .dark_mode_label {
-  box-shadow: 0 0 1px 2px #3b3b3b;
+  box-shadow: 0 0 1px 2px #fff;
 }
 
 .dark_mode_label .icon {
@@ -40,9 +33,10 @@
   /* color: white; */
 }
 
-@media (max-width: 1700px) {
+@media screen and (max-width: 480px) {
   .dark_mode {
-    margin: -8px -50px 0 10px;
-
-  }
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }  
 }

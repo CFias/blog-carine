@@ -24,6 +24,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login/index";
 import Dashboard from "./pages/Dashboard";
 import CreatePost from "./pages/CreatePost";
+import DarkMode from "./components/DarkMode";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -46,6 +47,7 @@ function App() {
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
+          <DarkMode />
           <BottomBar />
           <Banner />
           {user ? <AddPostShortcut /> : ""}

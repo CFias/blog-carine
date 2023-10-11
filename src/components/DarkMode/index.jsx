@@ -47,9 +47,9 @@ export default function DarkMode() {
       />
       <label className="dark_mode_label" htmlFor="darkmode-toggle" onClick={toggleTheme}>
         {isActive ? (
-          <Sun sx={{ color: "#ffffff" }} className="icon" />
+          <Sun sx={{ color: "#3b3b3b"  }} className="icon" />
         ) : (
-          <Moon sx={{ color: "#3b3b3b" }} className="icon" />
+          <Moon sx={{ color: "#ffffff" }} className="icon" />
         )}
       </label>
     </div>
