@@ -1,0 +1,47 @@
+.profile-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/imagens/acamp-photo2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-content {
+    color: var(--font-color);
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    width: 35vw;
+    height: 50vh;
+    border: var(--border-def);
+    border-radius: var(--border-rad);
+    gap: 20px;
+}
+
+.profile-photo {
+    background: var(--dest-color);
+    border-radius: 50%;
+    display: flex;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.profile-icon-img {
+    padding: 20px;
+    color: var(--btn-color);
+}
+
+.profile-img {
+    width: 10vw;
+    border-radius: 50%;
+}
+
+.profile-bio {
+    display: flex;
+    gap: 20px;
+}

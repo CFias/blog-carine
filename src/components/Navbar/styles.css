@@ -5,8 +5,8 @@
   width: 100%;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
-  background: var(--cards-color);
   overflow: hidden;
+  position: absolute;
 }
 
 .logo-name {
@@ -16,7 +16,7 @@
   width: 200px;
   font-family: "Ephesis", cursive;
   font-weight: 100;
-  font-size: 40px;
+  font-size: 30px;
   transition: 90ms;
   text-decoration: none;
   color: var(--logo-color);
@@ -37,11 +37,11 @@
 .nav-item {
   text-decoration: none;
   user-select: none;
-  font-size: 20px;
+  font-size: 16px;
   padding: 3px;
   color: var(--text-color);
-  transition: 90ms;
-  font-family: 'Montserrat', sans-serif;
+  transition: 250ms;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-item:hover {
@@ -52,7 +52,7 @@
   display: flex;
   list-style: none;
   gap: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-profile {
@@ -81,23 +81,28 @@
   text-decoration: none;
   color: var(--text-color);
   text-decoration: none;
-  font-size: 20px;
-  font-family: var(--main-font);
+  font-size: 16px;
+  transition: 250ms;
 }
 
 .btn-auth-register {
   text-decoration: none;
   color: var(--text-color);
   text-decoration: none;
-  font-size: 20px;
-  font-family: var(--main-font);
+  font-size: 16px;
+  transition: 250ms;
 }
 
-@media screen and (max-width: 768px){
+.btn-auth-login:hover,
+.btn-auth-register:hover {
+  color: var(--logo-color);
+}
+
+@media screen and (max-width: 768px) {
   .header-container {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     background: var(--cards-color);
     border-bottom: 1px solid #6e717346;
   }

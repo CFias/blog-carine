@@ -1,32 +1,75 @@
 .banner-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 18vh;
-}
-
-.banner {
-  font-size: 65px;
-  color: var(--logo-color);
-  font-family: 'Montserrat', sans-serif;
-}
-
-@media (min-width: 320px) and (max-width: 460px) {
-  .banner-container {
+    background-image: url("../../assets/image/bg-photo.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 6vh;
-  }
-
-  .banner {
-    font-size: 18px;
-  }
-  
+    justify-content: ;
+    gap: 100px;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
-  .banner-container {
-    display: none;
-  }
+.banner-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 50vw;
+    align-items: center;
+    padding: 80px;
+}
+
+.txt-banner {
+    color: var(--logo-color);
+    text-align: center;
+    font-size: 80px;
+    width: 80vw;
+}
+
+.banner-p {
+    color: var(--text-color);
+    font-size: 18px;
+    text-align: center;
+    width: 25vw;
+    padding: 20px;
+}
+
+.banner-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.banner-btn-contact {
+    background: var(--logo-color);
+    padding: 15px;
+    width: 8vw;
+    border: none;
+    color: var(--text-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.banner-btn-social {
+    border: none;
+    border: 1px solid var(--logo-color);
+    padding: 15px;
+    width: 8vw;
+    color: var(--logo-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 250ms;
+    background: none;
+}
+
+.banner-btn-contact:hover {
+    background: var(--text-color);
+    color: black;
+}
+
+.banner-btn-social:hover {
+    background: var(--logo-color);
+    color: var(--text-color);
 }

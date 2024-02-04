@@ -12,7 +12,7 @@
     z-index: 1000;
     bottom: 0;
     left: 0;
-  border-top: var(--border-color);    
+    border-top: var(--border-color);
   }
 
   .nav-item-content {

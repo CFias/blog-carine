@@ -5,13 +5,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--main-font);
 }
 
 :root {
   --logo-font: "Ephesis", cursive;
   --main-font: "Montserrat", sans-serif;
 
-  --logo-color: #f26b9c;
+  --logo-color: #d42346;
   --text-color: #404040;
   --bg-color: #D9D9D9;
   --bg-form: #d4d4d4;
@@ -23,10 +24,10 @@
 }
 
 [data-theme="dark"] {
-  --logo-color: #f26b9c;
+  --logo-color: #d42346;
   --text-color: #F2F2F2;
-  --bg-color: #262626;
-  --bg-form: #1a1717;
+  --bg-color: #101010;
+  --bg-form: #020202;
   --bg-error: #bd4949;
   --form-color: #A6A6A6;
   --border-color: 1px solid #73737321;

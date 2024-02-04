@@ -1,0 +1,68 @@
+.article-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    color: var(--text-color);
+    background: var(--bg-color);
+    width: 100vw;
+    height: 40vh;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.418);
+}
+
+.article-t {
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    gap: 10px;
+    transition: 250ms;
+}
+
+.article-content {
+    display: flex;
+    gap: 20px;
+}
+
+.article-t:hover {
+    color: var(--logo-color);
+}
+
+.article-card {
+    width: 20vw;
+    background: var(--bg-form);
+    padding: 25px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.article-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-title {
+    font-weight: 500;
+    padding: 10px;
+}
+
+.article-txt {
+    font-size: 12px;
+    padding: 10px;
+    font-weight: 300;
+}

@@ -4,7 +4,6 @@ import { onAuthStateChanged } from "firebase/auth";
 
 // Components
 import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
 import Footer from "./components/Footer/index";
 import BottomBar from "./components/BottomBar";
 import AddPostShortcut from "./components/AddPostShortcut";
@@ -49,7 +48,6 @@ function App() {
           <Navbar />
           <DarkMode />
           <BottomBar />
-          <Banner />
           {user ? <AddPostShortcut /> : ""}
           <Routes>
             <Route path="/" element={<Home />} />
@@ -72,7 +70,7 @@ function App() {
             />
             <Route path="/profile" element={<Profile />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </AuthProvider>
     </>

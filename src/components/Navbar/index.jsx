@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import DarkMode from "../DarkMode";
 import { Logout } from "@mui/icons-material";
 import { useAuthentication } from "./../../hooks/useAuthentication";
 import { useAuthValue } from "./../../contexts/AuthContext";
@@ -20,17 +19,27 @@ export default function Navbar() {
           <ul className="nav-content">
             <li>
               <NavLink to="/" className="nav-item">
-                Home
+                Artigos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" className="nav-item">
+                Galeria
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className="nav-item">
-                Contato
+                Podcasts
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" className="nav-item">
+                Redes
               </NavLink>
             </li>
             <li>
               <NavLink to="/about" className="nav-item">
-                Sobre
+                Acerca
               </NavLink>
             </li>
           </ul>
