@@ -6,7 +6,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/index";
 import BottomBar from "./components/BottomBar";
-import AddPostShortcut from "./components/AddPostShortcut";
 
 // hooks
 import { useEffect, useState } from "react";
@@ -18,12 +17,10 @@ import { AuthProvider } from "./contexts/AuthContext";
 // Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login/index";
-import Dashboard from "./pages/Dashboard";
-import CreatePost from "./pages/CreatePost";
-import DarkMode from "./components/DarkMode";
+// import DarkMode from "./components/DarkMode";
+// import Gallery from "./pages/Gallery";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -46,9 +43,8 @@ function App() {
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
-          <DarkMode />
+          {/* <DarkMode /> */}
           <BottomBar />
-          {user ? <AddPostShortcut /> : ""}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -60,17 +56,9 @@ function App() {
               path="/register"
               element={!user ? <Register /> : <Navigate to="/" />}
             />
-            <Route
-              path="/createpost"
-              element={user ? <CreatePost /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/posts/"
-              element={user ? <Dashboard /> : <Navigate to="/login" />}
-            />
-            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </AuthProvider>
     </>

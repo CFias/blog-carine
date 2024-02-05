@@ -1,12 +1,11 @@
 import React from "react";
 import "./styles.css";
-import Articles from "../Article";
 
 export default function Banner() {
   return (
     <section className="banner-container">
       <div className="banner-txt">
-        <h2 className="txt-banner">MULHEREM EM MOVIMENTO</h2>
+        <h2 className="txt-banner">MULHERES EM MOVIMENTO</h2>
         <p className="banner-p">
           Mulheres virtuosas se movimentam, conquistam seu espaço com
           dignidade e não negociam os seus valores.
@@ -16,7 +15,6 @@ export default function Banner() {
           <button className="banner-btn-social btn">Redes</button>
         </div>
       </div>
-        <Articles />
     </section>
   );
 }

@@ -2,13 +2,12 @@
     background-image: url("../../assets/image/bg-photo.png");
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 70vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: ;
-    gap: 100px;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -18,7 +17,6 @@
     gap: 30px;
     max-width: 50vw;
     align-items: center;
-    padding: 80px;
 }
 
 .txt-banner {
@@ -39,6 +37,7 @@
 .banner-btns {
     display: flex;
     gap: 20px;
+    padding-top: 30px;
 }
 
 .banner-btn-contact {
@@ -72,4 +71,31 @@
 .banner-btn-social:hover {
     background: var(--logo-color);
     color: var(--text-color);
+}
+
+@media screen and (max-width: 768px) {
+    .banner-container {
+    }
+
+    .banner-txt {
+        gap: 0;
+    }
+
+    .txt-banner {
+        font-size: 23px;
+        width: 90vw;
+    }
+
+    .banner-p {
+        width: 90vw;
+    }
+
+    .banner-btn-contact, .banner-btn-social {
+        width: 25vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
 }

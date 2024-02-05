@@ -4,15 +4,16 @@
 
 @media screen and (max-width: 768px) {
   .nav-bottom-container {
-    width: 100vw;
+    width: 100%;
     height: 65px;
-    border-top: 1px solid #6e717346;
-    background: var(--bg-color);
+    background: var(--bg-form);
     position: fixed;
     z-index: 1000;
     bottom: 0;
     left: 0;
-    border-top: var(--border-color);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-item-content {
@@ -20,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
     list-style: none;
-    width: 90%;
+    width: 85%;
   }
 
   .nav-item {
@@ -28,6 +29,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
+  }
+
+  .nav-item:hover {
+    color: var(--logo-color);
   }
 
   .nav-name {
