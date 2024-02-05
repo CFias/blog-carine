@@ -98,23 +98,46 @@
   color: var(--logo-color);
 }
 
+.logo-name-mob, .logo-name-log {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .header-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--cards-color);
     border-bottom: 1px solid #6e717346;
   }
 
-  .nav-content,
-  .btn-auth-login,
-  .btn-auth-register {
+  .nav-content {
     display: none;
   }
 
   .logo-name {
-    font-size: 35px;
+    display: none;
+  }
+
+  .logo-name-mob {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    font-family: "Ephesis", cursive;
+    font-weight: 100;
+    font-size: 30px;
+    transition: 90ms;
+    text-decoration: none;
     color: var(--logo-color);
+  }
+
+  .nav-logout-mob {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

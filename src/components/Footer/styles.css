@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: end;
   height: 10vw;
-  background: var(--cards-color);
+  background: var(--bg-form);
   border-top: var(--border-color);
   box-shadow: var(--box-shadow-cards);
   position: sticky;
@@ -28,7 +28,7 @@
 .footer-item {
   text-decoration: none;
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .footer-copy {
-  color: var(--text-color);
+  color: var(--cards-color);
   /* background: var(--bg-color); */
   width: 100%;
   height: 2vw;

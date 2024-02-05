@@ -25,7 +25,7 @@ export default function Footer() {
         </ul>
       </nav>
       <h3 className="footer-logo-name">Carine Lima</h3>
-      <p className="footer-copy">Carine Lima &copy; 2023 | All rights reserved.</p>
+      <p className="footer-copy">Carine Lima &copy; 2023 | All rights reserved. | Developed by Fias</p>
     </footer>
   );
 };

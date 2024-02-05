@@ -1,9 +1,11 @@
 import React from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import { Logout } from "@mui/icons-material";
 import { useAuthentication } from "./../../hooks/useAuthentication";
 import { useAuthValue } from "./../../contexts/AuthContext";
+import { Avatar } from "@mui/material";
+import profile from "../../assets/image/caren.png";
+import { Logout } from "@mui/icons-material";
 
 export default function Navbar() {
   const { user } = useAuthValue();
@@ -13,7 +15,17 @@ export default function Navbar() {
     <>
       <header className="header-container">
         <NavLink to="/" className="logo-name">
-          Carine Lima
+          <h4 className="logo-name">Carine Lima</h4>
+        </NavLink>
+        <NavLink to="/" className="logo-name-mob">
+          {user && <Avatar className="nav-profile-mob" src={profile} />}
+          <h4 className="logo-name-mob">Carine Lima</h4>
+          {user && (
+            <NavLink onClick={logout} className="nav-logout-mob">
+              <Logout fontSize="small" />
+              Sair
+            </NavLink>
+          )}
         </NavLink>
         <nav className="nav-container">
           <ul className="nav-content">
@@ -23,7 +35,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className="nav-item">
+              <NavLink to="/gallery" className="nav-item">
                 Galeria
               </NavLink>
             </li>
@@ -47,11 +59,11 @@ export default function Navbar() {
         {user ? (
           <div className="nav-btn">
             <ul className="nav-content">
-              <li>
+              {/* <li>
                 <NavLink to="/createpost" className="nav-item">
                   Novo Post
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink className="nav-profile-img">
                   <img
@@ -62,10 +74,10 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-btn-logout">
+                <span className="nav-logout">Olá, {user.displayName}</span>
                 <NavLink onClick={logout} className="nav-logout">
                   Sair
                 </NavLink>
-                <Logout className="nav-logout-icon" />
               </li>
             </ul>
           </div>
