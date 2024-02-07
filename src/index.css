@@ -40,7 +40,6 @@
   background-position: center;
   background-size: cover;
   height: 100%;
-  transition: transform 0.45s ease, background 0.45s ease;
 }
 
 /* Form Global */
@@ -51,6 +50,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("./assets/image/bg-photo.png");
+  background-position: center;
+  background-size: cover;
 }
 
 .form-card-container {
