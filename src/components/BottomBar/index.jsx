@@ -14,7 +14,7 @@ export default function BottomBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/gallery" className="nav-item">
+          <NavLink to="/articles" className="nav-item">
             <Collections />
             <p className="nav-name">Galeria</p>
           </NavLink>
