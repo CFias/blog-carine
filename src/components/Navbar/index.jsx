@@ -18,14 +18,7 @@ export default function Navbar() {
           <h4 className="logo-name">Carine Lima</h4>
         </NavLink>
         <NavLink to="/" className="logo-name-mob">
-          {user && <Avatar className="nav-profile-mob" src={profile} />}
           <h4 className="logo-name-mob">Carine Lima</h4>
-          {user && (
-            <NavLink onClick={logout} className="nav-logout-mob">
-              <Logout fontSize="small" />
-              Sair
-            </NavLink>
-          )}
         </NavLink>
         <nav className="nav-container">
           <ul className="nav-content">

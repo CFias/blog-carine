@@ -10,6 +10,8 @@
     overflow: hidden;
 }
 
+
+
 .banner-txt {
     display: flex;
     flex-direction: column;
@@ -61,6 +63,38 @@
 
 @media screen and (max-width: 768px) {
     .banner-container {
+        gap: 60px;
+    }
+
+    .mob-card {
+        background: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90vw;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--cards-color);
+        
+    }
+
+    .user-log {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90vw;
+    }
+
+    .log-user, .user-no {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+    }
+
+    .no-user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .banner-txt {

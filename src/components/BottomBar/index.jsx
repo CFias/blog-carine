@@ -20,7 +20,7 @@ export default function BottomBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/addpost" className="nav-item">
+          <NavLink to="/articles" className="nav-item">
             <AddCircle />
             <p className="nav-name">Adicionar</p>
           </NavLink>
