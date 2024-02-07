@@ -17,14 +17,14 @@
   font-family: "Ephesis", cursive;
   font-weight: 100;
   font-size: 30px;
-  transition: 90ms;
+  transition: 250ms;
   text-decoration: none;
   color: var(--logo-color);
+  cursor: pointer;
 }
 
 .logo-name:hover {
-  text-shadow: var(--box-shadow-cards);
-  cursor: pointer;
+  color: var(--text-color);
 }
 
 .nav-content {
@@ -70,6 +70,14 @@
   text-decoration: none;
   color: var(--text-color);
   font-family: var(--main-font);
+  transition: 250ms;
+}
+
+.nav-logout-name {
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 250ms;
 }
 
 .nav-logout-icon {
@@ -94,11 +102,14 @@
 }
 
 .btn-auth-login:hover,
-.btn-auth-register:hover {
+.btn-auth-register:hover,
+.nav-logout-name:hover,
+.nav-logout:hover {
   color: var(--logo-color);
 }
 
-.logo-name-mob, .logo-name-log {
+.logo-name-mob,
+.logo-name-log {
   display: none;
 }
 

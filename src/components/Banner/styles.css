@@ -1,5 +1,4 @@
 .banner-container {
-    background-image: url("../../assets/image/bg-photo.png");
     background-position: center;
     background-size: cover;
     height: 70vh;
@@ -22,7 +21,7 @@
 .txt-banner {
     color: var(--logo-color);
     text-align: center;
-    font-size: 80px;
+    font-size: 65px;
     width: 80vw;
 }
 
@@ -40,37 +39,24 @@
     padding-top: 30px;
 }
 
-.banner-btn-contact {
-    background: var(--logo-color);
+.banner-btn {
+    border: none;
     padding: 15px;
     width: 8vw;
-    border: none;
     color: var(--text-color);
+    background: var(--logo-color);
     border-radius: 25px;
     cursor: pointer;
     transition: 250ms;
-}
-
-.banner-btn-social {
-    border: none;
     border: 1px solid var(--logo-color);
-    padding: 15px;
-    width: 8vw;
+    text-decoration: none;
+    text-align: center;    
+}
+
+.banner-btn:hover {
     color: var(--logo-color);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 250ms;
+    border: 1px solid var(--logo-color);
     background: none;
-}
-
-.banner-btn-contact:hover {
-    background: var(--text-color);
-    color: black;
-}
-
-.banner-btn-social:hover {
-    background: var(--logo-color);
-    color: var(--text-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -90,7 +76,7 @@
         width: 90vw;
     }
 
-    .banner-btn-contact, .banner-btn-social {
+   .banner-btn {
         width: 25vw;
         display: flex;
         justify-content: center;

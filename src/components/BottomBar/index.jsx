@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { AccountCircle, AddCircle, Contacts, Info, Share } from "@mui/icons-material";
+import { AccountCircle, AddCircle, Collections, Info, Share } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
 export default function BottomBar() {
@@ -14,9 +14,9 @@ export default function BottomBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/addpost" className="nav-item">
-            <Contacts />
-            <p className="nav-name">Contato</p>
+          <NavLink to="/gallery" className="nav-item">
+            <Collections />
+            <p className="nav-name">Galeria</p>
           </NavLink>
         </li>
         <li>

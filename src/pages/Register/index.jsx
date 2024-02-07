@@ -1,5 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { Instagram, LinkedIn, YouTube } from "@mui/icons-material";
+import {
+  AlternateEmail,
+  Instagram,
+  LinkedIn,
+  Lock,
+  Person,
+  YouTube,
+} from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
@@ -55,6 +62,7 @@ export default function Register() {
         <form onSubmit={handleSubmit} className="form-content">
           <h2 className="form-title">Cadastre-se</h2>
           <label className="form-item">
+            <Person className="form-icons" />
             <input
               className="form-in"
               type="text"
@@ -66,6 +74,7 @@ export default function Register() {
             />
           </label>
           <label className="form-item">
+            <AlternateEmail className="form-icons" />
             <input
               className="form-in"
               type="email"
@@ -77,6 +86,7 @@ export default function Register() {
             />
           </label>
           <label className="form-item">
+            <Lock className="form-icons" />
             <input
               className="form-in"
               type="password"
@@ -88,6 +98,7 @@ export default function Register() {
             />
           </label>
           <label className="form-item">
+            <Lock className="form-icons" />
             <input
               className="form-in"
               type="password"

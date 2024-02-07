@@ -30,7 +30,7 @@ export default function Navbar() {
         <nav className="nav-container">
           <ul className="nav-content">
             <li>
-              <NavLink to="/" className="nav-item">
+              <NavLink to="/articles" className="nav-item">
                 Artigos
               </NavLink>
             </li>
@@ -40,7 +40,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="nav-item">
+              <NavLink to="/podcasts" className="nav-item">
                 Podcasts
               </NavLink>
             </li>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-btn-logout">
-                <span className="nav-logout">Olá, {user.displayName}</span>
+                <span className="nav-logout-name">Olá, {user.displayName}</span>
                 <NavLink onClick={logout} className="nav-logout">
                   Sair
                 </NavLink>

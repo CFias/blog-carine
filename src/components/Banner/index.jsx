@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { NavLink } from "react-router-dom";
 
 export default function Banner() {
   return (
@@ -11,8 +12,7 @@ export default function Banner() {
           dignidade e não negociam os seus valores.
         </p>
         <div className="banner-btns">
-          <button className="banner-btn-contact btn">Contato</button>
-          <button className="banner-btn-social btn">Redes</button>
+          <NavLink to="/contact" className="banner-btn btn">Redes</NavLink>
         </div>
       </div>
     </section>

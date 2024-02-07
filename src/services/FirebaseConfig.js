@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAPnpLAeq7mgac8ARpeoEOToHPcxu21pj0",
-  authDomain: "blog-carine.firebaseapp.com",
-  projectId: "blog-carine",
-  storageBucket: "blog-carine.appspot.com",
-  messagingSenderId: "427065831093",
-  appId: "1:427065831093:web:493285d224c0243bcc18fc",
-  measurementId: "G-SHR2PGN3M5",
+  apiKey: "AIzaSyAJV1-G2y7WpVncbN-YtSVJpzH7G6NUPp8",
+  authDomain: "carine-lima.firebaseapp.com",
+  projectId: "carine-lima",
+  storageBucket: "carine-lima.appspot.com",
+  messagingSenderId: "909436190367",
+  appId: "1:909436190367:web:fc2394790390c9c025ecaa",
+  measurementId: "G-EXBVMQGQ37"
 };
 
 const app = initializeApp(firebaseConfig);

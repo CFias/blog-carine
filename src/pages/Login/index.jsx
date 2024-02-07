@@ -1,4 +1,4 @@
-import { Instagram, LinkedIn, YouTube } from "@mui/icons-material";
+import { AlternateEmail, Instagram, LinkedIn, Lock, YouTube } from "@mui/icons-material";
 import "../../index.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -48,6 +48,7 @@ export default function Login() {
         <form onSubmit={handleSubmit} className="form-content">
           <h2 className="form-title">Fazer Login</h2>
           <label className="form-item">
+            <AlternateEmail className="form-icons" />
             <input
               className="form-in"
               type="email"
@@ -59,6 +60,7 @@ export default function Login() {
             />
           </label>
           <label className="form-item">
+            <Lock className="form-icons" />
             <input
               className="form-in"
               type="password"
@@ -73,7 +75,7 @@ export default function Login() {
           {loading && <button className="form-btn">Aguarde</button>}
           <p className="form-route">
             Não possui cadastro ?
-            <NavLink className="form-nav" to="/login">
+            <NavLink className="form-nav" to="/register">
               {" "}
               Cadastre-se
             </NavLink>

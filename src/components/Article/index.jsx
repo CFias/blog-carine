@@ -5,10 +5,10 @@ import { ArrowForwardIosOutlined } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import profile from "../../assets/image/caren.png";
 
-export default function Articles() {
+export default function Article() {
   return (
     <section className="article-container">
-      <NavLink className="article-t">
+      <NavLink className="article-t" to="/articles">
         <h2>Artigos</h2>
         <ArrowForwardIosOutlined fontSize="small" className="article-icon" />
       </NavLink>
