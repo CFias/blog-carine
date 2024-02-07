@@ -20,7 +20,6 @@ export default function Articles() {
 
     if (title !== "") {
       await addDoc(collection(db, "todos"), {
-        cod,
         title,
         completed: false,
       });

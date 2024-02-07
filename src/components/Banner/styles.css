@@ -1,121 +1,122 @@
 .banner-container {
-    background-position: center;
-    background-size: cover;
-    height: 70vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-
-
 .banner-txt {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 50vw;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 50vw;
+  align-items: center;
 }
 
 .txt-banner {
-    color: var(--logo-color);
-    text-align: center;
-    font-size: 65px;
-    width: 80vw;
+  color: var(--logo-color);
+  text-align: center;
+  font-size: 65px;
+  width: 80vw;
 }
 
 .banner-p {
-    color: var(--text-color);
-    font-size: 18px;
-    text-align: center;
-    width: 25vw;
-    padding: 20px;
+  color: var(--text-color);
+  font-size: 18px;
+  text-align: center;
+  width: 25vw;
+  padding: 20px;
 }
 
 .banner-btns {
-    display: flex;
-    gap: 20px;
-    padding-top: 30px;
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
 }
 
 .banner-btn {
-    border: none;
-    padding: 15px;
-    width: 8vw;
-    color: var(--text-color);
-    background: var(--logo-color);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 250ms;
-    border: 1px solid var(--logo-color);
-    text-decoration: none;
-    text-align: center;    
+  border: none;
+  padding: 15px;
+  width: 8vw;
+  color: var(--text-color);
+  background: var(--logo-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 250ms;
+  border: 1px solid var(--logo-color);
+  text-decoration: none;
+  text-align: center;
 }
 
 .banner-btn:hover {
-    color: var(--logo-color);
-    border: 1px solid var(--logo-color);
-    background: none;
+  color: var(--logo-color);
+  border: 1px solid var(--logo-color);
+  background: none;
+}
+
+.mob-card {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .banner-container {
-        gap: 60px;
-    }
+  .banner-container {
+    gap: 60px;
+  }
 
-    .mob-card {
-        background: var(--bg-color);
-        color: var(--text-color);
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 90vw;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid var(--cards-color);
-        
-    }
+  .mob-card {
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90vw;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--cards-color);
+  }
 
-    .user-log {
-        display: flex;
-        justify-content: space-evenly;
-        width: 90vw;
-    }
+  .user-log {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+  }
 
-    .log-user, .user-no {
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
-    }
+  .log-user,
+  .user-no {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+  }
 
-    .no-user {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .no-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .banner-txt {
-        gap: 0;
-    }
+  .banner-txt {
+    gap: 0;
+  }
 
-    .txt-banner {
-        font-size: 23px;
-        width: 90vw;
-    }
+  .txt-banner {
+    font-size: 23px;
+    width: 90vw;
+  }
 
-    .banner-p {
-        width: 90vw;
-    }
+  .banner-p {
+    width: 90vw;
+  }
 
-   .banner-btn {
-        width: 25vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 10px;
-    }
-
+  .banner-btn {
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+  }
 }
