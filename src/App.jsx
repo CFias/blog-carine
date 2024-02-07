@@ -19,8 +19,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Login from "./pages/Login/index";
+import Contact from "./pages/Contact";
+import Podcasts from "./pages/Podcasts";
+import Gallery from "./pages/Gallery";
+import Articles from "./pages/Articles";
 // import DarkMode from "./components/DarkMode";
-// import Gallery from "./pages/Gallery";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -48,6 +51,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/podcasts" element={<Podcasts />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/articles" element={<Articles />} />
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}

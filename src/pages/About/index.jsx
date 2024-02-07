@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Edit } from "@mui/icons-material";
+import Navbar from "../../components/Navbar"
 
 export default function About() {
   return (
