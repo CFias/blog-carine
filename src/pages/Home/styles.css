@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 

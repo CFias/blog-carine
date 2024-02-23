@@ -84,7 +84,7 @@ export default function Navbar() {
               </li>
               <li>
                 <NavLink to="/register" className="btn-auth-register">
-                  Registrar
+                  Cadastre-se
                 </NavLink>
               </li>
             </ul>

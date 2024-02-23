@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
 import Articles from "./pages/Articles";
+import Profile from "./pages/Profile";
 // import DarkMode from "./components/DarkMode";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/articles" element={<Articles />} />
+            <Route path="/profile" element={<Profile />} />
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}

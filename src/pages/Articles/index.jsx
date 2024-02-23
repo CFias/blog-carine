@@ -21,15 +21,17 @@ export default function Articles() {
     if (title !== "") {
       await addDoc(collection(db, "todos"), {
         title,
+        image: (imageListRef),
         completed: false,
       });
       setTitle("");
     }
 
+    
     if (postUpload == null) return;
-
+    
     const imageRef = ref(storage, `posts/${postUpload.name + v4()}`);
-
+    
     uploadBytes(imageRef, postUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageList((prev) => [...prev, url]);
@@ -117,7 +119,6 @@ export default function Articles() {
         </section>
       </section>
     )}
-      
     </>
   );
 }

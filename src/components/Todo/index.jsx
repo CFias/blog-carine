@@ -24,6 +24,10 @@ export default function Todo({ todo }) {
             className="todo-list"
             onChange={handleChange}
           />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/carine-lima.appspot.com/o/posts?alt=media&token=42b111b2-d8f2-45eb-9be8-ba92aa385f05"
+            alt=""
+          />
         </div>
       </div>
     </>
