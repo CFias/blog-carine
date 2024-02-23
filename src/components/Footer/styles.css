@@ -8,6 +8,7 @@
   border-top: var(--border-color);
   box-shadow: var(--box-shadow-cards);
   position: sticky;
+  overflow: hidden;
 }
 
 .footer-nav {

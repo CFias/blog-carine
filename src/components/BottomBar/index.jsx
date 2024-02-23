@@ -21,8 +21,7 @@ export default function BottomBar() {
         </li>
         <li>
           <NavLink to="/articles" className="nav-item">
-            <AddCircle />
-            <p className="nav-name">Adicionar</p>
+            <AddCircle fontSize="large" className="nav-name-add" />
           </NavLink>
         </li>
         <li>

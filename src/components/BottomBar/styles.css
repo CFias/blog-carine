@@ -40,6 +40,10 @@
     text-align: center;
   }
 
+  .nav-name-add {
+    color: var(--logo-color);
+  }
+
   @media (min-width: 320px) and (max-width: 480px) {
     .nav-bottom-container {
       display: flex;

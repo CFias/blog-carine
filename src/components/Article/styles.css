@@ -5,10 +5,12 @@
     flex-direction: column;
     color: var(--text-color);
     background: var(--bg-color);
-    width: 100vw;
+    backdrop-filter: blur(10px);
+    width: 100%;
     padding: 30px;
-    gap: 30px;
+    gap: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.418);
+    overflow: hidden;
 }
 
 .article-t {
@@ -20,14 +22,13 @@
     align-items: center;
     justify-content: center;
     color: var(--text-color);
-    gap: 10px;
     transition: 250ms;
 }
 
 .article-content {
     width: 60vw;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
 }
