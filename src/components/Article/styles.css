@@ -26,8 +26,8 @@
 }
 
 .article-content {
-    width: 60vw;
     display: flex;
+    width: 100%;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -37,69 +37,68 @@
     color: var(--logo-color);
 }
 
-.article-card {
-    width: 20vw;
+.art-card {
     background: var(--bg-form);
-    padding: 25px;
-    border-radius: 30px;
+    padding: 20px;
+    height: 12vh;
+    width: 15vw;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    transition: 250ms;
-}
-
-.article-card:hover {
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.295);
-}
-
-.article-info {
-    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
+    border: 1px solid var(--cards-color);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
-.article-card-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.article-title {
-    font-weight: 500;
-    padding: 10px;
-}
-
-.article-txt {
+.art-desc {
     font-size: 12px;
     padding: 10px;
     font-weight: 300;
 }
 
+.art-caption {
+    max-width: 7vw;
+    height: 1vh;
+    overflow-wrap: break-word;
+    display: flex;
+    align-items: center;
+}
+
+.art-image {
+    max-width: 5vw;
+    max-height: 5vh;
+    border-radius: 10px;
+    border: 1px solid var(--cards-color);
+}
+
 @media screen and (max-width: 768px) {
-    .article-container {
-        gap: 20px;
-        height: 55vh;
-        justify-content: center;
-    }
+   .article-container {
+    height: 50vh;
+    justify-content: center;
+   }
 
-    .article-t {
-        font-size: 12px;
-        gap: 5px;
-    }
+   .article-t {
+    font-size: 12px;
+   }
 
-    .article-content {
-        gap: 10px;
-        padding: 10px;
-    }
+   .article-content {
+    width: auto;
+   }
 
-    .article-card {
-        width: 90vw;
-    }
+   .art-card {
+    width: 90vw;
+    height: 20vh;
+   }
 
-    .article-info {
-        font-size: 12px;
-        padding: 0;
-        width: 90vw;
-    }
+   .art-image {
+    max-width: 20vw;
+    max-height: 20vh;
+   }
+
+   .art-caption {
+    max-width: 25vw;
+    height: 5vh;
+   }
 }

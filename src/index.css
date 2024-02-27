@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--main-font);
+  color: var(--text-color);
 }
 
 :root {

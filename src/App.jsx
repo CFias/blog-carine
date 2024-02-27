@@ -24,6 +24,7 @@ import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
 import Articles from "./pages/Articles";
 import Profile from "./pages/Profile";
+import CreatePost from "./pages/CreatePost";
 // import DarkMode from "./components/DarkMode";
 
 function App() {
