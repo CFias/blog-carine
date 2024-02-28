@@ -5,7 +5,7 @@ import { useAuthentication } from "./../../hooks/useAuthentication";
 import { useAuthValue } from "./../../contexts/AuthContext";
 import { Avatar } from "@mui/material";
 import profile from "../../assets/image/caren.png";
-import { Logout } from "@mui/icons-material";
+import { Logout, Settings } from "@mui/icons-material";
 
 export default function Navbar() {
   const { user } = useAuthValue();
@@ -23,15 +23,16 @@ export default function Navbar() {
           </NavLink>
           <ul className="nav-content">
             <li>
+              <NavLink to="/" className="nav-item">
+                Home
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/articles" className="nav-item">
                 Artigos
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/gallery" className="nav-item">
-                Galeria
-              </NavLink>
-            </li>
+
             <li>
               <NavLink to="/podcasts" className="nav-item">
                 Podcasts
@@ -61,10 +62,9 @@ export default function Navbar() {
                   />
                 </NavLink>
               </li>
-              <li className="nav-btn-logout">
-                <span className="nav-logout-name">{user.displayName}</span>
-                <NavLink onClick={logout} className="nav-logout">
-                  Sair
+              <li className="nav-btn-settings">
+                <NavLink to="/profile" className="nav-settings">
+                <Avatar className="nav-photo" />
                 </NavLink>
               </li>
             </ul>

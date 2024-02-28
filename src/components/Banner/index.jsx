@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.css";
-import Redes from "../Redes";
 
 export default function Banner() {
   return (
@@ -13,7 +12,6 @@ export default function Banner() {
             dignidade e não negociam os seus valores.
           </p>
         </div>
-        <Redes />
       </section>
     </>
   );

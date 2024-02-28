@@ -12,7 +12,7 @@ import {
 import { useAuthValue } from "./../../contexts/AuthContext";
 import { v4 } from "uuid";
 import "./styles.css";
-import { Delete, Favorite, FavoriteBorder } from "@mui/icons-material";
+import { AddAPhoto, Delete, Favorite, FavoriteBorder } from "@mui/icons-material";
 
 export default function AddPost() {
   const { user } = useAuthValue();
@@ -102,13 +102,14 @@ export default function AddPost() {
       {user ? (
         <section className="articles-container">
           <div className="articles-add">
-            <p className="select-img">Selecione uma imagem:</p>
             <input
               className="articles-img"
+              id="articles-img"
               type="file"
               onChange={(e) => setPostUpload(e.target.files[0])}
             />
-            <textarea
+            <label for="articles-img" className="articles-up">Selecione uma imagem <AddAPhoto fontSize="small"/></label>
+            <input
               className="articles-caption"
               type="text"
               placeholder="Legenda"
@@ -124,6 +125,26 @@ export default function AddPost() {
               <div className="post-card" key={post.id}>
                 <div className="post-caption">
                   <p className="caption">{post.caption}</p>
+                  <div className="dropdown-content">
+                    <button
+                      className="articles-btn1"
+                      onClick={() =>
+                        handleUpdate(post.id, { completed: !post.completed })
+                      }
+                    >
+                      {post.completed ? (
+                        <FavoriteBorder className="like" />
+                      ) : (
+                        <Favorite className="like" />
+                      )}
+                    </button>
+                    <button
+                      className="articles-btn1"
+                      onClick={() => handleDelete(post.id)}
+                    >
+                      <Delete className="like" />
+                    </button>
+                  </div>
                 </div>
                 <img
                   src={post.image}
@@ -131,26 +152,6 @@ export default function AddPost() {
                   onClick={() => openModal(post)}
                   className="post-image"
                 />
-                <div className="dropdown-content">
-                  <button
-                    className="articles-btn1"
-                    onClick={() =>
-                      handleUpdate(post.id, { completed: !post.completed })
-                    }
-                  >
-                    {post.completed ? (
-                      <FavoriteBorder className="like" />
-                    ) : (
-                      <Favorite className="like" />
-                    )}
-                  </button>
-                  <button
-                    className="articles-btn1"
-                    onClick={() => handleDelete(post.id)}
-                  >
-                    <Delete className="like" />
-                  </button>
-                </div>
               </div>
             ))}
           </section>
