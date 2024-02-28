@@ -20,7 +20,7 @@ export default function Article() {
       ...doc.data(),
     }));
 
-    const limitedPosts = fetchedPosts.slice(0, 6);
+    const limitedPosts = fetchedPosts.slice(0, 12);
 
     setPosts(limitedPosts);
   };
@@ -30,7 +30,7 @@ export default function Article() {
       <div className="article-tags-container">
         <h4 className="posts-recent">Publicações recentes</h4>
         <span className="tags-line"></span>
-        <NavLink className="tags">
+        <NavLink to="/articles" className="tags">
           Mais publicações
           <ArrowForward fontSize="small" className="tags-icon" />
         </NavLink>

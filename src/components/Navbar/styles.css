@@ -37,13 +37,14 @@
   width: 200px;
   display: flex;
   list-style: none;
+  font-size: 14px;
   gap: 14px;
 }
 
 .nav-item {
   text-decoration: none;
   user-select: none;
-  font-size: 16px;
+  font-size: 14px;
   padding: 3px;
   color: var(--text-color);
   transition: 250ms;
@@ -54,6 +55,10 @@
   color: var(--logo-color);
 }
 
+.nav-settings {
+  color: var(--text-color);
+}
+
 .nav-btn {
   display: flex;
   list-style: none;
@@ -61,32 +66,33 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.nav-profile {
-  width: 3rem;
+.nav-photo {
+  width: 1rem;
   border-radius: 50%;
 }
 
-.nav-btn-logout {
+.nav-btn-settings {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.nav-logout {
+.nav-settings {
   text-decoration: none;
+  display: flex;
   color: var(--text-color);
   font-family: var(--main-font);
   transition: 250ms;
 }
 
-.nav-logout-name {
+.nav-settings-name {
   color: var(--text-color);
   font-weight: 500;
   cursor: pointer;
   transition: 250ms;
 }
 
-.nav-logout-icon {
+.nav-settings-icon {
   cursor: pointer;
   color: var(--text-color);
 }
