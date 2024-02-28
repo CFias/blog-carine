@@ -1,62 +1,35 @@
 .banner-container {
   background-position: center;
   background-size: cover;
-  height: 70vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   overflow: hidden;
 }
 
 .banner-txt {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 50vw;
+  max-width: 90vw;
   align-items: center;
 }
 
 .txt-banner {
   color: var(--logo-color);
-  text-align: center;
-  font-size: 65px;
-  width: 80vw;
+  font-size: 40px;
+  padding: 20px;
 }
 
 .banner-p {
   color: var(--text-color);
   font-size: 18px;
+  font-weight: 300;
   text-align: center;
   width: 25vw;
   padding: 20px;
-}
-
-.banner-btns {
-  display: flex;
-  gap: 20px;
-  padding-top: 30px;
-}
-
-.banner-btn {
-  border: none;
-  padding: 15px;
-  width: 8vw;
-  color: var(--text-color);
-  background: var(--logo-color);
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 250ms;
-  border: 1px solid var(--logo-color);
-  text-decoration: none;
-  text-align: center;
-}
-
-.banner-btn:hover {
-  color: var(--logo-color);
-  border: 1px solid var(--logo-color);
-  background: none;
 }
 
 .mob-card {
@@ -67,49 +40,19 @@
   .banner-container {
     gap: 60px;
   }
-
-  .mob-card {
-    background: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 90vw;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid var(--cards-color);
-  }
-
-  .user-log {
-    display: flex;
-    justify-content: space-evenly;
-    width: 90vw;
-  }
-
-  .log-user,
-  .user-no {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-  }
-
-  .no-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+  
   .banner-txt {
-    gap: 0;
+    width: 100%;
   }
 
   .txt-banner {
-    font-size: 23px;
+    font-size: 20px;
     width: 90vw;
   }
 
   .banner-p {
-    width: 90vw;
+    width: 100%;
+    font-size: 14px;
   }
 
   .banner-btn {

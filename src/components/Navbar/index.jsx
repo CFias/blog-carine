@@ -14,13 +14,13 @@ export default function Navbar() {
   return (
     <>
       <header className="header-container">
-        <NavLink to="/" className="logo-name">
-          <h4 className="logo-name">Carine Lima</h4>
-        </NavLink>
         <NavLink to="/" className="logo-name-mob">
           <h4 className="logo-name-mob">Carine Lima</h4>
         </NavLink>
         <nav className="nav-container">
+          <NavLink to="/" className="logo-name">
+            <h4 className="logo-name">Carine Lima</h4>
+          </NavLink>
           <ul className="nav-content">
             <li>
               <NavLink to="/articles" className="nav-item">
@@ -52,11 +52,6 @@ export default function Navbar() {
         {user ? (
           <div className="nav-btn">
             <ul className="nav-content">
-              {/* <li>
-                <NavLink to="/createpost" className="nav-item">
-                  Novo Post
-                </NavLink>
-              </li> */}
               <li>
                 <NavLink className="nav-profile-img">
                   <img
@@ -67,7 +62,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-btn-logout">
-                <span className="nav-logout-name">Olá, {user.displayName}</span>
+                <span className="nav-logout-name">{user.displayName}</span>
                 <NavLink onClick={logout} className="nav-logout">
                   Sair
                 </NavLink>

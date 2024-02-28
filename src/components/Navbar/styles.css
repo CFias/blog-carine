@@ -1,12 +1,18 @@
 .header-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding: 20px;
   height: 10vh;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
   position: absolute;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo-name {

@@ -4,7 +4,13 @@
   justify-content: start;
   flex-direction: column;
   width: 100%;
+  height: auto;
   overflow: hidden;
+  background: var(--bg-color);
+}
+
+.bg-container {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
