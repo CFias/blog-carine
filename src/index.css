@@ -15,12 +15,13 @@
 
   --logo-color: #d42346;
   --text-color: #F2F2F2;
-  --bg-color: #10101086;
+  --bg-color: #000000a6;
   --bg-form: #020202;
   --bg-error: #bd4949;
   --form-color: #A6A6A6;
   --border-color: 1px solid #73737321;
   --cards-color: #404040;
+  --card-color: #4442442d;
 
   --box-shadow-cards: 0 0 20px 6px #00000013; 
 }
@@ -28,19 +29,21 @@
 [data-theme="dark"] {
   --logo-color: #d42346;
   --text-color: #F2F2F2;
-  --bg-color: #101010;
+  --bg-color: #000000d8;
   --bg-form: #020202;
   --bg-error: #bd4949;
   --form-color: #A6A6A6;
   --border-color: 1px solid #73737321;
-  --cards-color: #404040;
+  --cards-color: #1d1a1a;
+  --card-color: #111010;
 }
 
-.container {
-  background-image: url("./assets/image/bg-photo.png");
+.bg-container {
+  background-image: url("./assets/image/bg-phototest.png");
   background-position: center;
   background-size: cover;
   height: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 

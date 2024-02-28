@@ -5,9 +5,11 @@ import Article from "../../components/Article";
 
 export default function Home() {
   return (
-    <section className="main-container container">
-      <Banner />
-      <Article />
+    <section className="main-container">
+      <div className="bg-container">
+        <Banner />
+      </div>
+        <Article />
     </section>
   );
 }

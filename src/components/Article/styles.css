@@ -1,104 +1,168 @@
 .article-container {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     color: var(--text-color);
-    background: var(--bg-color);
-    backdrop-filter: blur(10px);
+    background-image: linear-gradient(black, rgb(19, 19, 19), black);
     width: 100%;
     padding: 30px;
     gap: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.418);
     overflow: hidden;
 }
 
 .article-t {
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px;
-    text-align: center;
+    text-align: start;
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: var(--text-color);
     transition: 250ms;
-}
-
-.article-content {
-    display: flex;
-    width: 100%;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
 }
 
 .article-t:hover {
     color: var(--logo-color);
 }
 
+.article-icon {}
+
 .art-card {
-    background: var(--bg-form);
-    padding: 20px;
-    height: 12vh;
-    width: 15vw;
+    padding: 10px;
     display: flex;
-    border-radius: 10px;
+    border-radius: 5px;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border: 1px solid var(--cards-color);
     cursor: pointer;
     text-decoration: none;
-    color: var(--text-color);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    transition: 350ms;
+    margin: 10px;
 }
 
-.art-desc {
-    font-size: 12px;
-    padding: 10px;
-    font-weight: 300;
+.art-card:hover {
+    transform: scale(0.9);
 }
 
-.art-caption {
-    max-width: 7vw;
-    height: 1vh;
-    overflow-wrap: break-word;
+.article-content {
     display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--cards-color);
+    flex-wrap: wrap;
+    width: 80%;
 }
 
 .art-image {
-    max-width: 5vw;
-    max-height: 5vh;
-    border-radius: 10px;
+    width: 20vw;
+    border-radius: 3px;
+}
+
+.art-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 10vh;
+    width: 10vw;
+    overflow: hidden;
+}
+
+.art-caption {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.article-tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.tags-line {
+    width: 20%;
     border: 1px solid var(--cards-color);
 }
 
-@media screen and (max-width: 768px) {
-   .article-container {
-    height: 50vh;
+.tags {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     justify-content: center;
-   }
+    border: 0.5px solid var(--logo-color);
+    padding: 10px;
+    border-radius: 25px;
+    color: var(--logo-color);
+    font-size: 14px;
+    gap: 10px;
+    transition: 350ms;
+}
 
-   .article-t {
-    font-size: 12px;
-   }
+.tags:hover {
+    background: var(--logo-color);
+    color: var(--text-color);
+    border: 0.5px solid var(--text-color);
+}
 
-   .article-content {
-    width: auto;
-   }
+.tags-icon {
+    background: var(--logo-color);
+    border-radius: 50%;
+}
 
-   .art-card {
-    width: 90vw;
-    height: 20vh;
-   }
+@media screen and (max-width: 768px) {
+    .article-container {
+        justify-content: center;
+        height: 100%;
+    }
 
-   .art-image {
-    max-width: 20vw;
-    max-height: 20vh;
-   }
+    .article-content {
+        height: auto;
+    }
 
-   .art-caption {
-    max-width: 25vw;
-    height: 5vh;
-   }
+    .posts-recent {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .tags {
+        font-size: 10px;
+        width: 60vw;
+    }
+
+    .art-card {
+    }
+
+    .art-card:hover {
+        transform: scale(1);
+    }
+
+    .art-image {
+        width: 70vw;
+    }
+
+    .art-desc {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .art-caption {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .tags-line {
+        display: none;
+    }
+
+
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { NavLink } from "react-router-dom";
+import Redes from "../Redes";
 
 export default function Banner() {
   return (
@@ -12,12 +12,8 @@ export default function Banner() {
             Mulheres virtuosas se movimentam, conquistam seu espaço com
             dignidade e não negociam os seus valores.
           </p>
-          <div className="banner-btns">
-            <NavLink to="/contact" className="banner-btn btn">
-              Redes
-            </NavLink>
-          </div>
         </div>
+        <Redes />
       </section>
     </>
   );
