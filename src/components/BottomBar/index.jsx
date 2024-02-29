@@ -8,7 +8,7 @@ export default function BottomBar() {
     <nav className="nav-bottom-container">
       <ul className="nav-item-content">
         <li>
-          <NavLink to="/articles" className="nav-item">
+          <NavLink to="/" className="nav-item">
             <Home />
           </NavLink>
         </li>
@@ -19,7 +19,7 @@ export default function BottomBar() {
         </li>
         <li>
           <NavLink to="/articles" className="nav-item">
-            <AddCircle className="nav-name-add" />
+            <AddCircle fontSize="large" className="nav-name-add" />
           </NavLink>
         </li>
         <li>

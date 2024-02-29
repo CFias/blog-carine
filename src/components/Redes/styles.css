@@ -41,6 +41,25 @@
 
 @media screen and (max-width: 768px) {
     .redes-container {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding-bottom: 40px;
+    }
+    
+    .redes-content {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .rede {
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    .rede:hover{
+        transform: scale(1);
     }
 }

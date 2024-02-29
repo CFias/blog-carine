@@ -13,16 +13,26 @@ export default function Article() {
   }, []);
 
   const fetchPosts = async () => {
-    const postsCollection = collection(db, "posts");
-    const snapshot = await getDocs(postsCollection);
-    const fetchedPosts = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+    try {
+      const postsCollection = collection(db, "posts");
+      const snapshot = await getDocs(postsCollection);
+      const fetchedPosts = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          publishedAt: data.publishedAt.toDate(),
+        };
+      });
+      const sortedPosts = fetchedPosts.sort(
+        (a, b) => b.publishedAt - a.publishedAt
+      ); 
+      const limitedPosts = sortedPosts.slice(0, 12);
 
-    const limitedPosts = fetchedPosts.slice(0, 12);
-
-    setPosts(limitedPosts);
+      setPosts(limitedPosts);
+    } catch (error) {
+      console.error("Erro ao buscar posts: ", error);
+    }
   };
 
   return (
@@ -45,10 +55,17 @@ export default function Article() {
           >
             <img src={post.image} alt="Publicação" className="art-image" />
             <div className="art-desc">
+              <p className="post-date-rec">
+                {post.publishedAt.toLocaleString()}
+              </p>
               <p className="art-caption">{post.caption}</p>
             </div>
           </NavLink>
         ))}
+        <NavLink to="/articles" className="tags-mob">
+          Mais publicações
+          <ArrowForward fontSize="small" className="tags-icon" />
+        </NavLink>
       </div>
     </section>
   );
