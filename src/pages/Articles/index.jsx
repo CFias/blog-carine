@@ -8,11 +8,18 @@ import {
   deleteDoc,
   updateDoc,
   doc,
+  serverTimestamp,
 } from "firebase/firestore";
 import { useAuthValue } from "./../../contexts/AuthContext";
 import { v4 } from "uuid";
 import "./styles.css";
-import { AddAPhoto, Delete, Favorite, FavoriteBorder } from "@mui/icons-material";
+import {
+  AddAPhoto,
+  ArrowForward,
+  Delete,
+  Favorite,
+  FavoriteBorder,
+} from "@mui/icons-material";
 
 export default function AddPost() {
   const { user } = useAuthValue();
@@ -28,13 +35,21 @@ export default function AddPost() {
   }, []);
 
   const fetchPosts = async () => {
-    const postsCollection = collection(db, "posts");
-    const snapshot = await getDocs(postsCollection);
-    const fetchedPosts = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setPosts(fetchedPosts);
+    try {
+      const postsCollection = collection(db, "posts");
+      const snapshot = await getDocs(postsCollection);
+      const fetchedPosts = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          publishedAt: data.publishedAt.toDate(),
+        };
+      });
+      setPosts(fetchedPosts);
+    } catch (error) {
+      console.error("Erro ao buscar posts: ", error);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -57,9 +72,16 @@ export default function AddPost() {
         image,
         caption,
         completed: false,
+        publishedAt: serverTimestamp(),
       });
-      const newPost = { id: docRef.id, image, caption, completed: false };
-      setPosts([...posts, newPost]);
+      const newPost = {
+        id: docRef.id,
+        image,
+        caption,
+        completed: false,
+        publishedAt: new Date(),
+      };
+      setPosts([newPost, ...posts]);
     } catch (error) {
       console.error("Erro ao adicionar post: ", error);
     }
@@ -108,7 +130,9 @@ export default function AddPost() {
               type="file"
               onChange={(e) => setPostUpload(e.target.files[0])}
             />
-            <label for="articles-img" className="articles-up">Selecione uma imagem <AddAPhoto fontSize="small"/></label>
+            <label for="articles-img" className="articles-up">
+              Selecione uma imagem <AddAPhoto fontSize="small" />
+            </label>
             <input
               className="articles-caption"
               type="text"
@@ -118,18 +142,56 @@ export default function AddPost() {
             />
             <button className="articles-btn" onClick={handleSubmit}>
               Publicar
+              <ArrowForward fontSize="small" />
             </button>
           </div>
           <section className="todo-container">
-            {posts.map((post) => (
-              <div className="post-card" key={post.id}>
-                <div className="post-caption">
-                  <p className="caption">{post.caption}</p>
-                  <div className="dropdown-content">
+            {posts
+              .slice()
+              .sort((a, b) => b.publishedAt - a.publishedAt)
+              .map((post) => (
+                <div className="post-card" key={post.id}>
+                  <div className="post-caption">
+                    <p className="caption">{post.caption}</p>
+                    <div className="dropdown-content">
+                      <button
+                        className="articles-btn1"
+                        onClick={() =>
+                          handleUpdate(post.id, {
+                            completed: !post.completed,
+                          })
+                        }
+                      >
+                        {post.completed ? (
+                          <FavoriteBorder className="like" />
+                        ) : (
+                          <Favorite className="like" />
+                        )}
+                      </button>
+                      <p className="post-date">
+                        {post.publishedAt.toLocaleString()}
+                      </p>
+                      <button
+                        className="articles-btn1"
+                        onClick={() => handleDelete(post.id)}
+                      >
+                        <Delete className="like" />
+                      </button>
+                    </div>
+                  </div>
+                  <img
+                    src={post.image}
+                    alt="Publicação"
+                    onClick={() => openModal(post)}
+                    className="post-image"
+                  />
+                  <div className="dropdown-content-mob">
                     <button
                       className="articles-btn1"
                       onClick={() =>
-                        handleUpdate(post.id, { completed: !post.completed })
+                        handleUpdate(post.id, {
+                          completed: !post.completed,
+                        })
                       }
                     >
                       {post.completed ? (
@@ -138,6 +200,9 @@ export default function AddPost() {
                         <Favorite className="like" />
                       )}
                     </button>
+                    <p className="post-date">
+                      {post.publishedAt.toLocaleString()}
+                    </p>
                     <button
                       className="articles-btn1"
                       onClick={() => handleDelete(post.id)}
@@ -146,28 +211,22 @@ export default function AddPost() {
                     </button>
                   </div>
                 </div>
-                <img
-                  src={post.image}
-                  alt="Publicação"
-                  onClick={() => openModal(post)}
-                  className="post-image"
-                />
-              </div>
-            ))}
+              ))}
           </section>
         </section>
       ) : (
         <section className="todo-container-off">
           {posts.map((post) => (
             <div
-              className="post-card"
+              className="post-card-off"
               key={post.id}
               onClick={() => openModal(post)}
             >
-              <div className="dropdown">
-                <p className="post-caption">{post.caption}</p>
-              </div>
               <img src={post.image} alt="Publicação" className="post-image" />
+              <div className="post-caption">
+                <p className="caption">{post.caption}</p>
+                <p className="post-date">{post.publishedAt.toLocaleString()}</p>
+              </div>
             </div>
           ))}
         </section>

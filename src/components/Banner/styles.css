@@ -1,7 +1,7 @@
 .banner-container {
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -38,6 +38,7 @@
 @media screen and (max-width: 768px) {
   .banner-container {
     gap: 60px;
+    height: 60vh;
   }
   
   .banner-txt {
