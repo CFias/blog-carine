@@ -198,5 +198,7 @@
         display: none;
     }
 
-
+    .post-date-rec {
+        font-size: 7px;
+    }
 }
