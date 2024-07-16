@@ -123,28 +123,6 @@ export default function AddPost() {
     <>
       {user ? (
         <section className="articles-container">
-          <div className="articles-add">
-            <input
-              className="articles-img"
-              id="articles-img"
-              type="file"
-              onChange={(e) => setPostUpload(e.target.files[0])}
-            />
-            <label for="articles-img" className="articles-up">
-              Selecione uma imagem <AddAPhoto fontSize="small" />
-            </label>
-            <input
-              className="articles-caption"
-              type="text"
-              placeholder="Legenda"
-              value={caption}
-              onChange={(e) => setCaption(e.target.value)}
-            />
-            <button className="articles-btn" onClick={handleSubmit}>
-              Publicar
-              <ArrowForward fontSize="small" />
-            </button>
-          </div>
           <section className="todo-container">
             {posts
               .slice()
@@ -241,7 +219,7 @@ export default function AddPost() {
               <img
                 src={selectedPost.image}
                 alt="Publicação"
-                className="post-image"
+                className="post-image-modal"
               />
               <p className="post-caption">{selectedPost.caption}</p>
             </div>

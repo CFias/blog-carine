@@ -7,7 +7,7 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  position: absolute;
+  background: #000;
 }
 
 .nav-container {
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 400px;
   font-family: "Ephesis", cursive;
   font-weight: 100;
   font-size: 30px;
@@ -44,7 +44,7 @@
 .nav-item {
   text-decoration: none;
   user-select: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 3px;
   color: var(--text-color);
   transition: 250ms;

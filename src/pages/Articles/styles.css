@@ -98,7 +98,7 @@
 }
 
 .post-date {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--form-color);
 }
 
@@ -110,6 +110,8 @@
 
 .post-image {
   width: 20vw;
+  height: 40vh;
+  object-fit: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,8 +194,6 @@
   width: 100%;
 }
 
-.articles-del {}
-
 .like {
   color: var(--logo-color);
 }
@@ -245,13 +245,16 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .articles-container {
-  }
+.post-image-modal {
+  width: 15vw auto;
+  max-width: 35vw;
+  object-fit: cover;
+}
 
+@media screen and (max-width: 768px) {
   .todo-container-off {
     height: auto;
-    padding:  100px 0 10px 0;
+    padding: 100px 0 10px 0;
   }
 
   .post-card-off {
@@ -282,7 +285,7 @@
   }
 
   .modal {
-    background: var(--bg-color); 
+    background: var(--bg-color);
   }
 
   .articles-add {
@@ -323,7 +326,7 @@
 
   .modal-content {
     flex-direction: column;
-    background: var(--bg-form); 
+    background: var(--bg-form);
     border: none;
     color: var(--text-color);
     max-width: 90%;

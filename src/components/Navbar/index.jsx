@@ -63,8 +63,11 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-btn-settings">
+                <NavLink to="/adm" className="nav-item">
+                  ADM
+                </NavLink>
                 <NavLink to="/profile" className="nav-settings">
-                <Avatar className="nav-photo" />
+                  <Avatar className="nav-photo" />
                 </NavLink>
               </li>
             </ul>

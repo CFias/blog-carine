@@ -26,8 +26,6 @@
     color: var(--logo-color);
 }
 
-.article-icon {}
-
 .art-card {
     padding: 10px;
     display: flex;
@@ -59,7 +57,10 @@
 
 .art-image {
     width: 15vw;
+    height: 25vh;
+    object-fit: cover;
     border-radius: 3px;
+
 }
 
 .art-desc {
@@ -84,9 +85,9 @@
     overflow-y: scroll;
     display: flex;
     align-items: start;
-    color: var(--text-color);
-    font-weight: 400;
-    font-size: 12px;
+    color: #eee;
+    font-weight: 300;
+    font-size: 14px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     flex-wrap: wrap;
@@ -170,8 +171,6 @@
         transition: 350ms;
         width: 100%;
     }
-
-    .art-card {}
 
     .art-card:hover {
         transform: scale(1);

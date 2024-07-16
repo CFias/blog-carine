@@ -24,6 +24,7 @@ import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
 import Articles from "./pages/Articles";
 import Profile from "./pages/Profile";
+import AdminPostManager from "./pages/AdminPostManager/AdminPostManager";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -56,6 +57,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/adm" element={<AdminPostManager />} />
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}

@@ -17,8 +17,15 @@
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-  .main-container {
+.articles-home {
+  width: 100%;
+  background: #000;
+}
 
-  }
+.posts-recent-home {
+  color: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+
 }
