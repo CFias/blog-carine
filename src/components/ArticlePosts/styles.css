@@ -141,6 +141,7 @@
       justify-content: center;
       height: 100%;
       flex-wrap: wrap;
+      border: none;
     }
   
     .article-content {
@@ -150,6 +151,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: start;
+      border: none;
     }
   
     .posts-recent {
@@ -177,7 +179,8 @@
   
     .art-card {
       width: 48%; 
-      margin: 10px 1%; /* Adjust margin to fit within the container */
+      height: 25vh;
+      margin: 1rem 1%; /* Adjust margin to fit within the container */
     }
   
     .art-card:hover {
@@ -185,25 +188,24 @@
     }
   
     .art-image {
-      width: 250px;
-      height: 250px;
-      max-height: 250px;
+      width: 180px;
+      height: 180px;
+      max-height: 180px;
       height: auto;
     }
   
     .art-desc {
-      width: 250px;
-      height: 250px;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   
     .art-caption {
-      width: 250px;
+      width: 100%;
       height: 250px;
       text-align: start;
-      font-size: 12px;
+      font-size: 10px;
     }
   
     .tags-line {
