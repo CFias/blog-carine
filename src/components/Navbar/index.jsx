@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { useAuthentication } from "./../../hooks/useAuthentication";
 import { useAuthValue } from "./../../contexts/AuthContext";
-import { Avatar } from "@mui/material";
-import profile from "../../assets/image/caren.png";
-import { Logout, Settings } from "@mui/icons-material";
+import SideMenu from "../SideMenu/SideMenu";
+import { Menu } from "@mui/icons-material";
 
 export default function Navbar() {
   const { user } = useAuthValue();
-  const { logout } = useAuthentication();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
       <header className="header-container">
-        <NavLink to="/" className="logo-name-mob">
-          <h4 className="logo-name-mob">Carine Lima</h4>
-        </NavLink>
         <nav className="nav-container">
           <NavLink to="/" className="logo-name">
             <h4 className="logo-name">Carine Lima</h4>
@@ -32,7 +32,6 @@ export default function Navbar() {
                 Artigos
               </NavLink>
             </li>
-
             <li>
               <NavLink to="/podcasts" className="nav-item">
                 Podcasts
@@ -67,7 +66,7 @@ export default function Navbar() {
                   ADM
                 </NavLink>
                 <NavLink to="/profile" className="nav-settings">
-                  <Avatar className="nav-photo" />
+                  {/* <Avatar className="nav-photo" /> */}
                 </NavLink>
               </li>
             </ul>
@@ -88,6 +87,15 @@ export default function Navbar() {
             </ul>
           </div>
         )}
+        <nav className="nav-mob">
+          <div className="nav-mob-content">
+            <div className="nav-mob-icon" onClick={toggleMenu}>
+              <Menu className="mob-icon" fontSize="medium" />
+              {/* <h4>{user.userName}</h4> */}
+            </div>
+            <SideMenu isOpen={isOpen} onClose={toggleMenu} />
+          </div>
+        </nav>
       </header>
     </>
   );

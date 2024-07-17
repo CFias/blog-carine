@@ -24,6 +24,10 @@
 
 .posts-recent-home {
   color: #ccc;
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

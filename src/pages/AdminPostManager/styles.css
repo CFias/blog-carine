@@ -167,3 +167,34 @@
     max-height: 100px;
     object-fit: cover;
 }
+
+/* Media Queries para Telas Móveis */
+@media screen and (max-width: 768px) {
+    .admin-container {
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .form-input {
+        margin-bottom: 10px;
+    }
+
+    .admin-btn,
+    .modal-btn {
+        padding: 8px 16px;
+    }
+
+    .post-image {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .table-item-desc {
+        max-width: 200px;
+    }
+}

@@ -5,7 +5,6 @@ import { onAuthStateChanged } from "firebase/auth";
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/index";
-import BottomBar from "./components/BottomBar";
 
 // hooks
 import { useEffect, useState } from "react";
@@ -22,7 +21,6 @@ import Login from "./pages/Login/index";
 import Contact from "./pages/Contact";
 import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
-import Articles from "./pages/Articles";
 import Profile from "./pages/Profile";
 import AdminPostManager from "./pages/AdminPostManager/AdminPostManager";
 
@@ -47,15 +45,12 @@ function App() {
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
-          {/* <DarkMode /> */}
-          <BottomBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/articles" element={<Articles />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/adm" element={<AdminPostManager />} />
             <Route

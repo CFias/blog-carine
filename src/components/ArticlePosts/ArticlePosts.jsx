@@ -3,9 +3,8 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
-import { ArrowForward } from "@mui/icons-material";
 
-export default function Article({ category }) {
+export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -47,10 +46,9 @@ export default function Article({ category }) {
 
   return (
     <section className="article-container">
-      
       <div className="article-content">
         {posts.map((post) => (
-          <NavLink to="/articles" className="art-card" key={post.id}>
+          <NavLink to="/" className="art-card" key={post.id}>
             {post.image && (
               <img src={post.image} alt="Publicação" className="art-image" />
             )}
@@ -62,10 +60,6 @@ export default function Article({ category }) {
             </div>
           </NavLink>
         ))}
-        <NavLink to="/articles" className="tags-mob">
-          Mais publicações
-          <ArrowForward fontSize="small" className="tags-icon" />
-        </NavLink>
       </div>
     </section>
   );

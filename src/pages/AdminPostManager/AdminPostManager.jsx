@@ -200,7 +200,6 @@ export default function AdminPostManager() {
               <tr>
                 <th>ID</th>
                 <th>Imagem</th>
-                <th>Legenda</th>
                 <th>Categoria</th>
                 <th>Data de Publicação</th>
                 <th>Ações</th>
@@ -219,7 +218,6 @@ export default function AdminPostManager() {
                       />
                     )}
                   </td>
-                  <td className="table-item-desc">{post.caption}</td>
                   <td className="table-item">{post.category}</td>
                   <td className="table-item">
                     {post.publishedAt.toLocaleString()}

@@ -1,0 +1,40 @@
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.side-infos {
+  display: flex;
+  width: 280px;
+  height: 150px;
+  border-radius: 25px;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.side-infos h4 {
+  color: #000;
+}
+
+.link-list {
+  color: #000;
+
+}
+
+.side-text {
+  font-size: 12px;
+}
+
+.side-menu .MuiListItem-root {
+  padding: 10px 20px;
+}
+
+.side-menu .MuiListItemText-primary {
+  font-size: 14px;
+  margin: 0 1rem; 
+}
+
+.side-menu .MuiListItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}

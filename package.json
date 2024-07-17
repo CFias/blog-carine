@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.14.9",
-    "@mui/material": "^5.14.9",
+    "@mui/material": "^5.16.4",
     "@reduxjs/toolkit": "^1.9.5",
     "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.5.0",
