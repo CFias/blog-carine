@@ -67,7 +67,7 @@ export default function ArticlePosts({ category }) {
               </p>
               <p className="art-caption-title">{post.title}</p>
               <p className="art-caption">{post.caption}</p>
-              <p className="art-author">{post.author}</p>
+              <p className="art-author">Por: {post.author}</p>
             </div>
           </NavLink>
         ))}

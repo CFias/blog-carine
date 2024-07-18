@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
 // Components
-import Navbar from "./components/Navbar";
 // hooks
 import { useEffect, useState } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
@@ -42,7 +41,6 @@ function App() {
     <>
       <AuthProvider value={{ user }}>
         <BrowserRouter>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

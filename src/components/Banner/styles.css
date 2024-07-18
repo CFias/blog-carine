@@ -1,65 +1,91 @@
 .banner-container {
-  background-position: center;
-  background-size: cover;
-  height: 85vh;
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   overflow: hidden;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
-.banner-txt {
+.banner-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.733);
+}
+
+.banner-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  color: white;
+  padding: 20px;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  max-width: 90vw;
-  align-items: center;
+}
+
+.filter-banner {
+  background: #3d3c3d7a;
+  color: rgb(243, 243, 243);
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 80px;
+  text-align: center;
 }
 
 .txt-banner {
-  color: var(--logo-color);
-  font-size: 40px;
-  padding: 20px;
+  font-size: 20px;
+  margin: 10px 0;
+  text-decoration: underline;
 }
 
 .banner-p {
-  color: var(--text-color);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
-  text-align: center;
-  width: 25vw;
-  padding: 20px;
+  margin-bottom: .5rem;
 }
 
-.mob-card {
-  display: none;
+.banner-date {
+ margin-top: 1rem;
+ font-size: 10px;
 }
 
 @media screen and (max-width: 768px) {
   .banner-container {
-    gap: 60px;
-    height: 60vh;
+    height: 40vh;
   }
-  
-  .banner-txt {
-    width: 100%;
+
+  .banner-overlay {
+    max-width: 100%;
   }
 
   .txt-banner {
-    font-size: 20px;
-    width: 90vw;
+    font-size: 10px;
   }
 
   .banner-p {
-    width: 100%;
-    font-size: 14px;
+    font-size: 8px;
   }
 
-  .banner-btn {
-    width: 25vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .banner-date {
+    font-size: 8px;
+   }
+
+   .filter-banner {
     font-size: 10px;
-  }
+    margin: 0;
+   }
 }

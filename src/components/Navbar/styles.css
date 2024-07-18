@@ -1,56 +1,78 @@
 /* Desktop Styles */
 .header-container {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  height: 10vh;
+  justify-content: center;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  background: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  height: 10vh;
+  margin: 0;
 }
 
 .logo-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  font-family: "Ephesis", cursive;
-  font-weight: 600;
-  font-size: 30px;
+  font-family: var(--logo-font);
+  font-weight: 400;
+  font-size: 20px;
   transition: 250ms;
   text-decoration: none;
-  color: var(--logo-color);
+  color: #eee;
   cursor: pointer;
+  margin: 0;
 }
 
 .logo-name:hover {
-  color: var(--text-color);
+  color: pink;
 }
 
 .nav-content {
-  width: 200px;
   display: flex;
   list-style: none;
   font-size: 14px;
   gap: 14px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-content li {
+  margin: 0;
 }
 
 .nav-item {
   text-decoration: none;
   user-select: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 300;
   padding: 3px;
-  color: var(--text-color);
+  color: #eee;
   transition: 250ms;
   font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.nav-item-adm, .nav-content h4 {
+  background: #ddd;
+  text-decoration: none;
+  padding: 5px 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #444343;
+  transition: 250ms;
+}
+
+.nav-item-adm:hover {
+  background: #eee;
 }
 
 .nav-item:hover {
@@ -125,15 +147,14 @@
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .header-container {
-    justify-content: center;
-    border-bottom: 1px solid #6e717346;
+  display: none;
   }
 
   .nav-mob {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: center;
+    width: 100vw;
+    justify-content: space-between;
     align-items: center;
     overflow: hidden;
     top: 0;
@@ -141,7 +162,7 @@
 
   .nav-mob-content {
     display: flex;
-    width: 95%;
+    width: 90%;
     align-items: center;
     justify-content: space-between;
     color: var(--font-color-two);
@@ -156,11 +177,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
   }
 
   .mob-icon {
     color: #000;
+    margin: 0;
   }
 
   .logo {

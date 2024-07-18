@@ -1,18 +1,23 @@
 import React from "react";
 import "./styles.css";
-import { NavLink } from "react-router-dom";
-import { ArrowForward } from "@mui/icons-material";
 import ArticlePosts from "../../components/ArticlePosts/ArticlePosts";
-import { Article } from "../../components/Article/Article";
+import Banner from "../../components/Banner/index";
+import Navbar from "../../components/Navbar";
 
 export default function Home() {
   return (
-    <section className="main-container">
-      <section className="articles-home">
-        <h4 className="article-h4">Blog</h4>
-        <ArticlePosts category="publication" />
+    <>
+    <Navbar />
+      <section className="main-container">
+        <section className="banner-section">
+          <Banner />
+        </section>
+        <section className="articles-home">
+          <h4 className="article-h4">Blog</h4>
+          <p></p>
+          <ArticlePosts category="publication" />
+        </section>
       </section>
-      <Article />
-    </section>
+    </>
   );
 }
