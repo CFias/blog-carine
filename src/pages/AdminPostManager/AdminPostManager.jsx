@@ -20,11 +20,14 @@ export default function AdminPostManager() {
   const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [caption, setCaption] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState(""); // Novo estado para o nome do autor
   const [posts, setPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [category, setCategory] = useState("publication"); // Novo estado para categoria
+  const [category, setCategory] = useState("publication");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     getPosts();
@@ -73,14 +76,20 @@ export default function AdminPostManager() {
       if (editingPostId) {
         await updateDoc(doc(db, "posts", editingPostId), {
           image: category === "publication" ? finalImageUrl : "",
+          title,
           caption,
           category,
+          filter,
+          author, // Incluir o nome do autor ao atualizar o documento
         });
       } else {
         await addDoc(collection(db, "posts"), {
           image: category === "publication" ? finalImageUrl : "",
+          title,
           caption,
           category,
+          filter,
+          author, 
           publishedAt: serverTimestamp(),
         });
       }
@@ -97,8 +106,11 @@ export default function AdminPostManager() {
   const editPost = (post) => {
     setEditingPostId(post.id);
     setImageUrl(post.image);
+    setTitle(post.title);
     setCaption(post.caption);
     setCategory(post.category);
+    setFilter(post.filter);
+    setAuthor(post.author); // Carregar o nome do autor ao editar o post
     setIsModalOpen(true);
   };
 
@@ -116,7 +128,10 @@ export default function AdminPostManager() {
     setImageFile(null);
     setImageUrl("");
     setCaption("");
+    setTitle("");
     setCategory("publication");
+    setFilter("");
+    setAuthor(""); // Limpar o estado do nome do autor ao limpar o formulário
     setIsModalOpen(false);
   };
 
@@ -163,6 +178,23 @@ export default function AdminPostManager() {
                       <option value="article">Artigo sem Imagem</option>
                     </select>
                   </label>
+                  <label htmlFor="post-category" className="form-label">
+                    <h3 className="form-title">Filtrar post</h3>
+                    <select
+                      className="form-input"
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    >
+                      <option selected disabled value="nenhum">
+                        Selecione
+                      </option>
+                      <option value="Podcast">Podcast</option>
+                      <option value="Palestra">Palestra</option>
+                      <option value="Trabalho">Trabalho</option>
+                      <option value="Estudo">Estudo</option>
+                      <option value="Certificado">Certificado</option>
+                    </select>
+                  </label>
                   {category === "publication" && (
                     <label htmlFor="post-image" className="form-label">
                       <h3 className="form-title">Selecionar imagem</h3>
@@ -170,12 +202,31 @@ export default function AdminPostManager() {
                     </label>
                   )}
                   <label htmlFor="post-caption" className="form-label">
+                    <h3 className="form-title">Título do post</h3>
+                    <textarea
+                      className="form-input"
+                      type="text"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
+                  </label>
+                  <label htmlFor="post-caption" className="form-label">
                     <h3 className="form-title">Legenda do post</h3>
                     <textarea
                       className="form-input"
                       type="text"
                       value={caption}
                       onChange={(e) => setCaption(e.target.value)}
+                    />
+                  </label>
+                  {/* Adicionar campo para capturar o nome do autor */}
+                  <label htmlFor="post-author" className="form-label">
+                    <h3 className="form-title">Autor</h3>
+                    <input
+                      className="form-input"
+                      type="text"
+                      value={author}
+                      onChange={(e) => setAuthor(e.target.value)}
                     />
                   </label>
                   <button className="admin-btn" type="submit">

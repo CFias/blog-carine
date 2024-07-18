@@ -52,18 +52,22 @@ export default function ArticlePosts({ category }) {
 
   return (
     <section className="article-container">
-      <h4 className="article-h4">Publicações recentes</h4>
       <div className="article-content">
         {posts.map((post) => (
           <NavLink to="/" className="art-card" key={post.id}>
-            {post.image && (
-              <img src={post.image} alt="Publicação" className="art-image" />
-            )}
+            <div className="art-wrapper">
+              {post.image && (
+                <img src={post.image} alt="Publicação" className="art-image" />
+              )}
+              <div className="art-type">{post.filter}</div>
+            </div>
             <div className="art-desc">
-              <p className="art-caption">{post.caption}</p>
               <p className="post-date-rec">
                 {post.publishedAt.toLocaleString()}
               </p>
+              <p className="art-caption-title">{post.title}</p>
+              <p className="art-caption">{post.caption}</p>
+              <p className="art-author">{post.author}</p>
             </div>
           </NavLink>
         ))}

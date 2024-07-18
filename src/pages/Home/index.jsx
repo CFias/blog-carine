@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <section className="main-container">
       <section className="articles-home">
+        <h4 className="article-h4">Blog</h4>
         <ArticlePosts category="publication" />
-        <Article />
       </section>
+      <Article />
     </section>
   );
 }

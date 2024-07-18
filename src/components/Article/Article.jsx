@@ -49,7 +49,6 @@ export const Article = ({ category }) => {
 
   return (
     <div className="article-card">
-        <h4 className="article-h4">Artigos</h4>
       {artPost.map((articlePost) => (
         <div to="/" className="card-article" key={articlePost.id}>
           <div className="article-desc">
