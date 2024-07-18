@@ -91,6 +91,7 @@ export default function Navbar() {
           <div className="nav-mob-content">
             <div className="nav-mob-icon" onClick={toggleMenu}>
               <Menu className="mob-icon" fontSize="medium" />
+              <h4 className="logo">Carine Lima</h4>
               {/* <h4>{user.userName}</h4> */}
             </div>
             <SideMenu isOpen={isOpen} onClose={toggleMenu} />

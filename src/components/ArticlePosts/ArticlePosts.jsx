@@ -9,7 +9,7 @@ export default function ArticlePosts({ category }) {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [category]);
 
   const fetchPosts = async () => {
     try {
@@ -33,7 +33,13 @@ export default function ArticlePosts({ category }) {
         };
       });
 
-      const sortedPosts = fetchedPosts.sort(
+      let filteredPosts = fetchedPosts;
+
+      if (category === "publicação com foto") {
+        filteredPosts = fetchedPosts.filter((post) => post.image);
+      }
+
+      const sortedPosts = filteredPosts.sort(
         (a, b) => b.publishedAt - a.publishedAt
       );
 
@@ -46,6 +52,7 @@ export default function ArticlePosts({ category }) {
 
   return (
     <section className="article-container">
+      <h4 className="article-h4">Publicações recentes</h4>
       <div className="article-content">
         {posts.map((post) => (
           <NavLink to="/" className="art-card" key={post.id}>
@@ -53,10 +60,10 @@ export default function ArticlePosts({ category }) {
               <img src={post.image} alt="Publicação" className="art-image" />
             )}
             <div className="art-desc">
+              <p className="art-caption">{post.caption}</p>
               <p className="post-date-rec">
                 {post.publishedAt.toLocaleString()}
               </p>
-              <p className="art-caption">{post.caption}</p>
             </div>
           </NavLink>
         ))}

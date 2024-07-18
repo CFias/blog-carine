@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Drawer, List, ListItem, ListItemText } from "@mui/material";
+import { Avatar, Drawer, List, ListItem, ListItemText } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import {
   AdminPanelSettings,
@@ -41,7 +41,9 @@ const SideMenu = ({ isOpen, onClose }) => {
           {user ? (
             <>
               <h4>
-                {user.displayName ? user.displayName : "Usuário"}
+                <Avatar />
+
+                Olá, {user.displayName ? user.displayName : "Usuário"}
               </h4>
               <NavLink onClick={handleLogout} className="link-list">
                 Sair <LogoutRounded fontSize="10" className="icon-list" />
@@ -65,7 +67,10 @@ const SideMenu = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <Inventory fontSize="small" className="icon-list" />
-            <ListItemText className="side-text" primary="Todas as publicações" />
+            <ListItemText
+              className="side-text"
+              primary="Todas as publicações"
+            />
           </ListItem>
           <ListItem button onClick={toggleCategories}>
             <FormatListBulletedRounded fontSize="small" className="icon-list" />
@@ -123,7 +128,10 @@ const SideMenu = ({ isOpen, onClose }) => {
           {user && (
             <ListItem button component={NavLink} to="/adm" onClick={onClose}>
               <AdminPanelSettings fontSize="small" className="icon-list" />
-              <ListItemText className="side-text" primary="Área administrativa" />
+              <ListItemText
+                className="side-text"
+                primary="Área administrativa"
+              />
             </ListItem>
           )}
         </List>

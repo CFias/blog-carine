@@ -4,11 +4,12 @@
   align-items: center;
   justify-content: end;
   height: 10vw;
-  background: var(--bg-form);
-  border-top: var(--border-color);
+  background: #fff;
   box-shadow: var(--box-shadow-cards);
-  position: sticky;
+  position: absolute;
   overflow: hidden;
+  bottom: 20;
+  width: 100%;
 }
 
 .footer-nav {
@@ -46,8 +47,7 @@
 }
 
 .footer-copy {
-  color: var(--cards-color);
-  /* background: var(--bg-color); */
+  color: #aaa;
   width: 100%;
   height: 2vw;
   display: flex;

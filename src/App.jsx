@@ -4,8 +4,6 @@ import { onAuthStateChanged } from "firebase/auth";
 
 // Components
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer/index";
-
 // hooks
 import { useEffect, useState } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
@@ -62,7 +60,6 @@ function App() {
               element={!user ? <Register /> : <Navigate to="/" />}
             />
           </Routes>
-          <Footer />
         </BrowserRouter>
       </AuthProvider>
     </>

@@ -4,9 +4,9 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
-  background: var(--bg-color);
+  background: #ddd;
 }
 
 
@@ -18,18 +18,23 @@
 }
 
 .articles-home {
-  width: 100%;
-  background: #000;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
 }
 
 .posts-recent-home {
-  color: #ccc;
+  color: #000;
   padding: 1rem;
   font-size: 16px;
   font-weight: 500;
-  width: 100%;
+  width: 70%;
 }
 
 @media screen and (max-width: 768px) {
-
+  .articles-home {
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,37 @@
+.article-card {
+    background: #eee;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-article {
+    list-style: none;
+    width: 15vw;
+}
+
+.article-desc {
+    padding: 1rem;
+    border-bottom: 1px solid #aaaaaa65;
+}
+
+.article-caption {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-size: 14px;
+    width: 100%;
+}
+
+.post-date-rec-art {
+    font-size: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+    .card-article {
+        width: 100%;
+    }
+}

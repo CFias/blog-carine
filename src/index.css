@@ -13,14 +13,14 @@
   --main-font: "Montserrat", sans-serif;
 
   --logo-color: #d42346;
-  --text-color: #eee;
-  --bg-color: #000000a6;
-  --bg-form: #020202;
+  --text-color: #000;
+  --bg-color: #eee;
+  --bg-form: #eee;
   --bg-error: #bd4949;
   --form-color: #9e9797;
-  --border-color: 1px solid #73737321;
-  --cards-color: #404040;
-  --card-color: #4442442d;
+  --border-color: 1px solid #aaa;
+  --cards-color: #fff;
+  --card-color: #fff;
 
   --box-shadow-cards: 0 0 20px 6px #00000013; 
 }

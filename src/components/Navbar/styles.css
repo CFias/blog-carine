@@ -8,7 +8,7 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  background: #000;
+  background: #fff;
 }
 
 .nav-container {
@@ -22,7 +22,7 @@
   justify-content: center;
   width: 400px;
   font-family: "Ephesis", cursive;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 30px;
   transition: 250ms;
   text-decoration: none;
@@ -46,6 +46,7 @@
   text-decoration: none;
   user-select: none;
   font-size: 16px;
+  font-weight: 500;
   padding: 3px;
   color: var(--text-color);
   transition: 250ms;
@@ -116,7 +117,8 @@
 }
 
 .logo-name-mob,
-.logo-name-log {
+.logo-name-log, 
+.nav-mob {
   display: none;
 }
 
@@ -149,7 +151,7 @@
   }
 
   .nav-mob-icon {
-    color: #fff;
+    color: #000;
     margin: 0;
     display: flex;
     align-items: center;
@@ -158,7 +160,11 @@
   }
 
   .mob-icon {
-    color: #fff;
+    color: #000;
+  }
+
+  .logo {
+    font-weight: 400;
   }
 
   .nav-content {
