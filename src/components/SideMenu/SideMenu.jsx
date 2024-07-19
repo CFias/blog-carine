@@ -5,13 +5,16 @@ import { NavLink } from "react-router-dom";
 import {
   AdminPanelSettings,
   AlignVerticalTopSharp,
+  ArrowRight,
   ExpandLess,
   ExpandMore,
   FormatListBulletedRounded,
   HelpRounded,
   Home,
+  HomeRounded,
   InfoRounded,
   Inventory,
+  InventoryRounded,
   LogoutRounded,
   Person2Rounded,
   Phone,
@@ -53,15 +56,14 @@ const SideMenu = ({ isOpen, onClose }) => {
             </>
           ) : (
             <NavLink to="/login" className="link-list">
-              Faça login
+              <p>Faça login</p>
+              <ArrowRight />
             </NavLink>
           )}
         </div>
         <List>
           <ListItem button component={NavLink} to="/" onClick={onClose}>
-            <span className="icon-list">
-              <Home fontSize="small" className="icons" />
-            </span>
+            <HomeRounded fontSize="small" className="icones" />
             <ListItemText className="side-text" primary="Inicio" />
           </ListItem>
           <ListItem
@@ -70,23 +72,19 @@ const SideMenu = ({ isOpen, onClose }) => {
             to="/productsAll"
             onClick={onClose}
           >
-            <span className="icon-list">
-              <Inventory fontSize="small" className="icons" />
-            </span>
+            <InventoryRounded fontSize="small" className="icones" />
             <ListItemText
               className="side-text"
               primary="Todas as publicações"
             />
           </ListItem>
           <ListItem button onClick={toggleCategories}>
-            <span className="icon-list">
-              <FormatListBulletedRounded fontSize="small" className="icons" />
-            </span>
+            <FormatListBulletedRounded fontSize="small" className="icones" />
             <ListItemText className="side-text" primary="Categorias" />
             {categoriesOpen ? (
-              <ExpandLess fontSize="small" />
+              <ExpandLess className="icones" fontSize="small" />
             ) : (
-              <ExpandMore fontSize="small" />
+              <ExpandMore className="icones" fontSize="small" />
             )}
           </ListItem>
           {categoriesOpen && (
@@ -97,7 +95,7 @@ const SideMenu = ({ isOpen, onClose }) => {
                 to="/productsAll"
                 onClick={onClose}
               >
-                <ListItemText primary="Podcasts" />
+                <ListItemText className="list-item" primary="Podcasts" />
               </ListItem>
               <ListItem
                 button
@@ -105,7 +103,7 @@ const SideMenu = ({ isOpen, onClose }) => {
                 to="/productsAll"
                 onClick={onClose}
               >
-                <ListItemText primary="Artigos" />
+                <ListItemText className="list-item" primary="Artigos" />
               </ListItem>
               <ListItem
                 button
@@ -113,7 +111,7 @@ const SideMenu = ({ isOpen, onClose }) => {
                 to="/productsAll"
                 onClick={onClose}
               >
-                <ListItemText primary="Carreira" />
+                <ListItemText className="list-item" primary="Carreira" />
               </ListItem>
               <ListItem
                 button
@@ -121,27 +119,21 @@ const SideMenu = ({ isOpen, onClose }) => {
                 to="/productsAll"
                 onClick={onClose}
               >
-                <ListItemText primary="Palestras" />
+                <ListItemText className="list-item" primary="Palestras" />
               </ListItem>
             </>
           )}
           <ListItem button component={NavLink} to="/contact" onClick={onClose}>
-            <span className="icon-list">
-              <Share fontSize="small" className="icons" />
-            </span>
+            <Share fontSize="small" className="icones" />
             <ListItemText className="side-text" primary="Redes" />
           </ListItem>
           <ListItem button component={NavLink} to="/about" onClick={onClose}>
-            <span className="icon-list">
-              <InfoRounded fontSize="small" className="icons" />
-            </span>
+            <InfoRounded fontSize="small" className="icones" />
             <ListItemText className="side-text" primary="Carine Lima" />
           </ListItem>
           {user && (
             <ListItem button component={NavLink} to="/adm" onClick={onClose}>
-              <span className="icon-list">
-                <AdminPanelSettings fontSize="small" className="icons" />
-              </span>
+              <AdminPanelSettings fontSize="small" className="icon-list" />
               <ListItemText
                 className="side-text"
                 primary="Área administrativa"
