@@ -187,6 +187,7 @@
 
   .logo {
     font-weight: 400;
+    margin: 0;
   }
 
   .nav-content {
@@ -218,5 +219,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .logo-h3 {
+    background: rgb(240, 33, 67);
+    color: #eee;
+    padding: 3px;
+    border-radius: 10px 10px 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
   }
 }

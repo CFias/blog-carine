@@ -21,13 +21,20 @@ export default function AdminPostManager() {
   const [imageUrl, setImageUrl] = useState("");
   const [caption, setCaption] = useState("");
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState(""); // Novo estado para o nome do autor
+  const [author, setAuthor] = useState("");
   const [posts, setPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [categories, setCategories] = useState([
+    "publication",
+    "article",
+    "destaque",
+  ]);
   const [category, setCategory] = useState("publication");
   const [filter, setFilter] = useState("");
+  const [isFeatured, setIsFeatured] = useState(false);
+  const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);
 
   useEffect(() => {
     getPosts();
@@ -80,7 +87,8 @@ export default function AdminPostManager() {
           caption,
           category,
           filter,
-          author, // Incluir o nome do autor ao atualizar o documento
+          author,
+          isFeatured,
         });
       } else {
         await addDoc(collection(db, "posts"), {
@@ -89,7 +97,8 @@ export default function AdminPostManager() {
           caption,
           category,
           filter,
-          author, 
+          author,
+          isFeatured,
           publishedAt: serverTimestamp(),
         });
       }
@@ -110,7 +119,8 @@ export default function AdminPostManager() {
     setCaption(post.caption);
     setCategory(post.category);
     setFilter(post.filter);
-    setAuthor(post.author); // Carregar o nome do autor ao editar o post
+    setAuthor(post.author);
+    setIsFeatured(post.isFeatured);
     setIsModalOpen(true);
   };
 
@@ -131,16 +141,21 @@ export default function AdminPostManager() {
     setTitle("");
     setCategory("publication");
     setFilter("");
-    setAuthor(""); // Limpar o estado do nome do autor ao limpar o formulário
+    setAuthor("");
+    setIsFeatured(false);
     setIsModalOpen(false);
   };
 
   const filterPosts = (posts) => {
     return posts.filter((post) => {
       const searchTermLower = searchTerm.toLowerCase();
-      return (
-        post.caption && post.caption.toLowerCase().includes(searchTermLower)
-      );
+      const matchesSearchTerm =
+        post.caption && post.caption.toLowerCase().includes(searchTermLower);
+      const matchesCategory =
+        post.category === category ||
+        (category === "destaque" && post.isFeatured);
+      const matchesFeaturedStatus = !showOnlyFeatured || post.isFeatured;
+      return matchesSearchTerm && matchesCategory && matchesFeaturedStatus;
     });
   };
 
@@ -174,8 +189,17 @@ export default function AdminPostManager() {
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                     >
-                      <option value="publication">Publicação com Imagem</option>
-                      <option value="article">Artigo sem Imagem</option>
+                      {categories.map((cat) => (
+                        <option key={cat} value={cat}>
+                          {cat === "publication"
+                            ? "Publicação com Imagem"
+                            : cat === "article"
+                            ? "Artigo sem Imagem"
+                            : cat === "destaque"
+                            ? "Destaque"
+                            : ""}
+                        </option>
+                      ))}
                     </select>
                   </label>
                   <label htmlFor="post-category" className="form-label">
@@ -219,7 +243,6 @@ export default function AdminPostManager() {
                       onChange={(e) => setCaption(e.target.value)}
                     />
                   </label>
-                  {/* Adicionar campo para capturar o nome do autor */}
                   <label htmlFor="post-author" className="form-label">
                     <h3 className="form-title">Autor</h3>
                     <input
@@ -227,6 +250,14 @@ export default function AdminPostManager() {
                       type="text"
                       value={author}
                       onChange={(e) => setAuthor(e.target.value)}
+                    />
+                  </label>
+                  <label htmlFor="post-featured" className="form-label">
+                    <h3 className="form-title">Destaque</h3>
+                    <input
+                      type="checkbox"
+                      checked={isFeatured}
+                      onChange={(e) => setIsFeatured(e.target.checked)}
                     />
                   </label>
                   <button className="admin-btn" type="submit">
@@ -246,45 +277,59 @@ export default function AdminPostManager() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <label htmlFor="show-featured" className="form-label">
+            <h3 className="form-title">Mostrar apenas destaques</h3>
+            <input
+              type="checkbox"
+              checked={showOnlyFeatured}
+              onChange={(e) => setShowOnlyFeatured(e.target.checked)}
+            />
+          </label>
           <table className="post-table">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Imagem</th>
+                <th>Título</th>
+                <th>Legenda</th>
                 <th>Categoria</th>
-                <th>Data de Publicação</th>
+                <th>Filtro</th>
+                <th>Autor</th>
+                <th>Destaque</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               {filterPosts(posts).map((post) => (
-                <tr className="table-row" key={post.id}>
-                  <td className="table-item">{post.id}</td>
-                  <td className="table-item">
-                    {post.category === "publication" && (
+                <tr key={post.id}>
+                  <td>{post.id}</td>
+                  <td>
+                    {post.image ? (
                       <img
                         src={post.image}
-                        alt={post.caption}
-                        className="post-image"
+                        alt={post.title}
+                        width="100"
+                        height="100"
                       />
+                    ) : (
+                      "N/A"
                     )}
                   </td>
-                  <td className="table-item">{post.category}</td>
-                  <td className="table-item">
-                    {post.publishedAt.toLocaleString()}
-                  </td>
-                  <td className="table-item-btn">
-                    <button
-                      className="table-btn edit-btn"
-                      onClick={() => editPost(post)}
-                    >
-                      <Edit className="table-icon" fontSize="small" />
+                  <td>{post.title}</td>
+                  <td>{post.caption}</td>
+                  <td>{post.category}</td>
+                  <td>{post.filter}</td>
+                  <td>{post.author}</td>
+                  <td>{post.isFeatured ? "Sim" : "Não"}</td>
+                  <td>
+                    <button onClick={() => editPost(post)} className="edit-btn">
+                      <Edit />
                     </button>
                     <button
-                      className="table-btn delete-btn"
                       onClick={() => deletePost(post.id)}
+                      className="delete-btn"
                     >
-                      <Delete className="table-icon" fontSize="small" />
+                      <Delete />
                     </button>
                   </td>
                 </tr>

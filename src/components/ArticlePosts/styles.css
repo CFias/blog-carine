@@ -5,8 +5,10 @@
   align-items: center;
   color: var(--text-color);
   overflow: hidden;
-  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 100vw;
+  z-index: 1000;
 }
 
 .art-card {
@@ -49,10 +51,26 @@
   left: 10px;
   background-color: rgba(73, 72, 72, 0.8);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 12px;
   font-weight: 500;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.art-icon {
+  display: flex;
+  padding: 3px;
+  border-radius: 50%;
+  background: rgb(231, 45, 76);
+  margin: 0;
+}
+
+.icon-art {
+  margin: 0;
 }
 
 .art-author {
@@ -79,6 +97,7 @@
   width: 100%;
   display: flex;
   justify-content: start;
+  gap: 5px;
 }
 
 .art-caption-title {
@@ -122,30 +141,56 @@
     width: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: start;
     border: none;
     width: 95%;
   }
 
   .art-card {
-    width: 100%;
-    margin: 1rem 1%;
+    margin-top: .5rem;
+    margin-bottom: 0;
     flex-direction: row;
-    border-bottom: 1px solid #aaaaaa56;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(14, 14, 14, 0.205);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 98%;
   }
 
   .art-image {
-    width: 100%;
-    max-height: 180px;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    padding: 5px;
   }
 
   .art-desc {
-    width: 50%;
+    width: 60vw;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .art-author {
+    font-size: 10px;
+    width: 100%;
+    color: #726e6e;
+  }
+
+  .art-caption-title {
+    font-size: 12px;
+    color: #111;
+    text-align: start;
+    width: 100%;
+    font-weight: 400;
+    margin: 0;
+    padding: 2px 0;
   }
 
   .art-caption {
@@ -153,9 +198,17 @@
     height: 250px;
     text-align: start;
     font-size: 10px;
+    color: #726e6e;
+    margin: 0;
   }
 
   .post-date-rec {
     font-size: 7px;
+    margin: 0;
+  }
+
+  .art-type {
+    padding: 5px;
+    font-size: 8px;
   }
 }

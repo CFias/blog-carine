@@ -13,6 +13,7 @@ import {
   InfoRounded,
   Inventory,
   LogoutRounded,
+  Person2Rounded,
   Phone,
   Share,
 } from "@mui/icons-material";
@@ -41,8 +42,9 @@ const SideMenu = ({ isOpen, onClose }) => {
           {user ? (
             <>
               <h4>
-                <Avatar />
-
+                <span className="icon-banner">
+                  <Person2Rounded className="icon-side" />
+                </span>{" "}
                 Olá, {user.displayName ? user.displayName : "Usuário"}
               </h4>
               <NavLink onClick={handleLogout} className="link-list">
@@ -57,7 +59,9 @@ const SideMenu = ({ isOpen, onClose }) => {
         </div>
         <List>
           <ListItem button component={NavLink} to="/" onClick={onClose}>
-            <Home fontSize="small" className="icon-list" />
+            <span className="icon-list">
+              <Home fontSize="small" className="icons" />
+            </span>
             <ListItemText className="side-text" primary="Inicio" />
           </ListItem>
           <ListItem
@@ -66,14 +70,18 @@ const SideMenu = ({ isOpen, onClose }) => {
             to="/productsAll"
             onClick={onClose}
           >
-            <Inventory fontSize="small" className="icon-list" />
+            <span className="icon-list">
+              <Inventory fontSize="small" className="icons" />
+            </span>
             <ListItemText
               className="side-text"
               primary="Todas as publicações"
             />
           </ListItem>
           <ListItem button onClick={toggleCategories}>
-            <FormatListBulletedRounded fontSize="small" className="icon-list" />
+            <span className="icon-list">
+              <FormatListBulletedRounded fontSize="small" className="icons" />
+            </span>
             <ListItemText className="side-text" primary="Categorias" />
             {categoriesOpen ? (
               <ExpandLess fontSize="small" />
@@ -118,16 +126,22 @@ const SideMenu = ({ isOpen, onClose }) => {
             </>
           )}
           <ListItem button component={NavLink} to="/contact" onClick={onClose}>
-            <Share fontSize="small" className="icon-list" />
+            <span className="icon-list">
+              <Share fontSize="small" className="icons" />
+            </span>
             <ListItemText className="side-text" primary="Redes" />
           </ListItem>
           <ListItem button component={NavLink} to="/about" onClick={onClose}>
-            <InfoRounded fontSize="small" className="icon-list" />
+            <span className="icon-list">
+              <InfoRounded fontSize="small" className="icons" />
+            </span>
             <ListItemText className="side-text" primary="Carine Lima" />
           </ListItem>
           {user && (
             <ListItem button component={NavLink} to="/adm" onClick={onClose}>
-              <AdminPanelSettings fontSize="small" className="icon-list" />
+              <span className="icon-list">
+                <AdminPanelSettings fontSize="small" className="icons" />
+              </span>
               <ListItemText
                 className="side-text"
                 primary="Área administrativa"

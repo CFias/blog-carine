@@ -3,6 +3,7 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
+import { DateRange, Favorite, FilterListRounded } from "@mui/icons-material";
 
 export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
@@ -59,15 +60,22 @@ export default function ArticlePosts({ category }) {
               {post.image && (
                 <img src={post.image} alt="Publicação" className="art-image" />
               )}
-              <div className="art-type">{post.filter}</div>
+              <div className="art-type">
+                <span className="art-icon">
+                  <FilterListRounded className="icon-art" fontSize="10" />
+                </span>
+                {post.filter}
+              </div>
             </div>
             <div className="art-desc">
               <p className="post-date-rec">
+                Publicado <span>•</span>
                 {post.publishedAt.toLocaleString()}
+                <DateRange fontSize="10" />
               </p>
               <p className="art-caption-title">{post.title}</p>
               <p className="art-caption">{post.caption}</p>
-              <p className="art-author">Por: {post.author}</p>
+              <p className="art-author">{post.author}</p>
             </div>
           </NavLink>
         ))}

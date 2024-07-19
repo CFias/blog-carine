@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #fff;
+  background: #eee;
 }
 
 
@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: center;
   margin: 0;
+  background: #eee;
 }
 
 .article-h4 {
@@ -38,6 +39,11 @@
   font-size: 16px;
   font-weight: 500;
   width: 70%;
+}
+
+.home-filter {
+  display: flex;
+  width: 90%;
 }
 
 @media screen and (max-width: 768px) {

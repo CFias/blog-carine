@@ -15,27 +15,42 @@
 }
 
 .side-infos h4 {
-  color: #eee;
+  color: #5c5c5c;
   display: flex; 
   align-items: center;
   gap: 1rem;
-  background: var(--logo-color);
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 5px;
 }
 
 .link-list {
-  color: #000;
+  color: #eee;
+  background: rgb(240, 46, 78);
+  padding: 1rem;
+  border-radius: 15px;
   list-style: none;
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .icon-list {
   text-decoration: none;
   font-size: 10px;
+  background: rgb(240, 46, 78);
+  display: flex;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.icons {
+  color: #eee;
+}
+
+.icon-side {
+  color: #eee;
 }
 
 .side-text {

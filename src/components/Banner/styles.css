@@ -19,7 +19,6 @@
   align-items: center;
   background-position: center;
   background-size: cover;
-  border-radius: 5px;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.733);
 }
 
@@ -36,31 +35,51 @@
 }
 
 .filter-banner {
-  background: #3d3c3d7a;
   color: rgb(243, 243, 243);
   margin: 0;
-  padding: 5px 10px;
   border-radius: 5px;
   font-size: 12px;
-  width: 80px;
   text-align: center;
 }
 
 .txt-banner {
   font-size: 20px;
   margin: 10px 0;
-  text-decoration: underline;
 }
 
 .banner-p {
   font-size: 14px;
   font-weight: 300;
-  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-banner {
+  background: rgb(221, 29, 61);
+  display: flex;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.dest-banner {
+  padding-bottom: 1rem;
+}
+
+.banner-cap {
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .banner-date {
- margin-top: 1rem;
- font-size: 10px;
+  margin-top: 1rem;
+  font-size: 10px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -68,24 +87,39 @@
     height: 40vh;
   }
 
+  .banner-item {
+    width: 95%;
+    border-radius: 15px;
+  }
+
   .banner-overlay {
-    max-width: 100%;
+    width: 90%;
+    bottom: 0px;
+    left: 2px;
+    padding: 10px;
   }
 
   .txt-banner {
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: 300;
   }
 
   .banner-p {
+    font-size: 12px;
+  }
+
+  .banner-cap {
     font-size: 8px;
+    font-weight: 300;
   }
 
   .banner-date {
     font-size: 8px;
-   }
+  }
 
-   .filter-banner {
+  .filter-banner {
     font-size: 10px;
     margin: 0;
-   }
+    
+  }
 }

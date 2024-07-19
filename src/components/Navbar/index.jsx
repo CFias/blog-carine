@@ -83,6 +83,7 @@ export default function Navbar() {
         <div className="nav-mob-content">
           <div className="nav-mob-icon" onClick={toggleMenu}>
             <Menu className="mob-icon" fontSize="medium" />
+            <h3 className="logo-h3">CaLima</h3>
             {user ? (
               <h4 className="logo">Olá, {user.displayName}</h4>
             ) : (
