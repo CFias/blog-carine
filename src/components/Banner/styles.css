@@ -85,6 +85,7 @@
 @media screen and (max-width: 768px) {
   .banner-container {
     height: 40vh;
+    margin-top: 1rem;
   }
 
   .banner-item {
@@ -120,6 +121,6 @@
   .filter-banner {
     font-size: 10px;
     margin: 0;
-    
+
   }
 }

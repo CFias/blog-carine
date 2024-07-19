@@ -62,7 +62,6 @@
 
 .form-card-container {
   display: flex;
-  height: 80vh;
   border-radius: 25px;
   background: var(--cards-color);
   box-shadow: var(--box-shadow-cards);
@@ -148,16 +147,19 @@
 .form-btn {
   border: none;
   padding: 15px;
-  width: 11vw;
+  width: 100%;
   border-radius: 15px;
   font-family: var(--main-font);
   font-size: 15px;
   cursor: pointer;
   transition: 350ms;
+  background: var(--logo-color);
+  color: #eee;
 }
 
 .form-btn:hover {
   background: var(--logo-color);
+  color: #eee;
 }
 
 .form-route {
@@ -179,6 +181,7 @@
   border: var(--border-color);
   padding: 5px;
   border-radius: 5px;
+  width: 250px;
 }
 
 .form-icons {
@@ -191,7 +194,7 @@
     flex-direction: column;
     align-items: center;
     width: 90vw;
-    height: 65vh;
+    height: 75vh;
     background: var(--bg-form);
   }
 

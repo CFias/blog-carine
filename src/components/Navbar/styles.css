@@ -153,7 +153,6 @@
   .nav-mob {
     display: flex;
     flex-direction: column;
-    width: 100vw;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
@@ -163,6 +162,7 @@
   .nav-mob-content {
     display: flex;
     width: 90%;
+    height: 10vh;
     align-items: center;
     justify-content: space-between;
     color: var(--font-color-two);
