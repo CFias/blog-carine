@@ -280,15 +280,16 @@
 
   .modal-content-art {
     width: 65vw;
+    height: 20vh;
     padding: 10px;
     gap: 10px;
   }
 
   .desc-modal-1 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .desc-modal-2 {
-    font-size: 12px;
+    font-size: 8px;
   }
 }

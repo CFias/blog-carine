@@ -71,8 +71,8 @@ export default function ArticlePosts({ category }) {
     <section className="article-container">
       <div className="article-content">
         {posts.map((post) => (
-          <div className="art-card" key={post.id}>
-            <div className="art-wrapper" onClick={() => handleOpenModal(post)}>
+          <div className="art-card" key={post.id} onClick={() => handleOpenModal(post)}>
+            <div className="art-wrapper" >
               {post.image && (
                 <img src={post.image} alt="Publicação" className="art-image" />
               )}
