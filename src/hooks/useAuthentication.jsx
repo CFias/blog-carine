@@ -1,4 +1,4 @@
-import { db } from "../services/FirebaseConfig";
+// useAuthentication.js
 import { useEffect, useState } from "react";
 import {
   getAuth,
@@ -10,21 +10,18 @@ import {
 
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
-
+  const [loading, setLoading] = useState(false);
   const [cancelled, setCancelled] = useState(false);
-
   const auth = getAuth();
 
-  function checkIfsCancelled() {
+  function checkIfCancelled() {
     if (cancelled) {
       return;
     }
   }
 
   const createUser = async (data) => {
-    checkIfsCancelled();
-
+    checkIfCancelled();
     setLoading(true);
     setError(null);
 
@@ -42,25 +39,23 @@ export const useAuthentication = () => {
       setLoading(false);
       return user;
     } catch (error) {
-      let systemErrorMessage;
+      let errorMessage;
 
       if (error.message.includes("Password")) {
-        systemErrorMessage = "A senha precisa de pelo menos 6 caracteres.";
+        errorMessage = "A senha precisa ter pelo menos 6 caracteres.";
       } else if (error.message.includes("email-already")) {
-        systemErrorMessage = "Email já cadastrado.";
+        errorMessage = "Email já cadastrado.";
       } else {
-        systemErrorMessage = "Falha no cadastro. Tente novamente mais tarde.";
+        errorMessage = "Falha no cadastro. Tente novamente mais tarde.";
       }
 
       setLoading(false);
-      setError(systemErrorMessage);
+      setError(errorMessage);
     }
   };
 
-  // login - sign in
   const login = async (data) => {
-    checkIfsCancelled();
-
+    checkIfCancelled();
     setLoading(true);
     setError(false);
 
@@ -68,24 +63,23 @@ export const useAuthentication = () => {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       setLoading(false);
     } catch (error) {
-      let systemErrorMessage;
+      let errorMessage;
 
       if (error.message.includes("user-not-found")) {
-        systemErrorMessage = "Usuário não existe.";
+        errorMessage = "Usuário não encontrado.";
       } else if (error.message.includes("wrong-password")) {
-        systemErrorMessage = "A senha está incorreta";
+        errorMessage = "Senha incorreta.";
       } else {
-        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde.";
+        errorMessage = "Ocorreu um erro. Tente novamente mais tarde.";
       }
 
-      setError(systemErrorMessage);
+      setError(errorMessage);
       setLoading(false);
     }
   };
 
   const logout = () => {
-    checkIfsCancelled();
-
+    checkIfCancelled();
     signOut(auth);
   };
 

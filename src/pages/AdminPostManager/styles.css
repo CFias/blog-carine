@@ -71,6 +71,11 @@
     margin-bottom: 10px;
 }
 
+.form-label-desc {
+    display: flex;
+    gap: 5px;
+}
+
 .form-title {
     margin-bottom: 5px;
     color: #111;

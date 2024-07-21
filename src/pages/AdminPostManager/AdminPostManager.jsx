@@ -209,7 +209,7 @@ export default function AdminPostManager() {
                       value={filter}
                       onChange={(e) => setFilter(e.target.value)}
                     >
-                      <option selected disabled value="nenhum">
+                      <option disabled value="nenhum">
                         Selecione
                       </option>
                       <option value="Podcast">Podcast</option>
@@ -219,12 +219,14 @@ export default function AdminPostManager() {
                       <option value="Certificado">Certificado</option>
                     </select>
                   </label>
-                  {category === "publication" && (
-                    <label htmlFor="post-image" className="form-label">
-                      <h3 className="form-title">Selecionar imagem</h3>
-                      <input type="file" onChange={handleImageChange} />
-                    </label>
-                  )}
+                  <label htmlFor="post-caption" className="form-label">
+                    {category === "publication" && (
+                      <label htmlFor="post-image" className="form-label">
+                        <h3 className="form-title">Selecionar imagem</h3>
+                        <input type="file" onChange={handleImageChange} />
+                      </label>
+                    )}
+                  </label>
                   <label htmlFor="post-caption" className="form-label">
                     <h3 className="form-title">Título do post</h3>
                     <textarea
@@ -252,7 +254,7 @@ export default function AdminPostManager() {
                       onChange={(e) => setAuthor(e.target.value)}
                     />
                   </label>
-                  <label htmlFor="post-featured" className="form-label">
+                  <label htmlFor="post-featured" className="form-label-desc">
                     <h3 className="form-title">Destaque</h3>
                     <input
                       type="checkbox"
@@ -260,9 +262,11 @@ export default function AdminPostManager() {
                       onChange={(e) => setIsFeatured(e.target.checked)}
                     />
                   </label>
-                  <button className="admin-btn" type="submit">
-                    Criar/Atualizar Post
-                  </button>
+                  <label htmlFor="post-featured" className="form-label">
+                    <button className="admin-btn" type="submit">
+                      Criar/Atualizar Post
+                    </button>
+                  </label>
                 </form>
               </div>
             </div>

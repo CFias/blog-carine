@@ -4,11 +4,10 @@
   justify-content: center;
   width: 100%;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  position: absolute;
   top: 0;
   z-index: 1000;
+  background: #eee;
 }
 
 .nav-container {
@@ -20,13 +19,20 @@
   margin: 0;
 }
 
+.nav-content h4 {
+  background: #ddd; 
+  padding: 5px;
+  border-radius: 5px;
+  color: #444343;
+}
+
 .logo-name {
   font-family: var(--logo-font);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 24px;
   transition: 250ms;
   text-decoration: none;
-  color: #eee;
+  color: #444343;
   cursor: pointer;
   margin: 0;
 }
@@ -52,27 +58,27 @@
 .nav-item {
   text-decoration: none;
   user-select: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   padding: 3px;
-  color: #eee;
+  color: #444343;
   transition: 250ms;
   font-family: "Montserrat", sans-serif;
   margin: 0;
 }
 
-.nav-item-adm, .nav-content h4 {
-  background: #ddd;
+.nav-item-adm {
+  background: rgb(224, 33, 65);
   text-decoration: none;
   padding: 5px 1rem;
   border-radius: 5px;
   font-weight: 500;
-  color: #444343;
+  color: #eee;
   transition: 250ms;
 }
 
 .nav-item-adm:hover {
-  background: #eee;
+  background: rgb(238, 38, 71);
 }
 
 .nav-item:hover {

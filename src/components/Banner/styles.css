@@ -1,7 +1,7 @@
 .banner-container {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,8 @@
 
 .banner-item {
   position: relative;
-  width: 100%;
+  width: 95%;
+  border-radius: 15px;
   height: 100%;
   display: flex;
   justify-content: center;

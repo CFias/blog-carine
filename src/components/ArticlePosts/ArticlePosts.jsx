@@ -3,7 +3,14 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
-import { DateRange, Favorite, FilterListRounded } from "@mui/icons-material";
+import {
+  DateRange,
+  Favorite,
+  FilterListRounded,
+  Person,
+  Person2Rounded,
+} from "@mui/icons-material";
+import { Avatar } from "@mui/material";
 
 export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
@@ -75,7 +82,12 @@ export default function ArticlePosts({ category }) {
               </p>
               <p className="art-caption-title">{post.title}</p>
               <p className="art-caption">{post.caption}</p>
-              <p className="art-author">{post.author}</p>
+              <div className="infos-user-cap">
+                <span className="icon-banner">
+                  <Person2Rounded fontSize="10" className="icon-side" />
+                </span>{" "}
+                <p className="art-author">{post.author}</p>
+              </div>
             </div>
           </NavLink>
         ))}
