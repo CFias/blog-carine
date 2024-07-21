@@ -5,15 +5,15 @@ import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
 import {
   DateRange,
-  Favorite,
   FilterListRounded,
-  Person,
   Person2Rounded,
 } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
+import { Avatar, Modal, Backdrop, Fade, Button } from "@mui/material";
 
 export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     fetchPosts();
@@ -28,7 +28,7 @@ export default function ArticlePosts({ category }) {
         const categoryQuery = where("category", "==", category);
         postsQuery = query(postsCollection, categoryQuery);
       } else {
-        postsQuery = postsCollection; // Fallback to fetch all posts if no category specified
+        postsQuery = postsCollection;
       }
 
       const snapshot = await getDocs(postsQuery);
@@ -58,40 +58,90 @@ export default function ArticlePosts({ category }) {
     }
   };
 
+  const handleOpenModal = (post) => {
+    setSelectedPost(post);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   return (
     <section className="article-container">
       <div className="article-content">
         {posts.map((post) => (
-          <NavLink to="/" className="art-card" key={post.id}>
-            <div className="art-wrapper">
+          <div className="art-card" key={post.id}>
+            <div className="art-wrapper" onClick={() => handleOpenModal(post)}>
               {post.image && (
                 <img src={post.image} alt="Publicação" className="art-image" />
               )}
               <div className="art-type">
                 <span className="art-icon">
-                  <FilterListRounded className="icon-art" fontSize="10" />
+                  <FilterListRounded className="icon-art" fontSize="small" />
                 </span>
                 {post.filter}
               </div>
             </div>
             <div className="art-desc">
               <p className="post-date-rec">
-                Publicado <span>•</span>
-                {post.publishedAt.toLocaleString()}
+                Publicado <span>•</span> {post.publishedAt.toLocaleString()}
                 <DateRange fontSize="10" />
               </p>
               <p className="art-caption-title">{post.title}</p>
               <p className="art-caption">{post.caption}</p>
               <div className="infos-user-cap">
                 <span className="icon-banner">
-                  <Person2Rounded fontSize="10" className="icon-side" />
+                  <Person2Rounded fontSize="small" className="icon-side" />
                 </span>{" "}
                 <p className="art-author">{post.author}</p>
               </div>
             </div>
-          </NavLink>
+          </div>
         ))}
       </div>
+      <Modal
+        className="modal-card-container"
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade className="modal-card-content" in={openModal}>
+          <div className="modal-paper">
+            {selectedPost && (
+              <>
+                <img
+                  src={selectedPost.image}
+                  alt="Publicação"
+                  className="modal-image"
+                />
+                <div className="modal-content-art">
+                  <div className="desc-modal-1">
+                    <h2 className="title-modal" id="modal-title">
+                      {selectedPost.title}
+                    </h2>
+                    <p className="caption-modal" id="modal-description">
+                      {selectedPost.caption}
+                    </p>
+                  </div>
+                  <div className="desc-modal-2">
+                    <p>{selectedPost.author}</p>
+                    <p>
+                      Publicado em: {selectedPost.publishedAt.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </Fade>
+      </Modal>
     </section>
   );
 }

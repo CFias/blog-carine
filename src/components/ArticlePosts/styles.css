@@ -38,7 +38,7 @@
 }
 
 .art-image {
-  width: 22vw;
+  width: 23vw;
   height: 40vh;
   transition: 350ms;
   object-fit: cover;
@@ -85,7 +85,7 @@
   justify-content: start;
   align-items: start;
   padding: 1rem;
-  width: 22vw;
+  width: 23vw;
   height: 25vh;
   flex-direction: column;
 }
@@ -131,8 +131,58 @@
 .infos-user-cap {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 5px;
+  width: 100%;
+}
+
+.modal-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-card-content {
+  background: #eee;
+  z-index: 1000;
+  display: flex;
+  border-radius: 15px;
+}
+
+.modal-image {
+  width: 30vw;
+  height: 60vh;
+  object-fit: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+.modal-content-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 5px;
+  width: 30vw;
+  background: #fff;
+}
+
+.desc-modal-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-modal-2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.title-modal {
+  color: #4d4d4d;
+}
+
+.caption-modal {
+  color: #726e6e;
 }
 
 @media screen and (max-width: 768px) {
@@ -175,7 +225,7 @@
   }
 
   .art-desc {
-    width: 80%;
+    width: 70%;
     height: 140px;
     display: flex;
     justify-content: center;
@@ -217,5 +267,28 @@
   .art-type {
     padding: 5px;
     font-size: 8px;
+  }
+
+  .modal-card-content {
+    flex-direction: column;
+  }
+
+  .modal-image {
+    width: 65vw;
+    height: 40vh;
+  }
+
+  .modal-content-art {
+    width: 65vw;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .desc-modal-1 {
+    font-size: 14px;
+  }
+
+  .desc-modal-2 {
+    font-size: 12px;
   }
 }

@@ -59,7 +59,7 @@
   text-decoration: none;
   user-select: none;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 3px;
   color: #444343;
   transition: 250ms;
@@ -126,22 +126,31 @@
 .btn-auth-login {
   text-decoration: none;
   color: var(--text-color);
+  background: #ddd;
+  padding: 7px;
   font-size: 16px;
   transition: 250ms;
+  border-radius: 10px;
 }
 
 .btn-auth-register {
   text-decoration: none;
-  color: var(--text-color);
+  color: #DDD;
+  background: #444343;
+  padding: 7px;
   font-size: 16px;
+  border-radius: 10px;
   transition: 250ms;
 }
 
 .btn-auth-login:hover,
-.btn-auth-register:hover,
 .nav-logout-name:hover,
 .nav-logout:hover {
-  color: var(--logo-color);
+  background: #ccc;
+}
+
+.btn-auth-register:hover {
+  background: #5d5d5d;
 }
 
 .logo-name-mob,
