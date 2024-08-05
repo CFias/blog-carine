@@ -1,6 +1,5 @@
 import { collection, getDocs, where, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { db } from "../../services/FirebaseConfig";
 import "./styles.css";
 
@@ -52,7 +51,9 @@ export const Article = ({ category }) => {
       {artPost.map((articlePost) => (
         <div to="/" className="card-article" key={articlePost.id}>
           <div className="article-desc">
+            <p className="article-caption">{articlePost.title}</p>
             <p className="article-caption">{articlePost.caption}</p>
+            <p className="article-caption">{articlePost.author}</p>
             <p className="post-date-rec-art">
               {articlePost.publishedAt.toLocaleString()}
             </p>

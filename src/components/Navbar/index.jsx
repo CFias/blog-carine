@@ -23,7 +23,7 @@ export default function Navbar() {
           </NavLink>
           <ul className="nav-content">
             <li>
-              <NavLink to="/articles" className="nav-item">
+              <NavLink to="#article" className="nav-item">
                 Artigos
               </NavLink>
             </li>

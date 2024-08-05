@@ -3,10 +3,11 @@ import "./styles.css";
 import ArticlePosts from "../../components/ArticlePosts/ArticlePosts";
 import Banner from "../../components/Banner/index";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer";
 import { FilterListRounded } from "@mui/icons-material";
 import { db } from "../../services/FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import { Article } from "../../components/Article/Article";
 
 export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState([]);
@@ -43,9 +44,16 @@ export default function Home() {
         <section className="articles-home">
           <div className="home-filter">
             <h6 className="article-h4">Blog</h6>
-            <FilterListRounded />
+            <FilterListRounded fontSize="small" />
           </div>
           <ArticlePosts category="publication" />
+        </section>
+        <section className="articles-home" id="article">
+          <div className="home-filter">
+            <h6 className="article-h4">Artigos</h6>
+            <FilterListRounded fontSize="small" />
+          </div>
+          <Article />
         </section>
       </section>
       <Footer />

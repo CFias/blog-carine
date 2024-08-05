@@ -71,30 +71,36 @@ export default function ArticlePosts({ category }) {
     <section className="article-container">
       <div className="article-content">
         {posts.map((post) => (
-          <div className="art-card" key={post.id} onClick={() => handleOpenModal(post)}>
-            <div className="art-wrapper" >
+          <div
+            className="art-card"
+            key={post.id}
+            onClick={() => handleOpenModal(post)}
+          >
+            <div className="art-wrapper">
               {post.image && (
                 <img src={post.image} alt="Publicação" className="art-image" />
               )}
               <div className="art-type">
                 <span className="art-icon">
-                  <FilterListRounded className="icon-art" fontSize="small" />
+                  <FilterListRounded className="icon-art" fontSize="10" />
                 </span>
                 {post.filter}
               </div>
             </div>
             <div className="art-desc">
-              <p className="post-date-rec">
-                Publicado <span>•</span> {post.publishedAt.toLocaleString()}
-                <DateRange fontSize="10" />
-              </p>
               <p className="art-caption-title">{post.title}</p>
               <p className="art-caption">{post.caption}</p>
               <div className="infos-user-cap">
-                <span className="icon-banner">
-                  <Person2Rounded fontSize="small" className="icon-side" />
-                </span>{" "}
-                <p className="art-author">{post.author}</p>
+                <div className="author-photo">
+                  <span className="icon-banner">
+                    <Person2Rounded fontSize="small" className="icon-side" />
+                  </span>{" "}
+                  <p className="art-author">{post.author}</p>
+                </div>
+                <p className="post-date-rec">
+                  Publicado <span>•</span> {post.publishedAt.toLocaleString()}
+                  <DateRange fontSize="10" />
+                </p>
               </div>
             </div>
           </div>
@@ -132,7 +138,7 @@ export default function ArticlePosts({ category }) {
                   </div>
                   <div className="desc-modal-2">
                     <p>{selectedPost.author}</p>
-                    <p>
+                    <p className="modal-date">
                       Publicado em: {selectedPost.publishedAt.toLocaleString()}
                     </p>
                   </div>

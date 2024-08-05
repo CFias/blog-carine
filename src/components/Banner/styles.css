@@ -1,7 +1,8 @@
 .banner-container {
   position: relative;
   width: 100vw;
-  height: 90vh;
+  background-position: center;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +86,7 @@
 
 @media screen and (max-width: 768px) {
   .banner-container {
-    height: 40vh;
+    height: 30vh;
     margin-top: 1rem;
   }
 
@@ -102,7 +103,7 @@
   }
 
   .txt-banner {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
   }
 
