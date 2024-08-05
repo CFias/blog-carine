@@ -45,8 +45,12 @@
 }
 
 .txt-banner {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.cap-banner {
+  font-size: 14px;
 }
 
 .banner-p {
@@ -105,6 +109,10 @@
   .txt-banner {
     font-size: 12px;
     font-weight: 300;
+  }
+
+  .cap-banner {
+    display: none;
   }
 
   .banner-p {
