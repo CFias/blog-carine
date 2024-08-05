@@ -39,10 +39,10 @@
 
 .art-image {
   width: 23vw;
-  height: 40vh;
+  height: 30vh;
   transition: 350ms;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 0;
 }
 
@@ -75,18 +75,21 @@
 }
 
 .art-author {
-  color: #111;
+  color: #726e6e;
+  font-weight: 800;
   font-size: 14px;
-  font-weight: 600;
+}
+
+.load-more-btn {
+  background: #000;
 }
 
 .art-desc {
   display: flex;
   justify-content: start;
   align-items: start;
-  padding: 1rem;
   width: 23vw;
-  height: 25vh;
+  height: 15vh;
   flex-direction: column;
 }
 
@@ -130,14 +133,22 @@
 .infos-user-cap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 95%;
+  width: 100%;
+  gap: 5px;
+  justify-content: start;
 }
 
 .author-photo {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.post-date-rec {
+  display: flex;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .modal-card-container {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
-import { NavLink } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
 import {
@@ -8,10 +7,13 @@ import {
   FilterListRounded,
   Person2Rounded,
 } from "@mui/icons-material";
-import { Avatar, Modal, Backdrop, Fade, Button } from "@mui/material";
+import { Modal, Backdrop, Fade, Button } from "@mui/material";
+import { format } from "date-fns"; 
 
 export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
+  const [visiblePosts, setVisiblePosts] = useState(8); 
   const [selectedPost, setSelectedPost] = useState(null);
   const [openModal, setOpenModal] = useState(false);
 
@@ -51,8 +53,8 @@ export default function ArticlePosts({ category }) {
         (a, b) => b.publishedAt - a.publishedAt
       );
 
-      const limitedPosts = sortedPosts.slice(0, 12);
-      setPosts(limitedPosts);
+      setAllPosts(sortedPosts); 
+      setPosts(sortedPosts.slice(0, visiblePosts)); 
     } catch (error) {
       console.error("Erro ao buscar posts: ", error);
     }
@@ -65,6 +67,14 @@ export default function ArticlePosts({ category }) {
 
   const handleCloseModal = () => {
     setOpenModal(false);
+  };
+
+  const loadMorePosts = () => {
+    setVisiblePosts((prevVisiblePosts) => {
+      const newVisiblePosts = prevVisiblePosts + 8;
+      setPosts(allPosts.slice(0, newVisiblePosts));
+      return newVisiblePosts;
+    });
   };
 
   return (
@@ -98,7 +108,7 @@ export default function ArticlePosts({ category }) {
                   <p className="art-author">{post.author}</p>
                 </div>
                 <p className="post-date-rec">
-                  Publicado <span>•</span> {post.publishedAt.toLocaleString()}
+                  <span>•</span> {format(post.publishedAt, "MMM yyyy")}{" "}
                   <DateRange fontSize="10" />
                 </p>
               </div>
@@ -106,6 +116,11 @@ export default function ArticlePosts({ category }) {
           </div>
         ))}
       </div>
+      {visiblePosts < allPosts.length && (
+        <Button onClick={loadMorePosts} className="load-more-btn">
+          Ver mais
+        </Button>
+      )}
       <Modal
         className="modal-card-container"
         open={openModal}
@@ -139,7 +154,8 @@ export default function ArticlePosts({ category }) {
                   <div className="desc-modal-2">
                     <p>{selectedPost.author}</p>
                     <p className="modal-date">
-                      Publicado em: {selectedPost.publishedAt.toLocaleString()}
+                      Publicado em:{" "}
+                      {format(selectedPost.publishedAt, "MMM yyyy")}{" "}
                     </p>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   background-position: center;
-  height: 70vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
 .banner-item {
   position: relative;
   width: 95%;
-  border-radius: 15px;
+  border-radius: 10px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@
   text-align: left;
   color: white;
   padding: 20px;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -45,12 +45,15 @@
 }
 
 .txt-banner {
-  font-size: 18px;
+  font-size: 78px;
   margin-top: 10px;
+  color: #e6e5e5de;
 }
 
 .cap-banner {
-  font-size: 14px;
+  font-size: 24px;
+  width: 40%;
+  color: #c9c9c9ec;
 }
 
 .banner-p {
@@ -70,6 +73,8 @@
 
 .dest-banner {
   padding-bottom: 1rem;
+  font-size: 24px;
+  color: #eee;
 }
 
 .banner-cap {

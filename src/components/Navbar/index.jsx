@@ -16,9 +16,6 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="nav-slogan">
-        <h2>Mulheres em movimento</h2>
-      </div>
       <header className="header-container">
         <nav className="nav-container">
           <NavLink to="/" className="logo-name">

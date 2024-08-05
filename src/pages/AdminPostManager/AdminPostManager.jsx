@@ -13,6 +13,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
+import { format } from "date-fns"; // Importa a função format
 import "./styles.css";
 import { Delete, Edit } from "@mui/icons-material";
 
@@ -151,10 +152,9 @@ export default function AdminPostManager() {
       const searchTermLower = searchTerm.toLowerCase();
       const matchesSearchTerm =
         post.caption && post.caption.toLowerCase().includes(searchTermLower);
-      const matchesCategory =
-        post.category === category ||
-        (category === "destaque" && post.isFeatured);
+      const matchesCategory = category === "all" || category === post.category;
       const matchesFeaturedStatus = !showOnlyFeatured || post.isFeatured;
+
       return matchesSearchTerm && matchesCategory && matchesFeaturedStatus;
     });
   };
@@ -189,6 +189,7 @@ export default function AdminPostManager() {
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                     >
+                      <option value="all">Todos</option>
                       {categories.map((cat) => (
                         <option key={cat} value={cat}>
                           {cat === "publication"
@@ -202,14 +203,14 @@ export default function AdminPostManager() {
                       ))}
                     </select>
                   </label>
-                  <label htmlFor="post-category" className="form-label">
+                  <label htmlFor="post-filter" className="form-label">
                     <h3 className="form-title">Filtrar post</h3>
                     <select
                       className="form-input"
                       value={filter}
                       onChange={(e) => setFilter(e.target.value)}
                     >
-                      <option disabled value="nenhum">
+                      <option disabled value="">
                         Selecione
                       </option>
                       <option value="Podcast">Podcast</option>
@@ -219,19 +220,16 @@ export default function AdminPostManager() {
                       <option value="Certificado">Certificado</option>
                     </select>
                   </label>
-                  <label htmlFor="post-caption" className="form-label">
-                    {category === "publication" && (
-                      <label htmlFor="post-image" className="form-label">
-                        <h3 className="form-title">Selecionar imagem</h3>
-                        <input type="file" onChange={handleImageChange} />
-                      </label>
-                    )}
-                  </label>
-                  <label htmlFor="post-caption" className="form-label">
+                  {category === "publication" && (
+                    <label htmlFor="post-image" className="form-label">
+                      <h3 className="form-title">Selecionar imagem</h3>
+                      <input type="file" onChange={handleImageChange} />
+                    </label>
+                  )}
+                  <label htmlFor="post-title" className="form-label">
                     <h3 className="form-title">Título do post</h3>
                     <textarea
                       className="form-input"
-                      type="text"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
                     />
@@ -240,7 +238,6 @@ export default function AdminPostManager() {
                     <h3 className="form-title">Legenda do post</h3>
                     <textarea
                       className="form-input"
-                      type="text"
                       value={caption}
                       onChange={(e) => setCaption(e.target.value)}
                     />
@@ -262,7 +259,7 @@ export default function AdminPostManager() {
                       onChange={(e) => setIsFeatured(e.target.checked)}
                     />
                   </label>
-                  <label htmlFor="post-featured" className="form-label">
+                  <label htmlFor="post-submit" className="form-label">
                     <button className="admin-btn" type="submit">
                       Criar/Atualizar Post
                     </button>
@@ -300,6 +297,7 @@ export default function AdminPostManager() {
                 <th>Filtro</th>
                 <th>Autor</th>
                 <th>Destaque</th>
+                <th>Data</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -325,6 +323,7 @@ export default function AdminPostManager() {
                   <td>{post.filter}</td>
                   <td>{post.author}</td>
                   <td>{post.isFeatured ? "Sim" : "Não"}</td>
+                  <td>{format(post.publishedAt, "MMM yyyy")}</td>
                   <td>
                     <button onClick={() => editPost(post)} className="edit-btn">
                       <Edit />

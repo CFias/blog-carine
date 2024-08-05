@@ -28,7 +28,6 @@
 }
 
 .article-h4 {
-  width: 98%;
   font-weight: 600;
   font-size: 28px;
   color: #444;
@@ -44,7 +43,7 @@
 
 .home-filter {
   display: flex;
-  width: 90%;
+  width: 95%;
   justify-content: space-between;
 }
 
