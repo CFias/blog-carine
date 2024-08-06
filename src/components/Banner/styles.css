@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   background-position: center;
-  height: 110vh;
+  height: 115vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: start;
+  background-position: center;
   background-size:  cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.808);
 }
