@@ -40,6 +40,7 @@ export default function Banner({ featuredPosts }) {
             </p>
           </div>
           <h2 className="txt-banner">{currentPost.title}</h2>
+          <p className="cap-banner">{currentPost.caption}</p>
         </div>
       </div>
     </section>
