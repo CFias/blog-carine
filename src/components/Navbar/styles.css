@@ -185,6 +185,10 @@
     align-items: center;
     overflow: hidden;
     top: 0;
+    margin-bottom: 1rem;
+    background: #fff;
+    position: sticky;
+    z-index: 1100;
   }
 
   .nav-mob-content {

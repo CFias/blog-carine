@@ -215,22 +215,18 @@
   }
 
   .article-content {
-    height: auto;
-    width: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    border: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Sempre 4 colunas */
+    gap: 1rem; /* Espaço entre os cartões */
     width: 95%;
   }
 
   .art-card {
     margin-top: .5rem;
     margin-bottom: 0;
-    flex-direction: row;
     background: #eee;
     border-radius: 15px;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0;
@@ -255,7 +251,7 @@
   }
 
   .art-author {
-    font-size: 10px;
+    font-size: 8px;
     width: 100%;
     color: #726e6e;
   }

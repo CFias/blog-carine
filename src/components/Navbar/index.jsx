@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useAuthValue } from "./../../contexts/AuthContext";
 import SideMenu from "../SideMenu/SideMenu";
 import { Menu } from "@mui/icons-material";
-import logo from "../../assets/image/logo.png"
+import logo from "../../assets/image/logo.png";
 
 export default function Navbar() {
   const { user } = useAuthValue();
@@ -86,7 +86,8 @@ export default function Navbar() {
         <div className="nav-mob-content">
           <div className="nav-mob-icon" onClick={toggleMenu}>
             <Menu className="mob-icon" fontSize="medium" />
-            <h3 className="logo-h3">CaLima</h3>
+            <img className="logo-nav" src={logo} alt="Carine Lima" />
+
             {user ? (
               <h4 className="logo">Olá, {user.displayName}</h4>
             ) : (
