@@ -57,6 +57,8 @@
     border-radius: 5px;
     width: 90%;
     max-width: 500px;
+    position: relative;
+    /* Ajuste para o botão de fechar */
 }
 
 .close {
@@ -122,6 +124,10 @@
 .post-table {
     width: 100%;
     border-collapse: collapse;
+    overflow-x: auto;
+    /* Adiciona rolagem horizontal se necessário */
+    display: block;
+    /* Permite rolagem horizontal */
 }
 
 .post-table th,
@@ -201,5 +207,27 @@
 
     .table-item-desc {
         max-width: 200px;
+    }
+
+    .post-table {
+        display: block;
+        /* Permite rolagem horizontal */
+        overflow-x: auto;
+        /* Adiciona rolagem horizontal se necessário */
+    }
+
+    .post-table th,
+    .post-table td {
+        display: block;
+        text-align: right;
+        /* Ajusta a visualização dos cabeçalhos e células em telas pequenas */
+    }
+
+    .post-table th::before {
+        content: attr(data-label);
+        /* Exibe o rótulo dos cabeçalhos nas células */
+        font-weight: bold;
+        display: block;
+        text-align: left;
     }
 }
