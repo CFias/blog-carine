@@ -20,25 +20,26 @@
 }
 
 .nav-content h4 {
-  background: #ddd; 
+  background: #ddd;
   padding: 5px;
   border-radius: 5px;
   color: #444343;
 }
 
 .logo-name {
-  font-family: var(--logo-font);
-  font-weight: 400;
-  font-size: 24px;
   transition: 250ms;
-  text-decoration: none;
-  color: #444343;
   cursor: pointer;
   margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: start;
 }
 
 .logo-nav {
   width: 150px;
+  display: flex;
+  justify-content: start;
   margin: 0;
 }
 
@@ -159,7 +160,7 @@
 }
 
 .logo-name-mob,
-.logo-name-log, 
+.logo-name-log,
 .nav-mob {
   display: none;
 }
@@ -174,7 +175,7 @@
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .header-container {
-  display: none;
+    display: none;
   }
 
   .nav-mob {
