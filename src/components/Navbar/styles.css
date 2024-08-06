@@ -37,6 +37,11 @@
   margin: 0;
 }
 
+.logo-nav {
+  width: 150px;
+  margin: 0;
+}
+
 .logo-name:hover {
   color: pink;
 }

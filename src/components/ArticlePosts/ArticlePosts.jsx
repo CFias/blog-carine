@@ -103,7 +103,7 @@ export default function ArticlePosts({ category }) {
               <div className="infos-user-cap">
                 <div className="author-photo">
                   <span className="icon-banner">
-                    <Person2Rounded fontSize="small" className="icon-side" />
+                    <Person2Rounded fontSize="10" className="icon-side" />
                   </span>{" "}
                   <p className="art-author">{post.author}</p>
                 </div>

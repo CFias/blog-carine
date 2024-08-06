@@ -38,6 +38,21 @@
   --card-color: #111010;
 }
 
+.loading-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 100vh;
+}
+
+.cloading {
+  background-position: center;
+  object-position: center;
+  object-fit: cover;
+  background-size: 100px;
+}
+
 .bg-container {
   background-image: url("./assets/image/bg-phototest.png");
   background-position: center;

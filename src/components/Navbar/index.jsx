@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import { useAuthentication } from "./../../hooks/useAuthentication";
 import { useAuthValue } from "./../../contexts/AuthContext";
 import SideMenu from "../SideMenu/SideMenu";
 import { Menu } from "@mui/icons-material";
+import logo from "../../assets/image/logo.png"
 
 export default function Navbar() {
   const { user } = useAuthValue();
@@ -19,7 +19,7 @@ export default function Navbar() {
       <header className="header-container">
         <nav className="nav-container">
           <NavLink to="/" className="logo-name">
-            <h4 className="logo-name">Carine Lima</h4>
+            <img className="logo-nav" src={logo} alt="Carine Lima" />
           </NavLink>
           <ul className="nav-content">
             <li>

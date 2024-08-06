@@ -20,6 +20,7 @@ import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
 import AdminPostManager from "./pages/AdminPostManager/AdminPostManager";
+import CLoading from "../src/assets/image/CLoading.gif"
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -34,7 +35,9 @@ function App() {
   }, [auth]);
 
   if (loadingUser) {
-    return <p>Carregando...</p>;
+    return <div className="loading-main">
+      <img className="cloading" src={CLoading} alt="" />
+    </div>;
   }
 
   return (
