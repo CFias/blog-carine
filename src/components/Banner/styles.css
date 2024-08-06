@@ -2,13 +2,13 @@
   position: relative;
   width: 100vw;
   background-position: center;
-  height: 90vh;
+  height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .banner-item {
@@ -19,9 +19,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.733);
+  background-position: start;
+  background-size:  cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.808);
 }
 
 .banner-overlay {
@@ -45,13 +45,13 @@
 }
 
 .txt-banner {
-  font-size: 78px;
+  font-size: 38px;
   margin-top: 10px;
   color: #e6e5e5de;
 }
 
 .cap-banner {
-  font-size: 24px;
+  font-size: 20px;
   width: 40%;
   color: #c9c9c9ec;
 }
