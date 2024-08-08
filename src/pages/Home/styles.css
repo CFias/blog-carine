@@ -67,12 +67,11 @@
   padding: 1rem;
   font-size: 16px;
   font-weight: 500;
-  width: 70%;
 }
 
 .home-filter {
   display: flex;
-  width: 95%;
+  width: 90%;
   justify-content: space-between;
 }
 

@@ -43,7 +43,6 @@ export default function Home() {
   const handleFilterClose = (filter) => {
     setAnchorEl(null);
     setSelectedFilter(filter);
-    // Aqui você pode aplicar o filtro na lista de posts
   };
 
   const open = Boolean(anchorEl);
@@ -78,8 +77,8 @@ export default function Home() {
                 open={open}
                 onClose={() => handleFilterClose(selectedFilter)}
               >
-                <MenuItem onClick={() => handleFilterClose("Filtrar por:")}>
-                  Filtrar por:
+                <MenuItem selected disabled onClick={() => handleFilterClose("Filtrar")}>
+                  Filtrar
                 </MenuItem>
                 <MenuItem onClick={() => handleFilterClose("Podcast")}>
                   Podcast
@@ -123,8 +122,8 @@ export default function Home() {
                 open={open}
                 onClose={() => handleFilterClose(selectedFilter)}
               >
-                <MenuItem onClick={() => handleFilterClose("Filtrar por:")}>
-                  Filtrar por:
+                <MenuItem onClick={() => handleFilterClose("Filtrar")}>
+                  Filtrar
                 </MenuItem>
                 <MenuItem onClick={() => handleFilterClose("Podcast")}>
                   Podcast
