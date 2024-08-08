@@ -9,6 +9,7 @@ import {
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import logo from "../../assets/image/logo.png";
 
 export default function Register() {
   const [displayName, setDisplayName] = useState("");
@@ -48,7 +49,7 @@ export default function Register() {
     <section className="form-container container">
       <div className="form-card-container">
         <div className="form-card">
-          <h1 className="form-logo-name">Carine Lima</h1>
+          <img className="logo-nav" src={logo} alt="Carine Lima" />
           <h2 className="form-text">
             <span className="form-span">Mulheres em movimento</span> estão
             transformando o mundo com força e determinação.

@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/image/logo.png"
 
 export default function Footer() {
   return (
@@ -23,9 +24,11 @@ export default function Footer() {
             </NavLink>
           </li>
         </ul>
+        <img className="logo-nav" src={logo} alt="" />
+        <p className="footer-copy">
+          Carine Lima &copy; 2023 | All rights reserved. | Developed by Fias
+        </p>
       </nav>
-      <h3 className="footer-logo-name">Carine Lima</h3>
-      <p className="footer-copy">Carine Lima &copy; 2023 | All rights reserved. | Developed by Fias</p>
     </footer>
   );
-};
+}

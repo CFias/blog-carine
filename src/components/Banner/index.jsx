@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { Person2Rounded } from "@mui/icons-material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { East, KeyboardArrowRight, West } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 
 export default function Banner({ featuredPosts }) {
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -16,10 +19,26 @@ export default function Banner({ featuredPosts }) {
   }, [featuredPosts]);
 
   if (featuredPosts.length === 0) {
-    return null; // Se não houver posts em destaque, não renderiza nada
+    return null;
   }
 
   const currentPost = featuredPosts[currentPostIndex];
+
+  const handlePrevClick = () => {
+    setCurrentPostIndex((prevIndex) =>
+      prevIndex === 0 ? featuredPosts.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentPostIndex((prevIndex) =>
+      prevIndex === featuredPosts.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentPostIndex(index);
+  };
 
   return (
     <section className="banner-container">
@@ -27,21 +46,30 @@ export default function Banner({ featuredPosts }) {
         key={currentPost.id}
         className="banner-item"
         style={{ backgroundImage: `url(${currentPost.image})` }}
-      >
-        <div className="banner-overlay">
-          <h4 className="dest-banner">Destaques</h4>
-          <div className="tags">
-            <p className="banner-p">
-              <span className="icon-banner">
-                <Person2Rounded />
-              </span>{" "}
-              {currentPost.author} <span>•</span>{" "}
-              <span>{currentPost.filter}</span>
-            </p>
-          </div>
-          <h2 className="txt-banner">{currentPost.title}</h2>
-          <p className="cap-banner">{currentPost.caption}</p>
-        </div>
+      ></div>
+      <div className="banner-overlay">
+        <h2 className="txt-banner">Mulheres em movimento</h2>
+        <p className="cap-banner">O início de uma jornada de sucesso</p>
+      </div>
+      <NavLink to="/history" className="banner-link">
+        Minha história <KeyboardArrowRight fontSize="small" />
+      </NavLink>
+      <div className="arrows-container">
+        <button className="arrow-button left" onClick={handlePrevClick}>
+          <West fontSize="small" />
+        </button>
+        <button className="arrow-button right" onClick={handleNextClick}>
+          <East fontSize="small" />
+        </button>
+      </div>
+      <div className="dots-container">
+        {featuredPosts.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentPostIndex ? "active" : ""}`}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
       </div>
     </section>
   );

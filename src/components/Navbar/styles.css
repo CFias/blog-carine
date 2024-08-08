@@ -65,7 +65,7 @@
   text-decoration: none;
   user-select: none;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   padding: 3px;
   color: #444343;
   transition: 250ms;
@@ -94,7 +94,6 @@
 .nav-btn {
   display: flex;
   list-style: none;
-  gap: 15px;
   font-family: "Montserrat", sans-serif;
 }
 

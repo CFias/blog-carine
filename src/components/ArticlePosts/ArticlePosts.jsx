@@ -5,10 +5,10 @@ import { db } from "../../services/FirebaseConfig";
 import {
   DateRange,
   FilterListRounded,
-  Person2Rounded,
 } from "@mui/icons-material";
 import { Modal, Backdrop, Fade, Button } from "@mui/material";
 import { format } from "date-fns"; 
+import profile from "../../assets/image/caren.png"
 
 export default function ArticlePosts({ category }) {
   const [posts, setPosts] = useState([]);
@@ -102,8 +102,8 @@ export default function ArticlePosts({ category }) {
               <p className="art-caption">{post.caption}</p>
               <div className="infos-user-cap">
                 <div className="author-photo">
-                  <span className="icon-banner">
-                    <Person2Rounded fontSize="10" className="icon-side" />
+                  <span className="icon-profile">
+                    <img className="art-profile" src={profile} alt="" />
                   </span>{" "}
                   <p className="art-author">{post.author}</p>
                 </div>

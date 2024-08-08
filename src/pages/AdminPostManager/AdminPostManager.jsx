@@ -13,7 +13,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
-import { format } from "date-fns"; // Importa a função format
+import { format } from "date-fns";
 import "./styles.css";
 import { Delete, Edit } from "@mui/icons-material";
 
@@ -36,6 +36,7 @@ export default function AdminPostManager() {
   const [filter, setFilter] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
   const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
     getPosts();
@@ -158,6 +159,20 @@ export default function AdminPostManager() {
       return matchesSearchTerm && matchesCategory && matchesFeaturedStatus;
     });
   };
+
+  const filterArticlesWithoutImage = (posts) => {
+    return posts.filter(
+      (post) => post.category === "article" && !post.image
+    );
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount(visibleCount + 3);
+  };
+
+  const visiblePostsWithImage = filterPosts(posts)
+    .filter((post) => post.image)
+    .slice(0, visibleCount);
 
   return (
     <section className="admin-container">
@@ -302,7 +317,7 @@ export default function AdminPostManager() {
               </tr>
             </thead>
             <tbody>
-              {filterPosts(posts).map((post) => (
+              {visiblePostsWithImage.map((post) => (
                 <tr key={post.id}>
                   <td>{post.id}</td>
                   <td>
@@ -317,6 +332,52 @@ export default function AdminPostManager() {
                       "N/A"
                     )}
                   </td>
+                  <td>{post.title}</td>
+                  <td>{post.caption}</td>
+                  <td>{post.category}</td>
+                  <td>{post.filter}</td>
+                  <td>{post.author}</td>
+                  <td>{post.isFeatured ? "Sim" : "Não"}</td>
+                  <td>{format(post.publishedAt, "MMM yyyy")}</td>
+                  <td>
+                    <button onClick={() => editPost(post)} className="edit-btn">
+                      <Edit />
+                    </button>
+                    <button
+                      onClick={() => deletePost(post.id)}
+                      className="delete-btn"
+                    >
+                      <Delete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {filterPosts(posts).filter((post) => post.image).length > visibleCount && (
+            <button onClick={handleShowMore} className="show-more-btn">
+              Exibir Mais
+            </button>
+          )}
+          <h3 className="list-title">Artigos sem Imagem</h3>
+          <table className="post-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Legenda</th>
+                <th>Categoria</th>
+                <th>Filtro</th>
+                <th>Autor</th>
+                <th>Destaque</th>
+                <th>Data</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterArticlesWithoutImage(posts).map((post) => (
+                <tr key={post.id}>
+                  <td>{post.id}</td>
                   <td>{post.title}</td>
                   <td>{post.caption}</td>
                   <td>{post.category}</td>

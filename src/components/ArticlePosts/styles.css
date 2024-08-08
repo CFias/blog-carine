@@ -41,7 +41,7 @@
   height: 40vh;
   transition: 350ms;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 25px;
   margin: 0;
 }
 
@@ -71,6 +71,10 @@
 
 .icon-art {
   margin: 0;
+}
+
+.icon-profile {
+  display: flex;
 }
 
 .art-author {
@@ -206,6 +210,38 @@
   color: #4d4d4d;
 }
 
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+.load-more-btn:focus {
+  outline: none; /* Remover o contorno padrão ao focar */
+}
+
+.load-more-btn:active {
+  background-color: #003f7f; /* Cor de fundo ao clicar */
+}
+
+.art-profile {
+  width: 30px;
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 768px) {
   .article-container {
     justify-content: center;
@@ -236,8 +272,12 @@
   .art-image {
     width: 150px;
     height: 150px;
-    border-radius: 15px;
+    border-radius:  15px 0 0 15px;
     padding: 5px;
+  }
+
+  .art-profile {
+    width: 20px;
   }
 
   .art-desc {

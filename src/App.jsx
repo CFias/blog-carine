@@ -20,7 +20,10 @@ import Podcasts from "./pages/Podcasts";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
 import AdminPostManager from "./pages/AdminPostManager/AdminPostManager";
-import CLoading from "../src/assets/image/CLoading.gif"
+import CLoading from "../src/assets/image/CLoading.gif";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { History } from "./pages/History/History";
+import { ArticlePage } from "./pages/ArticlePage/ArticlePage";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -35,9 +38,11 @@ function App() {
   }, [auth]);
 
   if (loadingUser) {
-    return <div className="loading-main">
-      <img className="cloading" src={CLoading} alt="" />
-    </div>;
+    return (
+      <div className="loading-main">
+        <img className="cloading" src={CLoading} alt="" />
+      </div>
+    );
   }
 
   return (
@@ -51,7 +56,11 @@ function App() {
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/adm" element={<AdminPostManager />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/article" element={<ArticlePage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/adm" element={<AdminPostManager />} />
+            </Route>
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
