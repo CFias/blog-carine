@@ -35,27 +35,32 @@
 
 .banner-overlay {
   position: absolute;
-  top: 60%;
-  left: 50px;
+  bottom: 20%;
+  left: 5%;
   text-align: left;
   color: white;
   display: flex;
   flex-direction: column;
-  border-radius: 0 50px 0 0;
 }
 
 .banner-link {
   position: absolute;
-  top: 80%;
-  left: 50px;
+  bottom: 5%;
+  right: 5%;
   background: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 15px;
-  font-weight: 700;
+  padding: 10px;
+  font-weight: 800;
   color: #363636;
-  border-radius: 25px;
+  border-radius: 30px;
+  transition: 100ms;
+  font-size: 12px;
+}
+
+.banner-link:hover {
+  background: #ddd;
 }
 
 .filter-banner {
@@ -67,18 +72,20 @@
 }
 
 .txt-banner {
-  font-size: 108px;
+  display: flex;
+  font-size: 100px;
   font-weight: 400;
   color: #fffffff3;
   font-family: "Plus Jakarta Sans", sans-serif;
-  position: relative;
+  margin: 0;
 }
 
 .cap-banner {
-  font-size: 20px;
+  text-align: start;
+  font-size: 22px;
   font-weight: 100;
   color: #ffffffd8;
-  position: relative;
+  margin-left: 5px;
 }
 
 .banner-p {
@@ -86,7 +93,6 @@
   font-weight: 300;
   display: flex;
   align-items: center;
-  gap: 1rem;
   color: #363636;
 }
 
@@ -122,10 +128,10 @@
 
 .arrows-container {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 5%;
+  left: 5%;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .arrow-button {
@@ -134,7 +140,7 @@
   padding: 10px;
   cursor: pointer;
   z-index: 10;
-  transition: 250ms;
+  transition: 60ms;
 }
 
 .left {

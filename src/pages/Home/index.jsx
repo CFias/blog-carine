@@ -5,12 +5,15 @@ import Banner from "../../components/Banner/index";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { FilterListRounded } from "@mui/icons-material";
+import { Menu, MenuItem, IconButton, Typography } from "@mui/material";
 import { db } from "../../services/FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import { Article } from "../../components/Article/Article";
+import Article from "../../components/Article/Article";
 
 export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState([]);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedFilter, setSelectedFilter] = useState("Filtrar por:");
 
   useEffect(() => {
     fetchFeaturedPosts();
@@ -30,9 +33,21 @@ export default function Home() {
       setFeaturedPosts(fetchedPosts);
     } catch (error) {
       console.error("Erro ao buscar posts em destaque:", error.message);
-      // Aqui você pode tratar o erro de alguma forma adequada para sua aplicação
     }
   };
+
+  const handleFilterClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleFilterClose = (filter) => {
+    setAnchorEl(null);
+    setSelectedFilter(filter);
+    // Aqui você pode aplicar o filtro na lista de posts
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "filter-menu" : undefined;
 
   return (
     <>
@@ -43,17 +58,93 @@ export default function Home() {
         </section>
         <section className="articles-home">
           <div className="home-filter">
-            <h6 className="article-h4">Blog</h6>
-            <FilterListRounded fontSize="small" />
+            <Typography variant="h6" className="filter-text">
+              Blog
+            </Typography>
+            <div className="filter-container">
+              <Typography variant="body1" className="selected-filter-text">
+                {selectedFilter}
+              </Typography>
+              <IconButton
+                aria-controls={id}
+                aria-haspopup="true"
+                onClick={handleFilterClick}
+              >
+                <FilterListRounded fontSize="small" />
+              </IconButton>
+              <Menu
+                id={id}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={() => handleFilterClose(selectedFilter)}
+              >
+                <MenuItem onClick={() => handleFilterClose("Filtrar por:")}>
+                  Filtrar por:
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Podcast")}>
+                  Podcast
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Palestra")}>
+                  Palestra
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Trabalho")}>
+                  Trabalho
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Estudo")}>
+                  Estudo
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Certificado")}>
+                  Certificado
+                </MenuItem>
+              </Menu>
+            </div>
           </div>
-          <ArticlePosts category="publication" />
+          <ArticlePosts category="publication" filter={selectedFilter} />
         </section>
         <section className="articles-home" id="article">
           <div className="home-filter">
-            <h6 className="article-h4">Artigos</h6>
-            <FilterListRounded fontSize="small" />
+            <Typography variant="h6" className="filter-text">
+              Artigos
+            </Typography>
+            <div className="filter-container">
+              <Typography variant="body1" className="selected-filter-text">
+                {selectedFilter}
+              </Typography>
+              <IconButton
+                aria-controls={id}
+                aria-haspopup="true"
+                onClick={handleFilterClick}
+              >
+                <FilterListRounded fontSize="small" />
+              </IconButton>
+              <Menu
+                id={id}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={() => handleFilterClose(selectedFilter)}
+              >
+                <MenuItem onClick={() => handleFilterClose("Filtrar por:")}>
+                  Filtrar por:
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Podcast")}>
+                  Podcast
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Palestra")}>
+                  Palestra
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Trabalho")}>
+                  Trabalho
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Estudo")}>
+                  Estudo
+                </MenuItem>
+                <MenuItem onClick={() => handleFilterClose("Certificado")}>
+                  Certificado
+                </MenuItem>
+              </Menu>
+            </div>
           </div>
-          <Article />
+          <Article category={selectedFilter} />
         </section>
       </section>
       <Footer />

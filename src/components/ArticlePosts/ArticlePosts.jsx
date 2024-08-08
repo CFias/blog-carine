@@ -2,35 +2,37 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
-import {
-  DateRange,
-  FilterListRounded,
-} from "@mui/icons-material";
+import { DateRange, FilterListRounded } from "@mui/icons-material";
 import { Modal, Backdrop, Fade, Button } from "@mui/material";
-import { format } from "date-fns"; 
-import profile from "../../assets/image/caren.png"
+import { format } from "date-fns";
+import profile from "../../assets/image/caren.png";
 
-export default function ArticlePosts({ category }) {
+export default function ArticlePosts({ category, filter }) {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
-  const [visiblePosts, setVisiblePosts] = useState(8); 
+  const [visiblePosts, setVisiblePosts] = useState(8);
   const [selectedPost, setSelectedPost] = useState(null);
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     fetchPosts();
-  }, [category]);
+  }, [category, filter]); // Dependências atualizadas para incluir `filter`
 
   const fetchPosts = async () => {
     try {
       const postsCollection = collection(db, "posts");
       let postsQuery;
 
-      if (category) {
-        const categoryQuery = where("category", "==", category);
-        postsQuery = query(postsCollection, categoryQuery);
+      // Se um filtro de categoria for fornecido, aplique-o
+      if (category && category !== "Filtrar por:") {
+        postsQuery = query(postsCollection, where("category", "==", category));
       } else {
         postsQuery = postsCollection;
+      }
+
+      // Se um filtro adicional for fornecido, aplique-o
+      if (filter && filter !== "Filtrar por:") {
+        postsQuery = query(postsQuery, where("filter", "==", filter));
       }
 
       const snapshot = await getDocs(postsQuery);
@@ -43,18 +45,20 @@ export default function ArticlePosts({ category }) {
         };
       });
 
+      // Se a categoria for "publicação com foto", filtre apenas posts com imagem
       let filteredPosts = fetchedPosts;
-
       if (category === "publicação com foto") {
         filteredPosts = fetchedPosts.filter((post) => post.image);
       }
 
+      // Ordene os posts pela data de publicação
       const sortedPosts = filteredPosts.sort(
         (a, b) => b.publishedAt - a.publishedAt
       );
 
-      setAllPosts(sortedPosts); 
-      setPosts(sortedPosts.slice(0, visiblePosts)); 
+      // Atualize o estado com os posts filtrados e ordenados
+      setAllPosts(sortedPosts);
+      setPosts(sortedPosts.slice(0, visiblePosts));
     } catch (error) {
       console.error("Erro ao buscar posts: ", error);
     }

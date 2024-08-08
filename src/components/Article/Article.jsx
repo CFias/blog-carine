@@ -3,19 +3,6 @@ import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
 import "./styles.css";
 
-const backgroundClasses = [
-  "art-bg-1",
-  "art-bg-2",
-  "art-bg-3",
-  "art-bg-4",
-  "art-bg-5",
-];
-
-const getRandomBgClass = () => {
-  const randomIndex = Math.floor(Math.random() * backgroundClasses.length);
-  return backgroundClasses[randomIndex];
-};
-
 export const Article = ({ category }) => {
   const [artPost, setArtPost] = useState([]);
 
@@ -28,7 +15,7 @@ export const Article = ({ category }) => {
       const postsCollection = collection(db, "posts");
       let postsQuery;
 
-      if (category) {
+      if (category && category !== "Filtrar por:") {
         const categoryQuery = where("category", "==", category);
         postsQuery = query(postsCollection, categoryQuery);
       } else {
@@ -42,16 +29,19 @@ export const Article = ({ category }) => {
           id: doc.id,
           ...data,
           publishedAt: data.publishedAt.toDate(),
-          bgClass: getRandomBgClass(), // Assign random background class
         };
       });
 
+      // Filtra apenas posts sem imagem
       const filteredPosts = fetchedPosts.filter((post) => !post.image);
+
+      // Ordena os posts pela data de publicação
       const sortedPosts = filteredPosts.sort(
         (a, b) => b.publishedAt - a.publishedAt
       );
 
-      const limitedPosts = sortedPosts.slice(0, 12);
+      // Limita aos 4 posts mais recentes
+      const limitedPosts = sortedPosts.slice(0, 4);
       setArtPost(limitedPosts);
     } catch (error) {
       console.error("Erro ao buscar posts: ", error);
@@ -59,28 +49,28 @@ export const Article = ({ category }) => {
   };
 
   return (
-    <div className="article-container">
+    <div className="article-container-two">
       {artPost.length > 0 && (
         <div className="art-main-card">
-          <div className={`art-main-card-content ${artPost[0].bgClass}`}>
+          <div className="art-main-card-content">
             <h2 className="art-caption-title">{artPost[0].title}</h2>
             <p className="art-caption">{artPost[0].caption}</p>
             <p className="art-author">{artPost[0].author}</p>
             <p className="post-date-rec">
-              {artPost[0].publishedAt.toLocaleString()}
+              {artPost[0].publishedAt.toLocaleDateString()}
             </p>
           </div>
         </div>
       )}
       <div className="art-small-cards">
         {artPost.slice(1).map((post) => (
-          <div key={post.id} className={`art-small-card ${post.bgClass}`}>
+          <div key={post.id} className="art-small-card">
             <div className="art-content-small">
               <h3 className="art-caption-title">{post.title}</h3>
               <p className="art-caption">{post.caption}</p>
               <p className="art-author">{post.author}</p>
               <p className="post-date-rec">
-                {post.publishedAt.toLocaleString()}
+                {post.publishedAt.toLocaleDateString()}
               </p>
             </div>
           </div>

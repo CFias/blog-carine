@@ -56,10 +56,10 @@ export default function Banner({ featuredPosts }) {
       </NavLink>
       <div className="arrows-container">
         <button className="arrow-button left" onClick={handlePrevClick}>
-          <West fontSize="small" />
+          <West fontSize="10" />
         </button>
         <button className="arrow-button right" onClick={handleNextClick}>
-          <East fontSize="small" />
+          <East fontSize="10" />
         </button>
       </div>
       <div className="dots-container">

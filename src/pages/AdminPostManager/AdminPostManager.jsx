@@ -154,16 +154,20 @@ export default function AdminPostManager() {
       const matchesSearchTerm =
         post.caption && post.caption.toLowerCase().includes(searchTermLower);
       const matchesCategory = category === "all" || category === post.category;
+      const matchesFilter = filter === "" || post.filter === filter;
       const matchesFeaturedStatus = !showOnlyFeatured || post.isFeatured;
 
-      return matchesSearchTerm && matchesCategory && matchesFeaturedStatus;
+      return (
+        matchesSearchTerm &&
+        matchesCategory &&
+        matchesFilter &&
+        matchesFeaturedStatus
+      );
     });
   };
 
   const filterArticlesWithoutImage = (posts) => {
-    return posts.filter(
-      (post) => post.category === "article" && !post.image
-    );
+    return posts.filter((post) => post.category === "article" && !post.image);
   };
 
   const handleShowMore = () => {
@@ -354,7 +358,8 @@ export default function AdminPostManager() {
               ))}
             </tbody>
           </table>
-          {filterPosts(posts).filter((post) => post.image).length > visibleCount && (
+          {filterPosts(posts).filter((post) => post.image).length >
+            visibleCount && (
             <button onClick={handleShowMore} className="show-more-btn">
               Exibir Mais
             </button>

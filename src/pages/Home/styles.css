@@ -27,6 +27,35 @@
   width: 100vw;
 }
 
+.home-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.selected-filter-text {
+  margin-right: 0.5rem;
+  font-size: 12px;
+  color: #494949;
+}
+
+.filter-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #494949;
+}
+
+.filter-for {
+  font-size: 10px;
+  font-weight: 700;
+}
+
 .article-h4 {
   font-weight: 600;
   font-size: 28px;
