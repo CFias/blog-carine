@@ -3,7 +3,8 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { useAuthValue } from "./../../contexts/AuthContext";
 import SideMenu from "../SideMenu/SideMenu";
-import { Menu } from "@mui/icons-material";
+import NotificationsMenu from "../NotificationsMenu/NotificationsMenu"; // Importa o novo componente
+import { Menu, Notifications } from "@mui/icons-material";
 import logo from "../../assets/image/logo.png";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { adminUIDs } from "../../Config/Config";
@@ -12,9 +13,19 @@ export default function Navbar() {
   const { user } = useAuthValue();
   const { logout } = useAuthentication();
   const [isOpen, setIsOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+
+  // Fake notifications for demonstration
+  const notifications = [
+    "Nova publicação disponível!",
+  ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleNotifications = () => {
+    setIsNotificationsOpen(!isNotificationsOpen);
   };
 
   const isAdmin = user && adminUIDs.includes(user.uid);
@@ -85,18 +96,22 @@ export default function Navbar() {
       </header>
       <nav className="nav-mob">
         <div className="nav-mob-content">
-          <div className="nav-mob-icon" onClick={toggleMenu}>
-            <Menu className="mob-icon" fontSize="medium" />
-            <img className="logo-nav" src={logo} alt="Carine Lima" />
-
-            {user ? (
-              <h4 className="logo">Olá, {user.displayName}</h4>
-            ) : (
-              <h4 className="logo">Caren Blog</h4>
-            )}
+          <div className="menu-cx">
+            <Menu className="mob-icon" fontSize="medium" onClick={toggleMenu} />
           </div>
-          <SideMenu isOpen={isOpen} onClose={toggleMenu} />
+          <div className="nav-mob-icon">
+            <img className="logo-nav" src={logo} alt="Carine Lima" />
+          </div>
+          <div className="nav-mob-notifications" onClick={toggleNotifications}>
+            <Notifications className="mob-icon" fontSize="medium" />
+            <NotificationsMenu
+              isOpen={isNotificationsOpen}
+              onClose={toggleNotifications}
+              notifications={notifications}
+            />
+          </div>
         </div>
+        <SideMenu isOpen={isOpen} onClose={toggleMenu} />
       </nav>
     </>
   );

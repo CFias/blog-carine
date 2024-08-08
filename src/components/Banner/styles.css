@@ -30,7 +30,7 @@
   object-fit: cover;
   background-size:  cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.808);
-  animation: zoomOut 30s linear forwards;
+  animation: zoomOut 25s linear forwards;
 }
 
 .banner-overlay {
@@ -195,13 +195,13 @@
 
 @media screen and (max-width: 768px) {
   .banner-container {
-    height: 30vh;
+    height: 60vh;
     margin-top: 1rem;
     border-radius: 25px;
   }
 
   .banner-item {
-    width: 95%;
+    width: 100%;
     border-radius: 15px;
   }
 
@@ -214,20 +214,21 @@
   }
 
   .banner-overlay {
-    width: 90%;
-    top: 55%;
+    width: 100%;
+    bottom: 10%;
     left: 5%;
     padding: 10px;
     border-radius: 25px;
   }
 
   .txt-banner {
-    font-size: 18px;
+    font-size: 38px;
     font-weight: 300;
   }
 
   .cap-banner {
-    font-size: 12px;
+    font-size: 14px;
+    margin: 0;
   }
 
   .banner-p {

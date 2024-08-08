@@ -4,11 +4,11 @@ import ArticlePosts from "../../components/ArticlePosts/ArticlePosts";
 import Banner from "../../components/Banner/index";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import {Article} from "../../components/Article/Article"
 import { FilterListRounded } from "@mui/icons-material";
 import { Menu, MenuItem, IconButton, Typography } from "@mui/material";
 import { db } from "../../services/FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import Article from "../../components/Article/Article";
 
 export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState([]);
