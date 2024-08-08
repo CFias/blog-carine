@@ -32,15 +32,12 @@ export const Article = ({ category }) => {
         };
       });
 
-      // Filtra apenas posts sem imagem
       const filteredPosts = fetchedPosts.filter((post) => !post.image);
 
-      // Ordena os posts pela data de publicação
       const sortedPosts = filteredPosts.sort(
         (a, b) => b.publishedAt - a.publishedAt
       );
 
-      // Limita aos 4 posts mais recentes
       const limitedPosts = sortedPosts.slice(0, 4);
       setArtPost(limitedPosts);
     } catch (error) {

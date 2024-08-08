@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./styles.css";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../services/FirebaseConfig";
-import { DateRange, FilterListRounded } from "@mui/icons-material";
+import {
+  DateRange,
+  FilterListRounded,
+  WhatsApp,
+  Instagram,
+} from "@mui/icons-material";
 import { Modal, Backdrop, Fade, Button } from "@mui/material";
 import { format } from "date-fns";
 import profile from "../../assets/image/caren.png";
+import html2canvas from "html2canvas";
 
 export default function ArticlePosts({ category, filter }) {
   const [posts, setPosts] = useState([]);
@@ -13,24 +19,23 @@ export default function ArticlePosts({ category, filter }) {
   const [visiblePosts, setVisiblePosts] = useState(8);
   const [selectedPost, setSelectedPost] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const modalContentRef = useRef(null);
 
   useEffect(() => {
     fetchPosts();
-  }, [category, filter]); // Dependências atualizadas para incluir `filter`
+  }, [category, filter]);
 
   const fetchPosts = async () => {
     try {
       const postsCollection = collection(db, "posts");
       let postsQuery;
 
-      // Se um filtro de categoria for fornecido, aplique-o
       if (category && category !== "Filtrar por:") {
         postsQuery = query(postsCollection, where("category", "==", category));
       } else {
         postsQuery = postsCollection;
       }
 
-      // Se um filtro adicional for fornecido, aplique-o
       if (filter && filter !== "Filtrar por:") {
         postsQuery = query(postsQuery, where("filter", "==", filter));
       }
@@ -45,18 +50,15 @@ export default function ArticlePosts({ category, filter }) {
         };
       });
 
-      // Se a categoria for "publicação com foto", filtre apenas posts com imagem
       let filteredPosts = fetchedPosts;
       if (category === "publicação com foto") {
         filteredPosts = fetchedPosts.filter((post) => post.image);
       }
 
-      // Ordene os posts pela data de publicação
       const sortedPosts = filteredPosts.sort(
         (a, b) => b.publishedAt - a.publishedAt
       );
 
-      // Atualize o estado com os posts filtrados e ordenados
       setAllPosts(sortedPosts);
       setPosts(sortedPosts.slice(0, visiblePosts));
     } catch (error) {
@@ -79,6 +81,20 @@ export default function ArticlePosts({ category, filter }) {
       setPosts(allPosts.slice(0, newVisiblePosts));
       return newVisiblePosts;
     });
+  };
+
+  const shareOnWhatsApp = (post) => {
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      post.title
+    )}%20${encodeURIComponent(post.caption)}%20${encodeURIComponent(
+      "https://blog-carine.vercel.app/"
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  const shareOnInstagram = () => {
+    const url = `https://www.instagram.com`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -138,7 +154,7 @@ export default function ArticlePosts({ category, filter }) {
         }}
       >
         <Fade className="modal-card-content" in={openModal}>
-          <div className="modal-paper">
+          <div className="modal-paper" ref={modalContentRef}>
             {selectedPost && (
               <>
                 <img
@@ -161,6 +177,26 @@ export default function ArticlePosts({ category, filter }) {
                       Publicado em:{" "}
                       {format(selectedPost.publishedAt, "MMM yyyy")}{" "}
                     </p>
+                  </div>
+                  <div className="share-buttons">
+                    <Button
+                      onClick={() => shareOnWhatsApp(selectedPost)}
+                      className="share-btn"
+                      variant="contained"
+                      color="success"
+                      startIcon={<WhatsApp />}
+                    >
+                      Compartilhar no WhatsApp
+                    </Button>
+                    <Button
+                      onClick={shareOnInstagram}
+                      className="share-btn"
+                      variant="contained"
+                      color="primary"
+                      startIcon={<Instagram />}
+                    >
+                      Compartilhar no Instagram
+                    </Button>
                   </div>
                 </div>
               </>

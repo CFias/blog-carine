@@ -4,7 +4,7 @@ import ArticlePosts from "../../components/ArticlePosts/ArticlePosts";
 import Banner from "../../components/Banner/index";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import {Article} from "../../components/Article/Article"
+import { Article } from "../../components/Article/Article";
 import { FilterListRounded } from "@mui/icons-material";
 import { Menu, MenuItem, IconButton, Typography } from "@mui/material";
 import { db } from "../../services/FirebaseConfig";
@@ -77,7 +77,11 @@ export default function Home() {
                 open={open}
                 onClose={() => handleFilterClose(selectedFilter)}
               >
-                <MenuItem selected disabled onClick={() => handleFilterClose("Filtrar")}>
+                <MenuItem
+                  selected
+                  disabled
+                  onClick={() => handleFilterClose("Filtrar")}
+                >
                   Filtrar
                 </MenuItem>
                 <MenuItem onClick={() => handleFilterClose("Podcast")}>

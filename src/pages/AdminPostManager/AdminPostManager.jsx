@@ -31,6 +31,7 @@ export default function AdminPostManager() {
     "publication",
     "article",
     "destaque",
+    "storie", // Adicionando a categoria "storie"
   ]);
   const [category, setCategory] = useState("publication");
   const [filter, setFilter] = useState("");
@@ -84,7 +85,10 @@ export default function AdminPostManager() {
 
       if (editingPostId) {
         await updateDoc(doc(db, "posts", editingPostId), {
-          image: category === "publication" ? finalImageUrl : "",
+          image:
+            category === "publication" || category === "storie"
+              ? finalImageUrl
+              : "",
           title,
           caption,
           category,
@@ -94,7 +98,10 @@ export default function AdminPostManager() {
         });
       } else {
         await addDoc(collection(db, "posts"), {
-          image: category === "publication" ? finalImageUrl : "",
+          image:
+            category === "publication" || category === "storie"
+              ? finalImageUrl
+              : "",
           title,
           caption,
           category,
@@ -217,6 +224,8 @@ export default function AdminPostManager() {
                             ? "Artigo sem Imagem"
                             : cat === "destaque"
                             ? "Destaque"
+                            : cat === "storie"
+                            ? "Storie"
                             : ""}
                         </option>
                       ))}
@@ -239,7 +248,7 @@ export default function AdminPostManager() {
                       <option value="Certificado">Certificado</option>
                     </select>
                   </label>
-                  {category === "publication" && (
+                  {(category === "publication" || category === "storie") && (
                     <label htmlFor="post-image" className="form-label">
                       <h3 className="form-title">Selecionar imagem</h3>
                       <input type="file" onChange={handleImageChange} />
@@ -262,7 +271,12 @@ export default function AdminPostManager() {
                     />
                   </label>
                   <label htmlFor="post-author" className="form-label">
-                    <h3 className="form-title">Autor</h3>
+                    <h3
+                      className="form
+-title"
+                    >
+                      Autor
+                    </h3>
                     <input
                       className="form-input"
                       type="text"
