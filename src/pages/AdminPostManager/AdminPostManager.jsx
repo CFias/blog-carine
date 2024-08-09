@@ -27,7 +27,7 @@ export default function AdminPostManager() {
   const [editingPostId, setEditingPostId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [categories, setCategories] = useState([
+  const [categories] = useState([
     "publication",
     "article",
     "destaque",
@@ -185,11 +185,13 @@ export default function AdminPostManager() {
     .filter((post) => post.image)
     .slice(0, visibleCount);
 
+  const totalPostsCount = posts.length;
+
   return (
     <section className="admin-container">
       <div className="posts-list">
         <NavLink to="/" className="nav-back">
-          Voltar para o inicio
+          Voltar para o início
         </NavLink>
         <div className="add-post">
           <button className="modal-btn" onClick={() => setIsModalOpen(true)}>
@@ -271,12 +273,7 @@ export default function AdminPostManager() {
                     />
                   </label>
                   <label htmlFor="post-author" className="form-label">
-                    <h3
-                      className="form
--title"
-                    >
-                      Autor
-                    </h3>
+                    <h3 className="form-title">Autor</h3>
                     <input
                       className="form-input"
                       type="text"
@@ -302,6 +299,7 @@ export default function AdminPostManager() {
             </div>
           )}
         </div>
+        <h3 className="list-title">Total de Posts: {totalPostsCount}</h3>
         <div className="list-all">
           <h3 className="list-title">Lista de Posts</h3>
           <input
