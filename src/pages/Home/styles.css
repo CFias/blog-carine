@@ -41,12 +41,12 @@
 
 .selected-filter-text {
   margin-right: 0.5rem;
-  font-size: 12px;
+  font-size: 20px;
   color: #494949;
 }
 
 .filter-text {
-  font-size: 12px;
+  font-size: 40px;
   font-weight: 700;
   color: #494949;
 }
@@ -73,6 +73,12 @@
   display: flex;
   width: 90%;
   justify-content: space-between;
+}
+
+.banner-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {

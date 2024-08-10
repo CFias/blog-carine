@@ -30,10 +30,9 @@ export default function AdminPostManager() {
   const [categories] = useState([
     "publication",
     "article",
-    "destaque",
     "storie", // Adicionando a categoria "storie"
   ]);
-  const [category, setCategory] = useState("publication");
+  const [category, setCategory] = useState("publication", "article", "storie");
   const [filter, setFilter] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
   const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);

@@ -1,0 +1,86 @@
+.story-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    gap: 20px;
+}
+
+.story-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 10px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.img-story {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.959);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 800px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: inset 0px 0px 15px rgba(236, 8, 8, 0.966);
+}
+
+.modal-story-content {
+    text-align: center;
+    width: 100%;
+}
+
+.modal-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: border 0.3s ease;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+    /* Internal box shadow */
+}
+
+.thumbnail.active {
+    border: 2px solid #000;
+}

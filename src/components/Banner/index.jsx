@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { East, KeyboardArrowRight, West } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 

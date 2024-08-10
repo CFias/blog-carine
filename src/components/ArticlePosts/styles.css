@@ -94,8 +94,9 @@
   justify-content: start;
   align-items: start;
   width: 23vw;
-  height: 25vh;
+  height: 22vh;
   flex-direction: column;
+  padding: 8px 0; 
 }
 
 .post-date-rec {
@@ -108,7 +109,7 @@
 }
 
 .art-caption-title {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   color: #494949;
   padding: .1rem 0;
@@ -121,7 +122,7 @@
   text-align: start;
   color: rgb(122, 122, 122);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   flex-wrap: wrap;
