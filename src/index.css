@@ -236,4 +236,11 @@
     display: none;
   }
 
+  .cloading {
+    background-position: center;
+    object-position: center;
+    object-fit: cover;
+    width: 250px;
+  }
+
 }

@@ -46,8 +46,8 @@ export default function Banner({ featuredPosts }) {
         style={{ backgroundImage: `url(${currentPost.image})` }}
       ></div>
       <div className="banner-overlay">
-        <h2 className="txt-banner">Mulheres em movimento</h2>
-        <p className="cap-banner">O início de uma jornada de sucesso</p>
+        <h2 className="txt-banner">O caminho para o sucesso</h2>
+        <p className="cap-banner"></p>
       </div>
       <NavLink to="/history" className="banner-link">
         Minha história <KeyboardArrowRight fontSize="small" />
