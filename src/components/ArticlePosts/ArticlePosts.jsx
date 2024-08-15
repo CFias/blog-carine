@@ -7,11 +7,12 @@ import {
   FilterListRounded,
   WhatsApp,
   Instagram,
+  Share, // Import the Share icon
 } from "@mui/icons-material";
 import { Modal, Backdrop, Fade, Button } from "@mui/material";
 import { format } from "date-fns";
+import { ptBR } from "date-fns/locale"; // Correct locale import
 import profile from "../../assets/image/caren.png";
-import html2canvas from "html2canvas";
 
 export default function ArticlePosts({ category, filter }) {
   const [posts, setPosts] = useState([]);
@@ -127,10 +128,18 @@ export default function ArticlePosts({ category, filter }) {
                   </span>{" "}
                   <p className="art-author">{post.author}</p>
                 </div>
-                <p className="post-date-rec">
-                  <span>•</span> {format(post.publishedAt, "MMM yyyy")}{" "}
-                  <DateRange fontSize="10" />
-                </p>
+                <div className="post-date-rec">
+                  <p>
+                    <span>•</span>{" "}
+                    {format(post.publishedAt, "MMM yyyy", { locale: ptBR })}{" "}
+                    <DateRange fontSize="10" />
+                  </p>
+                  <Button
+                    onClick={() => shareOnWhatsApp(post)}
+                  >
+                    <Share fontSize="10" className="share-btn" />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -175,7 +184,9 @@ export default function ArticlePosts({ category, filter }) {
                     <p>{selectedPost.author}</p>
                     <p className="modal-date">
                       Publicado em:{" "}
-                      {format(selectedPost.publishedAt, "MMM yyyy")}{" "}
+                      {format(selectedPost.publishedAt, "MMM yyyy", {
+                        locale: ptBR,
+                      })}{" "}
                     </p>
                   </div>
                   <div className="share-buttons">

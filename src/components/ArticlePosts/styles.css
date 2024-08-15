@@ -106,6 +106,9 @@
   display: flex;
   gap: 5px;
   margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
 }
 
 .art-caption-title {
@@ -240,6 +243,10 @@
   border-radius: 50%;
 }
 
+.share-btn {
+  color: #494949;
+}
+
 @media screen and (max-width: 768px) {
   .article-container {
     justify-content: center;
@@ -266,12 +273,16 @@
     width: 98%;
   }
 
+  .infos-user-cap {
+    margin: 0;
+    padding: 0;
+  }
+
   .art-image {
-    width: 180px;
-    max-width: 170px;
+    width: 160px;
     height: 160px;
     border-radius:  15px;
-    padding: 5px;
+    padding: 3px;
   }
 
   .art-profile {
@@ -279,16 +290,16 @@
   }
 
   .art-desc {
-    width: 60%;
-    height: 150px;
+    width: 58%;
+    height: 165px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
     margin: 0;
   }
 
   .art-author {
-    font-size: 6px;
+    font-size: 8px;
     width: 100%;
     color: #726e6e;
   }
@@ -300,7 +311,7 @@
     width: 100%;
     font-weight: 600;
     margin: 0;
-  }
+    }
 
   .art-caption {
     width: 100%;
@@ -313,7 +324,7 @@
   }
 
   .post-date-rec {
-    font-size: 7px;
+    font-size: 8px;
     margin: 0;
   }
 
