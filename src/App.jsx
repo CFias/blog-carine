@@ -24,6 +24,7 @@ import CLoading from "../src/assets/image/CLoading.gif";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { History } from "./pages/History/History";
 import { ArticlePage } from "./pages/ArticlePage/ArticlePage";
+import PostPage from "./pages/PostPage/PostPage";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -53,6 +54,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/posts/:id" element={<PostPage />} />
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/profile" element={<Profile />} />

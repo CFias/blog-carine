@@ -84,18 +84,34 @@ export default function ArticlePosts({ category, filter }) {
     });
   };
 
+  const sharePost = async (post) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: post.title,
+          text: post.caption,
+          url: `https://blog-carine.vercel.app/posts/${post.id}`,
+        });
+        console.log("Post compartilhado com sucesso!");
+      } catch (error) {
+        console.error("Erro ao compartilhar post:", error);
+      }
+    } else {
+      shareOnWhatsApp(post);
+    }
+  };
+
   const shareOnWhatsApp = (post) => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      post.title
-    )}%20${encodeURIComponent(post.caption)}%20${encodeURIComponent(
-      "https://blog-carine.vercel.app/"
+      `${post.title}\n${post.caption}\nhttps://blog-carine.vercel.app/posts/${post.id}`
     )}`;
     window.open(url, "_blank");
   };
 
   const shareOnInstagram = () => {
-    const url = `https://www.instagram.com`;
-    window.open(url, "_blank");
+    alert(
+      "Compartilhamento no Instagram não é suportado diretamente através de JavaScript."
+    );
   };
 
   return (
@@ -104,7 +120,7 @@ export default function ArticlePosts({ category, filter }) {
         {posts.map((post) => (
           <div
             className="art-card"
-            key={post.id}
+            key={post.id} // Certifique-se de que `post.id` é único
             onClick={() => handleOpenModal(post)}
           >
             <div className="art-wrapper">
@@ -134,9 +150,7 @@ export default function ArticlePosts({ category, filter }) {
                     {format(post.publishedAt, "MMM yyyy", { locale: ptBR })}{" "}
                     <DateRange fontSize="10" />
                   </p>
-                  <Button
-                    onClick={() => shareOnWhatsApp(post)}
-                  >
+                  <Button onClick={() => shareOnWhatsApp(post)}>
                     <Share fontSize="10" className="share-btn" />
                   </Button>
                 </div>
@@ -191,7 +205,7 @@ export default function ArticlePosts({ category, filter }) {
                   </div>
                   <div className="share-buttons">
                     <Button
-                      onClick={() => shareOnWhatsApp(selectedPost)}
+                      onClick={() => sharePost(selectedPost)}
                       className="share-btn"
                       variant="contained"
                       color="success"
