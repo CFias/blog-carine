@@ -7,11 +7,11 @@ import {
   FilterListRounded,
   WhatsApp,
   Instagram,
-  Share, // Import the Share icon
+  Share,
 } from "@mui/icons-material";
 import { Modal, Backdrop, Fade, Button } from "@mui/material";
 import { format } from "date-fns";
-import { ptBR } from "date-fns/locale"; // Correct locale import
+import { ptBR } from "date-fns/locale";
 import profile from "../../assets/image/caren.png";
 
 export default function ArticlePosts({ category, filter }) {
@@ -108,9 +108,13 @@ export default function ArticlePosts({ category, filter }) {
     window.open(url, "_blank");
   };
 
-  const shareOnInstagram = () => {
+  const shareOnInstagram = (post) => {
+    // Criar uma URL que o usuário pode copiar para compartilhar no Instagram Stories
+    const url = `https://www.instagram.com/create/story/?url=${encodeURIComponent(
+      `https://blog-carine.vercel.app/posts/${post.id}`
+    )}`;
     alert(
-      "Compartilhamento no Instagram não é suportado diretamente através de JavaScript."
+      `Para compartilhar no Instagram Stories, copie o link abaixo e cole no seu Stories:\n\n${url}`
     );
   };
 
@@ -120,7 +124,7 @@ export default function ArticlePosts({ category, filter }) {
         {posts.map((post) => (
           <div
             className="art-card"
-            key={post.id} // Certifique-se de que `post.id` é único
+            key={post.id}
             onClick={() => handleOpenModal(post)}
           >
             <div className="art-wrapper">
@@ -203,7 +207,7 @@ export default function ArticlePosts({ category, filter }) {
                       })}{" "}
                     </p>
                   </div>
-                  <div className="share-buttons">
+                  {/* <div className="share-buttons">
                     <Button
                       onClick={() => sharePost(selectedPost)}
                       className="share-btn"
@@ -214,7 +218,7 @@ export default function ArticlePosts({ category, filter }) {
                       Compartilhar no WhatsApp
                     </Button>
                     <Button
-                      onClick={shareOnInstagram}
+                      onClick={() => shareOnInstagram(selectedPost)}
                       className="share-btn"
                       variant="contained"
                       color="primary"
@@ -222,7 +226,7 @@ export default function ArticlePosts({ category, filter }) {
                     >
                       Compartilhar no Instagram
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
               </>
             )}
